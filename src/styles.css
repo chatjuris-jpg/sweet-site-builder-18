@@ -164,14 +164,6 @@
   }
 }
 
-@utility font-sans {
-  font-family: var(--font-sans);
-}
-
-@utility font-display {
-  font-family: var(--font-display);
-}
-
 @utility font-script {
   font-family: var(--font-script);
 }
