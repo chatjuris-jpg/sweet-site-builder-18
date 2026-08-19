@@ -151,68 +151,68 @@ function Index() {
       </header>
 
       <main id="topo">
-        {/* HERO — Capa de revista com destaque de imagem */}
+        {/* HERO — Marca + imagem central */}
         <section className="mx-auto max-w-6xl px-5 py-8 md:py-12">
-          {/* Faixa de produtos como selos */}
-          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-            {palavras.map((w) => (
-              <span
-                key={w}
-                className="rounded-full bg-navy px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cream sm:px-4 sm:text-sm"
-              >
-                {w}
-              </span>
-            ))}
-          </div>
+          <div className="flex flex-col items-center text-center">
+            <p className="section-eyebrow">Linha corporativa</p>
+            <h1 className="mt-5 max-w-3xl text-4xl font-semibold leading-[1.1] text-navy sm:text-5xl lg:text-6xl">
+              Doces artesanais para marcar presença no seu evento
+            </h1>
+            <p className="mt-5 max-w-xl text-base text-muted-foreground">
+              Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
+              visual do seu evento.
+            </p>
 
-          <div className="mt-6 grid items-center gap-6 md:grid-cols-5 lg:gap-8">
-            {/* Bloco de texto */}
-            <div className="order-2 md:order-1 md:col-span-2">
-              <p className="section-eyebrow">Linha corporativa</p>
-              <h1 className="mt-4 text-4xl font-semibold leading-[1.1] text-navy sm:text-5xl lg:text-6xl">
-                Doces artesanais que carregam a cara da sua marca
-              </h1>
-              <p className="mt-5 max-w-md text-base text-muted-foreground">
-                Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
-                visual do seu evento.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-4">
-                <WhatsButton>Pedir orçamento no WhatsApp</WhatsButton>
-                <span className="text-sm text-muted-foreground">
-                  Pedidos exclusivamente pelo WhatsApp.
-                </span>
-              </div>
-            </div>
-
-            {/* Imagem grande com cartão */}
-            <div className="order-1 md:order-2 md:col-span-3">
-              <div className="relative overflow-hidden rounded-[2rem] bg-navy shadow-xl">
-                <img
-                  src={heroCupcakes}
-                  alt="Bandeja de cupcakes artesanais personalizados para evento corporativo"
-                  width={1200}
-                  height={900}
-                  className="h-[320px] w-full object-cover sm:h-[420px] md:h-[520px]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-                <div className="absolute right-4 bottom-4 left-4 flex items-center justify-between rounded-2xl bg-cream/95 px-4 py-3 text-navy shadow-lg backdrop-blur sm:px-5">
-                  <div className="flex items-center gap-3">
-                    <span className="font-script text-2xl text-plum">X</span>
-                    <span className="text-sm leading-tight">
-                      Confeitaria artesanal
-                      <span className="flex items-center gap-1 text-xs text-muted-foreground">
-                        <MapPin className="size-3" aria-hidden /> Tatuapé · São Paulo
-                      </span>
+            {/* imagem central com overlay */}
+            <div className="relative mt-8 w-full max-w-4xl overflow-hidden rounded-[2rem] bg-navy shadow-2xl">
+              <img
+                src={heroCupcakes}
+                alt="Bandeja de cupcakes artesanais personalizados para evento corporativo"
+                width={1200}
+                height={900}
+                className="h-[320px] w-full object-cover sm:h-[420px] md:h-[520px]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-b from-navy/30 via-transparent to-navy/70" />
+              <div className="absolute right-4 bottom-4 left-4 flex flex-col items-center justify-center rounded-2xl bg-cream/95 px-5 py-3 text-navy shadow-lg backdrop-blur sm:flex-row sm:gap-4">
+                <div className="flex items-center gap-3">
+                  <span className="font-script text-2xl text-plum">X</span>
+                  <span className="text-sm leading-tight">
+                    Confeitaria artesanal
+                    <span className="flex items-center justify-center gap-1 text-xs text-muted-foreground sm:justify-start">
+                      <MapPin className="size-3" aria-hidden /> Tatuapé · São Paulo
                     </span>
-                  </div>
-                  <span className="hidden text-2xl font-bold text-plum sm:block">100%</span>
+                  </span>
                 </div>
+                <span className="text-2xl font-bold text-plum">100%</span>
               </div>
+            </div>
+
+            {/* produtos como faixa */}
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+              {palavras.map((w, i) => (
+                <span
+                  key={w}
+                  className={`rounded-full px-4 py-2 text-sm font-bold uppercase tracking-wider ${
+                    i % 2 === 0
+                      ? "bg-navy text-cream"
+                      : "border-2 border-plum text-plum"
+                  }`}
+                >
+                  {w}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+              <WhatsButton>Pedir orçamento no WhatsApp</WhatsButton>
+              <span className="text-sm text-muted-foreground">
+                Pedidos exclusivamente pelo WhatsApp.
+              </span>
             </div>
           </div>
 
-          {/* Stats em linha */}
-          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          {/* Stats */}
+          <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
               ["100%", "artesanal"],
               ["+500", "eventos atendidos"],
@@ -221,7 +221,7 @@ function Index() {
             ].map(([n, l]) => (
               <div
                 key={l}
-                className="flex flex-col justify-center rounded-3xl bg-accent p-5 text-accent-foreground"
+                className="flex flex-col justify-center rounded-3xl bg-accent p-5 text-center text-accent-foreground"
               >
                 <p className="font-display text-2xl text-plum">{n}</p>
                 <p className="mt-1 text-xs">{l}</p>
