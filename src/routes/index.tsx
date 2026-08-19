@@ -151,20 +151,33 @@ function Index() {
       </header>
 
       <main id="topo">
-        {/* HERO BENTO */}
+        {/* HERO — Tipografia em destaque */}
         <section className="mx-auto max-w-6xl px-5 py-10 md:py-16">
-          <div className="grid auto-rows-[minmax(0,auto)] gap-4 lg:grid-cols-3">
-            {/* bloco título */}
-            <div className="rounded-3xl bg-secondary/70 p-8 lg:col-span-2 lg:p-12">
+          <div className="grid items-center gap-10 md:grid-cols-2 md:gap-12 lg:gap-16">
+            {/* texto + produtos */}
+            <div>
               <p className="section-eyebrow">Linha corporativa</p>
-              <h1 className="mt-5 text-4xl leading-[1.05] font-semibold text-navy sm:text-5xl lg:text-6xl">
-                Surpreenda seus colaboradores e clientes com nossos{" "}
-                <span className="font-script block py-2 text-plum">Cupcakes Corporativos</span>
-                Personalizados!
+              <h1 className="mt-6">
+                <span className="sr-only">
+                  Cupcakes, brownies, bolos, docinhos e pão de mel artesanais
+                  personalizados para eventos corporativos
+                </span>
+                <span aria-hidden="true" className="space-y-1">
+                  {palavras.map((w, i) => (
+                    <span
+                      key={w}
+                      className={`block text-5xl font-bold uppercase tracking-tight sm:text-6xl md:text-7xl ${
+                        i % 2 === 0 ? "text-navy" : "text-plum"
+                      }`}
+                    >
+                      {w}
+                    </span>
+                  ))}
+                </span>
               </h1>
-              <p className="mt-6 max-w-lg text-base text-muted-foreground">
-                Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
-                visual do seu evento.
+              <p className="mt-6 max-w-md text-base text-muted-foreground">
+                Elaborados com ingredientes de alta qualidade e decorados de acordo com a
+                identidade visual do seu evento.
               </p>
               <div className="mt-8 flex flex-wrap items-center gap-4">
                 <WhatsButton>Pedir orçamento no WhatsApp</WhatsButton>
@@ -172,16 +185,31 @@ function Index() {
                   Pedidos exclusivamente pelo WhatsApp.
                 </span>
               </div>
+
+              <div className="mt-10 grid grid-cols-2 gap-4">
+                {[
+                  ["100%", "artesanal"],
+                  ["+500", "eventos atendidos"],
+                ].map(([n, l]) => (
+                  <div
+                    key={l}
+                    className="flex flex-col justify-center rounded-3xl bg-accent p-6 text-accent-foreground"
+                  >
+                    <p className="font-display text-3xl text-plum">{n}</p>
+                    <p className="mt-1 text-xs">{l}</p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* bloco imagem */}
-            <div className="relative overflow-hidden rounded-3xl bg-navy lg:row-span-2">
+            {/* imagem */}
+            <div className="relative overflow-hidden rounded-3xl bg-navy">
               <img
                 src={heroCupcakes}
                 alt="Bandeja de cupcakes artesanais personalizados para evento corporativo"
                 width={1200}
                 height={900}
-                className="h-64 w-full object-cover lg:h-full"
+                className="h-[360px] w-full object-cover sm:h-[480px] md:h-full md:min-h-[560px] lg:min-h-[640px]"
               />
               <div className="absolute right-4 bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-navy/90 px-5 py-3 text-cream backdrop-blur">
                 <span className="font-script text-xl">X</span>
@@ -192,39 +220,6 @@ function Index() {
                   </span>
                 </span>
               </div>
-            </div>
-
-            {/* bloco palavras / produtos */}
-            <div className="rounded-3xl border border-border bg-card p-8">
-              <p className="section-eyebrow">O que fazemos</p>
-              <ul className="mt-5 flex flex-wrap gap-3">
-                {palavras.map((w, i) => (
-                  <li
-                    key={w}
-                    className={`rounded-xl px-4 py-2 text-sm font-semibold tracking-wide ${
-                      i === palavras.length - 1 ? "bg-plum/10 text-plum" : "bg-navy/5 text-navy"
-                    }`}
-                  >
-                    {w}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* bloco números */}
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                ["100%", "artesanal"],
-                ["+500", "eventos atendidos"],
-              ].map(([n, l]) => (
-                <div
-                  key={l}
-                  className="flex flex-col justify-center rounded-3xl bg-accent p-6 text-accent-foreground"
-                >
-                  <p className="font-display text-3xl text-plum">{n}</p>
-                  <p className="mt-1 text-xs">{l}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
