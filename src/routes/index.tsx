@@ -156,8 +156,28 @@ function Index() {
             </h1>
             <p className="mt-6 max-w-lg text-base text-muted-foreground">
               Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
-              visual da sua empresa.
+              visual do seu evento.
             </p>
+
+            <div className="mt-6">
+              <div className="flex flex-wrap gap-3">
+                {["CUPCAKE", "BROWNIE", "BOLOS", "DOCINHOS", "PÃO DE MEL", "Entre outros"].map(
+                  (word, i) => (
+                    <span
+                      key={word}
+                      className={`inline-block rounded-xl px-4 py-2 text-sm font-semibold tracking-wide ${
+                        i === 5
+                          ? "bg-plum/10 text-plum"
+                          : "bg-navy/5 text-navy"
+                      }`}
+                    >
+                      {word}
+                    </span>
+                  )
+                )}
+              </div>
+            </div>
+
             <div className="mt-8">
               <WhatsButton>Pedir orçamento no WhatsApp</WhatsButton>
             </div>
@@ -165,9 +185,8 @@ function Index() {
               Pedidos feitos exclusivamente pelo WhatsApp.
             </p>
 
-            <div className="mt-10 grid max-w-md grid-cols-3 gap-6 border-t border-border pt-8">
+            <div className="mt-10 grid max-w-md grid-cols-2 gap-6 border-t border-border pt-8">
               {[
-                ["+30", "sabores de cupcake"],
                 ["100%", "artesanal"],
                 ["+500", "eventos atendidos"],
               ].map(([n, l]) => (
