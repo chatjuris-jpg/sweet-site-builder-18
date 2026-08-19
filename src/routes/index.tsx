@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle, Gift, PartyPopper, CalendarClock } from "lucide-react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin } from "lucide-react";
 
 import heroCupcakes from "@/assets/hero-cupcakes.jpg";
 import corporateGifting from "@/assets/corporate-gifting.jpg";
@@ -29,8 +29,10 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Mais de 30 sabores artesanais, embalagens com o seu logo e entrega no endereço combinado.",
+          "Cupcakes, brownies, bolos, docinhos e pão de mel artesanais com embalagem personalizada para a sua empresa.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -38,6 +40,8 @@ export const Route = createFileRoute("/")({
 
 const WHATS =
   "https://wa.me/5511971872937?text=Ol%C3%A1%2C%20Xuxuzinho!%20Gostaria%20de%20um%20or%C3%A7amento%20corporativo%20para%20minha%20empresa.";
+
+const palavras = ["CUPCAKE", "BROWNIE", "BOLOS", "DOCINHOS", "PÃO DE MEL", "Entre outros"];
 
 const servicos = [
   {
@@ -62,27 +66,29 @@ const produtos = [
     img: prodCupcakes,
     title: "Cupcakes",
     text: "Nosso carro-chefe: mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
+    span: "sm:col-span-2 sm:row-span-2",
   },
-  { img: prodBolos, title: "Bolos", text: "Bolos artesanais para comemorações e confraternizações." },
+  { img: prodBrownie, title: "Brownie", text: "Brownies intensos, embalados individualmente." },
+  { img: prodBolos, title: "Bolos", text: "Bolos artesanais para comemorações." },
+  {
+    img: prodDocinhos,
+    title: "Docinhos",
+    text: "Brigadeiros e docinhos finos para coffee breaks.",
+  },
+  {
+    img: prodPaodemel,
+    title: "Pão de Mel",
+    text: "Recheado e banhado em chocolate nobre.",
+  },
   {
     img: prodBolosPersonalizados,
     title: "Bolos Personalizados",
-    text: "Bolos exclusivos com a identidade visual da sua empresa, ideais para datas comemorativas.",
+    text: "Bolos exclusivos com a identidade visual da sua empresa.",
+    span: "sm:col-span-2",
   },
-  {
-    img: prodBento,
-    title: "Bentô Cakes",
-    text: "Mini bolos no estilo bentô, individuais e encantadores, perfeitos para mimos e brindes.",
-  },
-  {
-    img: prodBolachas,
-    title: "Bolachas / Biscoitos",
-    text: "Biscoitos decorados com pintura manual, personalizados para cada ocasião corporativa.",
-  },
-  { img: prodBrownie, title: "Brownie", text: "Brownies intensos, embalados individualmente para brindes." },
-  { img: prodDocinhos, title: "Docinhos", text: "Brigadeiros e docinhos finos para coffee breaks e coquetéis." },
-  { img: prodMinibolos, title: "Mini Bolos", text: "Porções individuais elegantes, perfeitas para presentear." },
-  { img: prodPaodemel, title: "Pão de Mel", text: "Pão de mel recheado e banhado em chocolate nobre." },
+  { img: prodBento, title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
+  { img: prodBolachas, title: "Bolachas", text: "Biscoitos com pintura manual." },
+  { img: prodMinibolos, title: "Mini Bolos", text: "Porções individuais elegantes." },
 ];
 
 const marcas = [
@@ -145,234 +151,240 @@ function Index() {
       </header>
 
       <main id="topo">
-        {/* HERO */}
-        <section className="mx-auto grid max-w-6xl items-center gap-14 px-5 py-16 md:py-24 lg:grid-cols-2">
-          <div>
-            <p className="section-eyebrow">Linha corporativa</p>
-            <h1 className="mt-5 text-4xl leading-[1.1] font-semibold text-navy sm:text-5xl lg:text-6xl">
-              Surpreenda seus colaboradores e clientes com nossos{" "}
-              <span className="font-script block py-2 text-plum">Cupcakes Corporativos</span>
-              Personalizados!
-            </h1>
-            <p className="mt-6 max-w-lg text-base text-muted-foreground">
-              Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
-              visual do seu evento.
-            </p>
-
-            <div className="mt-6">
-              <div className="flex flex-wrap gap-3">
-                {["CUPCAKE", "BROWNIE", "BOLOS", "DOCINHOS", "PÃO DE MEL", "Entre outros"].map(
-                  (word, i) => (
-                    <span
-                      key={word}
-                      className={`inline-block rounded-xl px-4 py-2 text-sm font-semibold tracking-wide ${
-                        i === 5
-                          ? "bg-plum/10 text-plum"
-                          : "bg-navy/5 text-navy"
-                      }`}
-                    >
-                      {word}
-                    </span>
-                  )
-                )}
+        {/* HERO BENTO */}
+        <section className="mx-auto max-w-6xl px-5 py-10 md:py-16">
+          <div className="grid auto-rows-[minmax(0,auto)] gap-4 lg:grid-cols-3">
+            {/* bloco título */}
+            <div className="rounded-3xl bg-secondary/70 p-8 lg:col-span-2 lg:p-12">
+              <p className="section-eyebrow">Linha corporativa</p>
+              <h1 className="mt-5 text-4xl leading-[1.05] font-semibold text-navy sm:text-5xl lg:text-6xl">
+                Surpreenda seus colaboradores e clientes com nossos{" "}
+                <span className="font-script block py-2 text-plum">Cupcakes Corporativos</span>
+                Personalizados!
+              </h1>
+              <p className="mt-6 max-w-lg text-base text-muted-foreground">
+                Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
+                visual do seu evento.
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-4">
+                <WhatsButton>Pedir orçamento no WhatsApp</WhatsButton>
+                <span className="text-sm text-muted-foreground">
+                  Pedidos exclusivamente pelo WhatsApp.
+                </span>
               </div>
             </div>
 
-            <div className="mt-8">
-              <WhatsButton>Pedir orçamento no WhatsApp</WhatsButton>
+            {/* bloco imagem */}
+            <div className="relative overflow-hidden rounded-3xl bg-navy lg:row-span-2">
+              <img
+                src={heroCupcakes}
+                alt="Bandeja de cupcakes artesanais personalizados para evento corporativo"
+                width={1200}
+                height={900}
+                className="h-64 w-full object-cover lg:h-full"
+              />
+              <div className="absolute right-4 bottom-4 left-4 flex items-center gap-3 rounded-2xl bg-navy/90 px-5 py-3 text-cream backdrop-blur">
+                <span className="font-script text-xl">X</span>
+                <span className="text-sm leading-tight">
+                  Confeitaria artesanal
+                  <span className="flex items-center gap-1 text-xs opacity-70">
+                    <MapPin className="size-3" aria-hidden /> Tatuapé · São Paulo
+                  </span>
+                </span>
+              </div>
             </div>
-            <p className="mt-4 text-sm text-muted-foreground">
-              Pedidos feitos exclusivamente pelo WhatsApp.
-            </p>
 
-            <div className="mt-10 grid max-w-md grid-cols-2 gap-6 border-t border-border pt-8">
+            {/* bloco palavras / produtos */}
+            <div className="rounded-3xl border border-border bg-card p-8">
+              <p className="section-eyebrow">O que fazemos</p>
+              <ul className="mt-5 flex flex-wrap gap-3">
+                {palavras.map((w, i) => (
+                  <li
+                    key={w}
+                    className={`rounded-xl px-4 py-2 text-sm font-semibold tracking-wide ${
+                      i === palavras.length - 1 ? "bg-plum/10 text-plum" : "bg-navy/5 text-navy"
+                    }`}
+                  >
+                    {w}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* bloco números */}
+            <div className="grid grid-cols-2 gap-4">
               {[
                 ["100%", "artesanal"],
                 ["+500", "eventos atendidos"],
               ].map(([n, l]) => (
-                <div key={l}>
-                  <p className="font-display text-2xl text-plum">{n}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">{l}</p>
+                <div
+                  key={l}
+                  className="flex flex-col justify-center rounded-3xl bg-accent p-6 text-accent-foreground"
+                >
+                  <p className="font-display text-3xl text-plum">{n}</p>
+                  <p className="mt-1 text-xs">{l}</p>
                 </div>
               ))}
             </div>
           </div>
-
-          <div className="relative">
-            <div className="absolute -top-6 -right-4 hidden size-40 rounded-full bg-accent md:block" />
-            <img
-              src={heroCupcakes}
-              alt="Bandeja de cupcakes artesanais personalizados para evento corporativo"
-              width={1200}
-              height={900}
-              className="relative w-full rounded-2xl object-cover shadow-2xl shadow-navy/20"
-            />
-            <div className="relative -mt-10 ml-2 inline-flex items-center gap-3 rounded-2xl bg-navy px-5 py-3 text-cream shadow-xl sm:ml-6">
-              <span className="font-script text-xl">X</span>
-              <span className="text-sm leading-tight">
-                Confeitaria artesanal
-                <span className="block text-xs opacity-70">Tatuapé · São Paulo</span>
-              </span>
-            </div>
-          </div>
         </section>
 
-        {/* CORPORATIVO */}
-        <section id="corporativo" className="bg-secondary/60 py-20">
-          <div className="mx-auto grid max-w-6xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="section-eyebrow">Xuxuzinho para empresas</p>
-              <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-                Presentes que sua marca assina
-              </h2>
-              <p className="mt-5 max-w-lg text-muted-foreground">
-                Cuidamos de tudo: sabores, embalagem personalizada com o seu logo, cartão dedicado e
-                entrega no endereço combinado. Você só escolhe a ocasião.
-              </p>
-              <div className="mt-10 space-y-6">
-                {servicos.map(({ icon: Icon, title, text }) => (
-                  <div key={title} className="flex gap-4">
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
-                      <Icon className="size-5" aria-hidden />
-                    </span>
-                    <div>
-                      <h3 className="text-lg font-medium text-navy">{title}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <img
-              src={corporateGifting}
-              alt="Caixa de presente corporativa com cupcakes personalizados"
-              width={1000}
-              height={1000}
-              loading="lazy"
-              className="w-full rounded-2xl object-cover shadow-xl shadow-navy/10"
-            />
-          </div>
-        </section>
-
-        {/* CUPCAKES */}
-        <section id="cupcakes" className="mx-auto max-w-6xl px-5 py-20">
+        {/* CORPORATIVO — bento */}
+        <section id="corporativo" className="mx-auto max-w-6xl px-5 py-14">
           <div className="max-w-2xl">
-            <p className="section-eyebrow">Nosso carro-chefe</p>
+            <p className="section-eyebrow">Xuxuzinho para empresas</p>
             <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-              Cupcakes em dois tamanhos
+              Presentes que sua marca assina
             </h2>
             <p className="mt-5 text-muted-foreground">
-              São mais de 30 sabores — de Cenoura a Ovomaltine — disponíveis nos tamanhos Standard e
-              Mini. Compare abaixo e escolha o que combina com o seu evento.
+              Cuidamos de tudo: sabores, embalagem personalizada com o seu logo, cartão dedicado e
+              entrega no endereço combinado.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {[
-              {
-                size: "6 cm",
-                name: "Standard",
-                bites: "5 mordidas",
-                text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
-              },
-              {
-                size: "4,5 cm",
-                name: "Mini",
-                bites: "2 mordidas",
-                text: "Perfeito para coffee breaks, kits com variedade de sabores e coquetéis.",
-              },
-            ].map((c) => (
+          <div className="mt-10 grid gap-4 lg:grid-cols-3">
+            <div className="overflow-hidden rounded-3xl lg:row-span-3">
+              <img
+                src={corporateGifting}
+                alt="Caixa de presente corporativa com cupcakes personalizados"
+                width={1000}
+                height={1000}
+                loading="lazy"
+                className="h-64 w-full object-cover lg:h-full"
+              />
+            </div>
+            {servicos.map(({ icon: Icon, title, text }) => (
               <div
-                key={c.name}
-                className="rounded-2xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-lg"
+                key={title}
+                className="rounded-3xl border border-border bg-card p-7 transition-shadow hover:shadow-lg lg:col-span-2"
               >
-                <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs text-accent-foreground">
-                  {c.size}
+                <span className="flex size-11 items-center justify-center rounded-full bg-primary/15 text-primary">
+                  <Icon className="size-5" aria-hidden />
                 </span>
-                <h3 className="mt-5 text-2xl font-semibold text-navy">{c.name}</h3>
-                <p className="mt-1 text-sm text-plum">{c.bites}</p>
-                <p className="mt-4 text-sm text-muted-foreground">{c.text}</p>
+                <h3 className="mt-4 text-lg font-medium text-navy">{title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{text}</p>
               </div>
             ))}
           </div>
-
-          <div className="mt-10 flex flex-col items-start gap-6 rounded-2xl bg-secondary/70 p-8 sm:flex-row sm:items-center sm:justify-between">
-            <p className="max-w-xl text-sm text-muted-foreground">
-              Para pedidos a partir de 30 unidades há condições especiais. Valores, sabores
-              disponíveis e prazos são confirmados no atendimento.
-            </p>
-            <WhatsButton size="sm">Consultar sabores e valores</WhatsButton>
-          </div>
         </section>
 
-        {/* PRODUTOS */}
-        <section id="produtos" className="bg-secondary/60 py-20">
+        {/* CUPCAKES — bento */}
+        <section id="cupcakes" className="bg-secondary/60 py-16">
           <div className="mx-auto max-w-6xl px-5">
             <div className="max-w-2xl">
-              <p className="section-eyebrow">Linha completa</p>
+              <p className="section-eyebrow">Nosso carro-chefe</p>
               <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-                Além dos cupcakes
+                Cupcakes em dois tamanhos
               </h2>
               <p className="mt-5 text-muted-foreground">
-                Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
-                empresa.
+                De Cenoura a Ovomaltine, disponíveis nos tamanhos Standard e Mini.
               </p>
             </div>
 
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {produtos.map((p) => (
-                <article
-                  key={p.title}
-                  className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-transform hover:-translate-y-1"
-                >
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    width={600}
-                    height={600}
-                    loading="lazy"
-                    className="aspect-4/3 w-full object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-lg font-medium text-navy">{p.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
-                  </div>
-                </article>
+            <div className="mt-10 grid gap-4 lg:grid-cols-4">
+              {[
+                {
+                  size: "6 cm",
+                  name: "Standard",
+                  bites: "5 mordidas",
+                  text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
+                },
+                {
+                  size: "4,5 cm",
+                  name: "Mini",
+                  bites: "2 mordidas",
+                  text: "Perfeito para coffee breaks, kits com variedade de sabores e coquetéis.",
+                },
+              ].map((c) => (
+                <div key={c.name} className="rounded-3xl border border-border bg-card p-8">
+                  <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs text-accent-foreground">
+                    {c.size}
+                  </span>
+                  <h3 className="mt-5 text-2xl font-semibold text-navy">{c.name}</h3>
+                  <p className="mt-1 text-sm text-plum">{c.bites}</p>
+                  <p className="mt-4 text-sm text-muted-foreground">{c.text}</p>
+                </div>
               ))}
+              <div className="flex flex-col justify-between gap-6 rounded-3xl bg-navy p-8 text-cream lg:col-span-2">
+                <p className="text-sm opacity-85">
+                  Para pedidos a partir de 30 unidades há condições especiais. Valores, sabores
+                  disponíveis e prazos são confirmados no atendimento.
+                </p>
+                <div>
+                  <WhatsButton size="sm">Consultar sabores e valores</WhatsButton>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* PRODUTOS — bento grid */}
+        <section id="produtos" className="mx-auto max-w-6xl px-5 py-16">
+          <div className="max-w-2xl">
+            <p className="section-eyebrow">Linha completa</p>
+            <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">Além dos cupcakes</h2>
+            <p className="mt-5 text-muted-foreground">
+              Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
+              empresa.
+            </p>
+          </div>
+
+          <div className="mt-10 grid auto-rows-[220px] gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {produtos.map((p) => (
+              <article
+                key={p.title}
+                className={`group relative overflow-hidden rounded-3xl border border-border bg-card ${p.span ?? ""}`}
+              >
+                <img
+                  src={p.img}
+                  alt={p.title}
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-navy/80 p-5 text-cream backdrop-blur-sm">
+                  <h3 className="text-base font-medium">{p.title}</h3>
+                  <p className="mt-1 text-xs opacity-80">{p.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
         {/* MARCAS */}
-        <section id="marcas" className="mx-auto max-w-6xl px-5 py-20 text-center">
-          <p className="section-eyebrow">Parcerias</p>
-          <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-            Marcas que confiam em nós
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl text-muted-foreground">
-            Empresas que escolheram a Xuxuzinho para adoçar seus eventos, brindes e celebrações
-            internas.
-          </p>
-          <ul className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
-            {marcas.map((m) => (
-              <li
-                key={m}
-                className="flex h-20 items-center justify-center rounded-xl border border-dashed border-border bg-card px-3 text-sm text-muted-foreground"
-              >
-                {m}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 text-xs text-muted-foreground">
-            Espaço reservado para os logos das marcas parceiras.
-          </p>
+        <section id="marcas" className="bg-secondary/60 py-16">
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="grid gap-4 lg:grid-cols-3">
+              <div className="rounded-3xl bg-card p-8">
+                <p className="section-eyebrow">Parcerias</p>
+                <h2 className="mt-4 text-3xl font-semibold text-navy">
+                  Marcas que confiam em nós
+                </h2>
+                <p className="mt-5 text-sm text-muted-foreground">
+                  Empresas que escolheram a Xuxuzinho para adoçar seus eventos, brindes e
+                  celebrações internas.
+                </p>
+              </div>
+              <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:col-span-2">
+                {marcas.map((m) => (
+                  <li
+                    key={m}
+                    className="flex h-20 items-center justify-center rounded-2xl border border-dashed border-border bg-card px-3 text-center text-sm text-muted-foreground"
+                  >
+                    {m}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </section>
 
         {/* CTA FINAL */}
-        <section className="bg-navy py-20 text-center text-cream">
-          <div className="mx-auto max-w-3xl px-5">
+        <section className="mx-auto max-w-6xl px-5 py-16">
+          <div className="rounded-3xl bg-navy px-6 py-16 text-center text-cream">
             <h2 className="font-script text-4xl">Vamos adoçar sua próxima ação?</h2>
-            <p className="mt-5 text-sm opacity-80">
+            <p className="mx-auto mt-5 max-w-xl text-sm opacity-80">
               Conte a ocasião, a quantidade e a data. Respondemos com sabores, embalagens e prazos.
             </p>
             <div className="mt-8 flex justify-center">
