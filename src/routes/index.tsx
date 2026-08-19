@@ -166,7 +166,7 @@ function Index() {
                   {palavras.map((w, i) => (
                     <span
                       key={w}
-                      className={`block text-5xl font-bold uppercase tracking-tight sm:text-6xl md:text-7xl ${
+                      className={`block font-sans text-5xl font-bold uppercase tracking-tight sm:text-6xl md:text-7xl ${
                         i % 2 === 0 ? "text-navy" : "text-plum"
                       }`}
                     >
