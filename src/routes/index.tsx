@@ -156,7 +156,7 @@ function Index() {
             </h1>
             <p className="mt-6 max-w-lg text-base text-muted-foreground">
               Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
-              visual da seu evento.
+              visual do seu evento.
             </p>
 
             <div className="mt-6">
