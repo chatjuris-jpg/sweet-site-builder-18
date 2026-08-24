@@ -151,68 +151,76 @@ function Index() {
       </header>
 
       <main id="topo">
-        {/* HERO — Full-width com imagem de fundo */}
-        <section className="relative">
-          <div className="relative h-[520px] w-full overflow-hidden sm:h-[600px] md:h-[680px]">
-            <img
-              src={heroCupcakes}
-              alt="Bandeja de cupcakes artesanais personalizados para evento corporativo"
-              width={1200}
-              height={900}
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy/90 via-navy/60 to-navy/30" />
-            <div className="absolute inset-0 flex flex-col justify-center">
-              <div className="mx-auto w-full max-w-6xl px-5 py-12">
-                <p className="text-xs font-semibold uppercase tracking-widest text-cream/70">
-                  Linha corporativa
-                </p>
-                <h1 className="mt-5 max-w-xl text-4xl font-semibold leading-[1.1] text-cream sm:text-5xl lg:text-6xl">
-                  Doces artesanais para marcar presença no seu evento
-                </h1>
-                <p className="mt-5 max-w-md text-base text-cream/80">
-                  Elaborados com ingredientes de alta qualidade e decorados de acordo com a
-                  identidade visual do seu evento.
-                </p>
-                <div className="mt-8 flex flex-wrap items-center gap-4">
-                  <WhatsButton>Pedir orçamento no WhatsApp</WhatsButton>
-                  <span className="text-sm text-cream/70">Pedidos exclusivamente pelo WhatsApp.</span>
+        {/* HERO — tags no topo + split editorial */}
+        <section className="mx-auto max-w-6xl px-5 pt-8 pb-14">
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {palavras.map((w) => (
+              <span
+                key={w}
+                className="rounded-full bg-navy px-5 py-2 text-sm font-bold uppercase tracking-wider text-cream"
+              >
+                {w}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-10 grid items-start gap-10 md:grid-cols-2">
+            <div>
+              <p className="section-eyebrow">Linha corporativa</p>
+              <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-navy sm:text-5xl lg:text-6xl">
+                Doces artesanais que carregam a cara da sua marca
+              </h1>
+              <p className="mt-6 max-w-md text-base text-muted-foreground">
+                Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
+                visual do seu evento.
+              </p>
+              <div className="mt-8">
+                <WhatsButton>Pedir orçamento no WhatsApp</WhatsButton>
+              </div>
+              <p className="mt-4 text-sm text-muted-foreground">
+                Pedidos exclusivamente pelo WhatsApp.
+              </p>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[2rem] shadow-xl">
+              <img
+                src={heroCupcakes}
+                alt="Bandeja de cupcakes artesanais personalizados para evento corporativo"
+                width={1200}
+                height={900}
+                className="h-[360px] w-full object-cover sm:h-[440px] lg:h-[520px]"
+              />
+              <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-4 rounded-2xl bg-cream/95 px-5 py-3 backdrop-blur">
+                <div className="flex items-center gap-3">
+                  <span className="font-script text-2xl text-plum">X</span>
+                  <div>
+                    <p className="text-sm font-medium text-navy">Confeitaria artesanal</p>
+                    <p className="flex items-center gap-1 text-xs text-muted-foreground">
+                      <MapPin className="size-3" aria-hidden />
+                      Tatuapé · São Paulo
+                    </p>
+                  </div>
                 </div>
+                <p className="font-display text-xl text-navy">100%</p>
               </div>
             </div>
           </div>
 
-          {/* Faixa de produtos e stats */}
-          <div className="mx-auto max-w-6xl px-5">
-            <div className="relative -mt-16 rounded-[2rem] bg-cream p-6 shadow-xl sm:p-8">
-              <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-                {palavras.map((w, i) => (
-                  <span
-                    key={w}
-                    className={`rounded-full px-4 py-2 text-sm font-bold uppercase tracking-wider ${
-                      i % 2 === 0 ? "bg-navy text-cream" : "border-2 border-plum text-plum"
-                    }`}
-                  >
-                    {w}
-                  </span>
-                ))}
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+            {[
+              ["100%", "artesanal"],
+              ["+500", "eventos atendidos"],
+              ["SP", "Tatuapé"],
+              ["WhatsApp", "Orçamento rápido"],
+            ].map(([n, l]) => (
+              <div key={l} className="rounded-2xl bg-accent px-5 py-5">
+                <p className="font-display text-2xl text-navy">{n}</p>
+                <p className="mt-1 text-xs text-muted-foreground">{l}</p>
               </div>
-              <div className="mt-6 grid grid-cols-2 gap-4 border-t border-navy/10 pt-6 sm:grid-cols-4">
-                {[
-                  ["100%", "artesanal"],
-                  ["+500", "eventos atendidos"],
-                  ["SP", "Tatuapé"],
-                  ["WhatsApp", "Orçamento rápido"],
-                ].map(([n, l]) => (
-                  <div key={l} className="text-center">
-                    <p className="font-display text-2xl text-plum">{n}</p>
-                    <p className="mt-1 text-xs text-muted-foreground">{l}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
         </section>
+
 
         {/* CORPORATIVO — bento */}
         <section id="corporativo" className="mx-auto max-w-6xl px-5 py-14">
