@@ -168,7 +168,7 @@ function Index() {
             <div>
               <p className="section-eyebrow">Linha corporativa</p>
               <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-navy sm:text-5xl lg:text-6xl">
-                Doces artesanais que carregam a cara da sua marca
+                Doces artesanais que carregam a essência da sua marca
               </h1>
               <p className="mt-6 max-w-md text-base text-muted-foreground">
                 Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
