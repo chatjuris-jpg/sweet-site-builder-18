@@ -157,7 +157,7 @@ function Index() {
             {palavras.map((w) => (
               <span
                 key={w}
-                className="rounded-full bg-navy px-5 py-2 text-sm font-bold uppercase tracking-wider text-cream"
+                className="rounded-full bg-navy px-6 py-2.5 text-base font-bold uppercase tracking-wider text-cream sm:text-lg"
               >
                 {w}
               </span>
@@ -168,7 +168,7 @@ function Index() {
             <div>
               <p className="section-eyebrow">Linha corporativa</p>
               <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-navy sm:text-5xl lg:text-6xl">
-                Doces artesanais que carregam a cara da sua marca
+                Doces artesanais que carregam a essência da sua marca
               </h1>
               <p className="mt-6 max-w-md text-base text-muted-foreground">
                 Elaborados com ingredientes de alta qualidade e decorados de acordo com a identidade
@@ -213,9 +213,9 @@ function Index() {
               ["SP", "Tatuapé"],
               ["WhatsApp", "Orçamento rápido"],
             ].map(([n, l]) => (
-              <div key={l} className="rounded-2xl bg-accent px-5 py-5">
-                <p className="font-display text-2xl text-navy">{n}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{l}</p>
+              <div key={l} className="rounded-2xl bg-plum px-5 py-5">
+                <p className="font-display text-2xl text-cream">{n}</p>
+                <p className="mt-1 text-xs text-cream/80">{l}</p>
               </div>
             ))}
           </div>
