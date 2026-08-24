@@ -213,9 +213,9 @@ function Index() {
               ["SP", "Tatuapé"],
               ["WhatsApp", "Orçamento rápido"],
             ].map(([n, l]) => (
-              <div key={l} className="rounded-2xl bg-accent px-5 py-5">
-                <p className="font-display text-2xl text-navy">{n}</p>
-                <p className="mt-1 text-xs text-muted-foreground">{l}</p>
+              <div key={l} className="rounded-2xl bg-plum px-5 py-5">
+                <p className="font-display text-2xl text-cream">{n}</p>
+                <p className="mt-1 text-xs text-cream/80">{l}</p>
               </div>
             ))}
           </div>
