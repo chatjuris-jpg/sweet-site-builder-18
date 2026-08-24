@@ -157,7 +157,7 @@ function Index() {
             {palavras.map((w) => (
               <span
                 key={w}
-                className="rounded-full bg-navy px-5 py-2 text-sm font-bold uppercase tracking-wider text-cream"
+                className="rounded-full bg-navy px-6 py-2.5 text-base font-bold uppercase tracking-wider text-cream sm:text-lg"
               >
                 {w}
               </span>
