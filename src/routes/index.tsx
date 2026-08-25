@@ -153,18 +153,7 @@ function Index() {
       <main id="topo">
         {/* HERO — tags no topo + split editorial */}
         <section className="mx-auto max-w-6xl px-5 pt-8 pb-14">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {palavras.map((w) => (
-              <span
-                key={w}
-                className="rounded-full bg-navy px-6 py-2.5 text-base font-bold uppercase tracking-wider text-cream sm:text-lg"
-              >
-                {w}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-10 grid items-start gap-10 md:grid-cols-2">
+          <div className="grid items-start gap-10 md:grid-cols-2">
             <div>
               <p className="section-eyebrow">Linha corporativa</p>
               <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-navy sm:text-5xl lg:text-6xl">
