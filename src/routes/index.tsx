@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin } from "lucide-react";
 
 import logoX from "@/assets/logo-x.png.asset.json";
-import heroCupcakes from "@/assets/hero-cupcakes.jpg";
+import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 import corporateGifting from "@/assets/corporate-gifting.jpg";
 import prodCupcakes from "@/assets/prod-cupcakes.jpg";
 import prodBolos from "@/assets/prod-bolos.jpg";
