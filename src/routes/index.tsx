@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin } from "lucide-react";
 
+import logoX from "@/assets/logo-x.png.asset.json";
 import heroCupcakes from "@/assets/hero-cupcakes.jpg";
 import corporateGifting from "@/assets/corporate-gifting.jpg";
 import prodCupcakes from "@/assets/prod-cupcakes.jpg";
@@ -153,18 +154,7 @@ function Index() {
       <main id="topo">
         {/* HERO — tags no topo + split editorial */}
         <section className="mx-auto max-w-6xl px-5 pt-8 pb-14">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {palavras.map((w) => (
-              <span
-                key={w}
-                className="rounded-full bg-navy px-6 py-2.5 text-base font-bold uppercase tracking-wider text-cream sm:text-lg"
-              >
-                {w}
-              </span>
-            ))}
-          </div>
-
-          <div className="mt-10 grid items-start gap-10 md:grid-cols-2">
+          <div className="grid items-start gap-10 md:grid-cols-2">
             <div>
               <p className="section-eyebrow">Linha corporativa</p>
               <h1 className="mt-4 text-4xl font-semibold leading-[1.05] text-navy sm:text-5xl lg:text-6xl">
@@ -192,7 +182,7 @@ function Index() {
               />
               <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-4 rounded-2xl bg-cream/95 px-5 py-3 backdrop-blur">
                 <div className="flex items-center gap-3">
-                  <span className="font-script text-2xl text-plum">X</span>
+                  <img src={logoX.url} alt="Logotipo Xuxuzinho" className="h-8 w-8 object-contain" />
                   <div>
                     <p className="text-sm font-medium text-navy">Confeitaria artesanal</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -206,7 +196,18 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            {palavras.map((w) => (
+              <span
+                key={w}
+                className="rounded-full bg-navy px-5 py-2 text-sm font-bold uppercase tracking-wider text-cream sm:text-base"
+              >
+                {w}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
               ["100%", "artesanal"],
               ["+500", "eventos atendidos"],
