@@ -195,7 +195,18 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
+            {palavras.map((w) => (
+              <span
+                key={w}
+                className="rounded-full bg-navy px-5 py-2 text-sm font-bold uppercase tracking-wider text-cream sm:text-base"
+              >
+                {w}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
             {[
               ["100%", "artesanal"],
               ["+500", "eventos atendidos"],
