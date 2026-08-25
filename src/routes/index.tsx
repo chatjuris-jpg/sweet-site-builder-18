@@ -181,7 +181,7 @@ function Index() {
               />
               <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-4 rounded-2xl bg-cream/95 px-5 py-3 backdrop-blur">
                 <div className="flex items-center gap-3">
-                  <span className="font-script text-2xl text-plum">X</span>
+                  <img src={logoX.url} alt="Logotipo Xuxuzinho" className="h-8 w-8 object-contain" />
                   <div>
                     <p className="text-sm font-medium text-navy">Confeitaria artesanal</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
