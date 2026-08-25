@@ -174,8 +174,8 @@ function Index() {
 
             <div className="relative overflow-hidden rounded-[2rem] shadow-xl">
               <img
-                src={heroCupcakes}
-                alt="Bandeja de cupcakes artesanais personalizados para evento corporativo"
+                src={heroCupcakeAsset.url}
+                alt="Cupcake artesanal com cobertura de chocolate e caixas de brinde com laço vermelho"
                 width={1200}
                 height={900}
                 className="h-[360px] w-full object-cover sm:h-[440px] lg:h-[520px]"
