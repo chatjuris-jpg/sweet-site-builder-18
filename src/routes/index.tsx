@@ -68,7 +68,7 @@ const produtos = [
   {
     img: prodCupcakes,
     title: "Cupcakes",
-    text: "Nosso carro-chefe: mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
+    text: "Mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
     span: "sm:col-span-2 sm:row-span-2",
   },
   { img: prodBrownie, title: "Brownie", text: "Brownies intensos, embalados individualmente." },
@@ -316,76 +316,37 @@ function Index() {
               </h2>
             </div>
             <p className="text-muted-foreground md:pb-2">
-              Do carro-chefe aos docinhos finos: todos os itens podem ser combinados em kits e
-              caixas personalizadas para a sua empresa ou evento.
+              Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
+              empresa ou evento.
             </p>
           </div>
 
-          {/* Cupcakes em destaque */}
-          <div className="mt-12 overflow-hidden rounded-[2rem] bg-navy text-cream">
-            <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
-              <div>
-                <p className="text-xs tracking-[0.25em] uppercase text-cream/60">Destaque</p>
-                <h3 className="mt-3 text-3xl font-semibold text-cream">Cupcakes</h3>
-                <p className="mt-4 text-sm text-cream/80">
-                  Mais de 30 sabores, de Cenoura a Ovomaltine, em dois tamanhos e com topos
-                  personalizáveis. A partir de 30 unidades há condições especiais.
-                </p>
-                <div className="mt-7">
-                  <WhatsButton size="sm">Consultar sabores</WhatsButton>
+          <div id="produtos" className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {produtos.map((p) => (
+              <article
+                key={p.title}
+                className="group overflow-hidden rounded-2xl border border-border bg-card"
+              >
+                <div className="overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
                 </div>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2">
-                {[
-                  {
-                    size: "6 cm",
-                    name: "Standard",
-                    bites: "5 mordidas",
-                    text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
-                  },
-                  {
-                    size: "4,5 cm",
-                    name: "Mini",
-                    bites: "2 mordidas",
-                    text: "Perfeito para coffee breaks, kits variados e coquetéis.",
-                  },
-                ].map((c) => (
-                  <div key={c.name} className="rounded-2xl bg-cream/10 p-6">
-                    <p className="font-display text-4xl text-cream">{c.size}</p>
-                    <p className="mt-3 text-lg font-semibold text-cream">{c.name}</p>
-                    <p className="text-xs tracking-[0.2em] uppercase text-cream/60">{c.bites}</p>
-                    <p className="mt-3 text-sm text-cream/80">{c.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <div className="p-5">
+                  <h3 className="font-display text-xl text-navy">{p.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
 
-          {/* Demais produtos */}
-          <div id="produtos" className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {produtos
-              .filter((p) => p.title !== "Cupcakes")
-              .map((p) => (
-                <article
-                  key={p.title}
-                  className="group overflow-hidden rounded-2xl border border-border bg-card"
-                >
-                  <div className="overflow-hidden">
-                    <img
-                      src={p.img}
-                      alt={p.title}
-                      width={800}
-                      height={800}
-                      loading="lazy"
-                      className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-5">
-                    <h3 className="font-display text-xl text-navy">{p.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
-                  </div>
-                </article>
-              ))}
+          <div className="mt-8 flex justify-center">
+            <WhatsButton size="sm">Consultar sabores e kits</WhatsButton>
           </div>
         </section>
 
