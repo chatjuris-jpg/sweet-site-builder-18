@@ -248,7 +248,7 @@ function Index() {
               </p>
             </div>
 
-            <div className="mt-14 grid gap-5 md:grid-cols-2">
+            <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
               {[
                 ...servicos,
                 {
@@ -257,26 +257,25 @@ function Index() {
                   text: "Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por doce.",
                 },
               ].map(({ icon: Icon, title, text }, i) => (
-                <article
-                  key={title}
-                  className="group relative overflow-hidden rounded-[2rem] bg-card p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg md:p-10"
-                >
-                  <span className="absolute top-6 right-8 font-display text-5xl text-plum/15">
-                    0{i + 1}
+                <article key={title} className="group flex gap-5 border-l-2 border-plum/25 pl-6 transition-colors hover:border-plum">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-plum/30 text-plum transition-colors group-hover:bg-plum group-hover:text-cream">
+                    <Icon className="size-5" aria-hidden />
                   </span>
-                  <span className="flex size-14 items-center justify-center rounded-2xl bg-plum/10 text-plum transition-colors group-hover:bg-plum group-hover:text-cream">
-                    <Icon className="size-6" aria-hidden />
-                  </span>
-                  <h3 className="mt-6 text-2xl font-medium text-navy">{title}</h3>
-                  <p className="mt-3 text-sm text-muted-foreground">{text}</p>
-                  <span className="mt-6 block h-px w-16 bg-plum/40 transition-all duration-300 group-hover:w-28" />
+                  <div>
+                    <p className="font-display text-xs tracking-[0.3em] text-plum/70 uppercase">
+                      0{i + 1}
+                    </p>
+                    <h3 className="mt-2 text-2xl font-medium text-navy">{title}</h3>
+                    <p className="mt-3 text-sm text-muted-foreground">{text}</p>
+                  </div>
                 </article>
               ))}
             </div>
 
-            <div className="mt-12">
+            <div className="mt-14">
               <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
             </div>
+
 
           </div>
         </section>
