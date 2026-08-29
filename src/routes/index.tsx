@@ -13,6 +13,7 @@ import logoPetCare from "@/assets/petcare.png.asset.json";
 import logoFoodToSave from "@/assets/foodtosave.png.asset.json";
 import logoEspiritoSanto from "@/assets/espiritosanto.jpg.asset.json";
 import logoPluris from "@/assets/pluris.png.asset.json";
+import logoUnicharm from "@/assets/unicharm.png.asset.json";
 
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
@@ -112,6 +113,7 @@ const marcas = [
   { nome: "Food to Save", src: logoFoodToSave.url },
   { nome: "Espírito Santo", src: logoEspiritoSanto.url },
   { nome: "Pluris", src: logoPluris.url },
+  { nome: "Unicharm", src: logoUnicharm.url },
 ];
 
 
