@@ -248,33 +248,35 @@ function Index() {
               </p>
             </div>
 
-            <div className="mt-14 grid gap-x-10 gap-y-12 sm:grid-cols-2">
-              {[
-                ...servicos,
-                {
-                  icon: Sparkles,
-                  title: "Produção 100% artesanal",
-                  text: "Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por doce.",
-                },
-              ].map(({ icon: Icon, title, text }, i) => (
-                <article key={title} className="group flex gap-5 border-l-2 border-plum/25 pl-6 transition-colors hover:border-plum">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-full border border-plum/30 text-plum transition-colors group-hover:bg-plum group-hover:text-cream">
-                    <Icon className="size-5" aria-hidden />
-                  </span>
-                  <div>
-                    <p className="font-display text-xs tracking-[0.3em] text-plum/70 uppercase">
-                      0{i + 1}
-                    </p>
-                    <h3 className="mt-2 text-2xl font-medium text-navy">{title}</h3>
-                    <p className="mt-3 text-sm text-muted-foreground">{text}</p>
-                  </div>
-                </article>
-              ))}
+            <div className="mt-14 overflow-hidden rounded-[2.5rem] bg-navy">
+              <div className="grid gap-px bg-cream/15 sm:grid-cols-2 lg:grid-cols-4">
+                {[
+                  ...servicos,
+                  {
+                    icon: Sparkles,
+                    title: "Produção 100% artesanal",
+                    text: "Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por doce.",
+                  },
+                ].map(({ icon: Icon, title, text }, i) => (
+                  <article
+                    key={title}
+                    className="group bg-navy p-8 transition-colors duration-300 hover:bg-plum"
+                  >
+                    <div className="flex items-center justify-between">
+                      <Icon className="size-7 text-cream" aria-hidden />
+                      <span className="font-display text-3xl text-cream/25">0{i + 1}</span>
+                    </div>
+                    <h3 className="mt-8 text-xl font-medium text-cream">{title}</h3>
+                    <p className="mt-3 text-sm text-cream/75">{text}</p>
+                  </article>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-14">
+            <div className="mt-12">
               <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
             </div>
+
 
 
           </div>
