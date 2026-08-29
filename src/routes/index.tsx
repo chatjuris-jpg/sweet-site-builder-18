@@ -239,7 +239,15 @@ function Index() {
                 <h2 className="mt-4 text-4xl leading-tight font-semibold text-navy sm:text-5xl">
                   Por que escolher
                   <br />
-                  a Xuxuzinho?
+                  <span className="inline-flex items-baseline gap-2">
+                    a
+                    <img
+                      src={wordmark.url}
+                      alt="Xuxuzinho"
+                      className="inline-block h-10 w-auto object-contain sm:h-12"
+                    />
+                    ?
+                  </span>
                 </h2>
               </div>
               <p className="text-muted-foreground md:pb-2">
