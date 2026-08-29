@@ -239,7 +239,7 @@ function Index() {
                 <h2 className="mt-4 text-4xl leading-tight font-semibold text-navy sm:text-5xl">
                   Por que escolher
                   <br />
-                  a <span className="font-script text-navy">Xuxuzinho</span>?
+                  a <span className="font-script font-normal text-navy">Xuxuzinho</span>?
                 </h2>
               </div>
               <p className="text-muted-foreground md:pb-2">
