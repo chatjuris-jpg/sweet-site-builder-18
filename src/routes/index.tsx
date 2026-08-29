@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles } from "lucide-react";
+import { useState } from "react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
 
 import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
@@ -66,32 +67,32 @@ const servicos = [
 
 const produtos = [
   {
-    img: prodCupcakes,
+    imgs: [prodCupcakes],
     title: "Cupcakes",
     text: "Mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
     span: "sm:col-span-2 sm:row-span-2",
   },
-  { img: prodBrownie, title: "Brownie", text: "Brownies intensos, embalados individualmente." },
-  { img: prodBolos, title: "Bolos", text: "Bolos artesanais para comemorações." },
+  { imgs: [prodBrownie], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
+  { imgs: [prodBolos], title: "Bolos", text: "Bolos artesanais para comemorações." },
   {
-    img: prodDocinhos,
+    imgs: [prodDocinhos],
     title: "Docinhos",
     text: "Brigadeiros e docinhos finos para coffee breaks.",
   },
   {
-    img: prodPaodemel,
+    imgs: [prodPaodemel],
     title: "Pão de Mel",
     text: "Recheado e banhado em chocolate nobre.",
   },
   {
-    img: prodBolosPersonalizados,
+    imgs: [prodBolosPersonalizados],
     title: "Bolos Personalizados",
     text: "Bolos exclusivos com a identidade visual da sua empresa.",
     span: "sm:col-span-2",
   },
-  { img: prodBento, title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
-  { img: prodBolachas, title: "Bolachas", text: "Biscoitos com pintura manual." },
-  { img: prodMinibolos, title: "Mini Bolos", text: "Porções individuais elegantes." },
+  { imgs: [prodBento], title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
+  { imgs: [prodBolachas], title: "Bolachas", text: "Biscoitos com pintura manual." },
+  { imgs: [prodMinibolos], title: "Mini Bolos", text: "Porções individuais elegantes." },
 ];
 
 const marcas = [
@@ -124,6 +125,66 @@ function WhatsButton({
       <MessageCircle className="size-5" aria-hidden />
       {children}
     </a>
+  );
+}
+
+function ProductCarousel({ imgs, title }: { imgs: string[]; title: string }) {
+  const [i, setI] = useState(0);
+  const go = (d: number) => setI((p) => (p + d + imgs.length) % imgs.length);
+
+  return (
+    <div className="group/car relative overflow-hidden">
+      <div
+        className="flex transition-transform duration-500 ease-out"
+        style={{ transform: `translateX(-${i * 100}%)` }}
+      >
+        {imgs.map((src, idx) => (
+          <img
+            key={src}
+            src={src}
+            alt={`${title} — foto ${idx + 1}`}
+            width={800}
+            height={500}
+            loading="lazy"
+            className="aspect-16/10 w-full shrink-0 object-cover"
+          />
+        ))}
+      </div>
+
+      {imgs.length > 1 && (
+        <>
+          <button
+            type="button"
+            aria-label={`Foto anterior de ${title}`}
+            onClick={() => go(-1)}
+            className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-cream/90 p-1.5 text-navy opacity-0 shadow transition-opacity group-hover/car:opacity-100 focus-visible:opacity-100"
+          >
+            <ChevronLeft className="size-4" aria-hidden />
+          </button>
+          <button
+            type="button"
+            aria-label={`Próxima foto de ${title}`}
+            onClick={() => go(1)}
+            className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-cream/90 p-1.5 text-navy opacity-0 shadow transition-opacity group-hover/car:opacity-100 focus-visible:opacity-100"
+          >
+            <ChevronRight className="size-4" aria-hidden />
+          </button>
+          <div className="absolute inset-x-0 bottom-2 flex justify-center gap-1.5">
+            {imgs.map((src, idx) => (
+              <button
+                key={src}
+                type="button"
+                aria-label={`Ver foto ${idx + 1} de ${title}`}
+                onClick={() => setI(idx)}
+                className={`h-1.5 rounded-full transition-all ${
+                  idx === i ? "w-4 bg-cream" : "w-1.5 bg-cream/60"
+                }`}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
   );
 }
 
@@ -327,16 +388,7 @@ function Index() {
                 key={p.title}
                 className="group overflow-hidden rounded-xl bg-card shadow-sm ring-1 ring-border/60 transition-shadow hover:shadow-md"
               >
-                <div className="overflow-hidden">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    width={800}
-                    height={500}
-                    loading="lazy"
-                    className="aspect-16/10 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
+                <ProductCarousel imgs={p.imgs} title={p.title} />
                 <div className="px-6 py-5">
                   <h3 className="text-lg font-medium text-navy">{p.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-plum/80">{p.text}</p>
