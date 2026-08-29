@@ -6,15 +6,15 @@ import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
 import brandX from "@/assets/x-logo.png.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
-import prodCupcakes from "@/assets/prod-cupcakes.jpg";
-import prodBolos from "@/assets/prod-bolos.jpg";
-import prodBolosPersonalizados from "@/assets/prod-bolos-personalizados.jpg";
-import prodBento from "@/assets/prod-bento.jpg";
-import prodBolachas from "@/assets/prod-bolachas.jpg";
-import prodBrownie from "@/assets/prod-brownie.jpg";
-import prodDocinhos from "@/assets/prod-docinhos.jpg";
-import prodMinibolos from "@/assets/prod-minibolos.jpg";
-import prodPaodemel from "@/assets/prod-paodemel.jpg";
+import prodCupcakes from "@/assets/prod-cupcakes.webp";
+import prodBolos from "@/assets/prod-bolos.webp";
+import prodBolosPersonalizados from "@/assets/prod-bolos-personalizados.webp";
+import prodBento from "@/assets/prod-bento.webp";
+import prodBolachas from "@/assets/prod-bolachas.webp";
+import prodBrownie from "@/assets/prod-brownie.webp";
+import prodDocinhos from "@/assets/prod-docinhos.webp";
+import prodMinibolos from "@/assets/prod-minibolos.webp";
+import prodPaodemel from "@/assets/prod-paodemel.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
