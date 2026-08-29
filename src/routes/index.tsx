@@ -231,157 +231,160 @@ function Index() {
         </section>
 
 
-        {/* POR QUE ESCOLHER */}
-        <section id="corporativo" className="mx-auto max-w-6xl px-5 py-16">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="section-eyebrow">Xuxuzinho para empresas e eventos</p>
-            <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-              Por que escolher a Xuxuzinho?
-            </h2>
-            <p className="mt-5 text-muted-foreground">
-              Do sabor à embalagem, cada detalhe é pensado para representar a essência da sua marca.
-            </p>
-          </div>
+        {/* POR QUE ESCOLHER — faixa navy com imagem de fundo */}
+        <section id="corporativo" className="relative overflow-hidden bg-navy py-20">
+          <img
+            src={corporateGifting}
+            alt=""
+            aria-hidden
+            loading="lazy"
+            className="absolute inset-0 h-full w-full object-cover opacity-20"
+          />
+          <div className="relative mx-auto max-w-6xl px-5">
+            <div className="max-w-2xl">
+              <p className="text-xs tracking-[0.25em] text-cream/70 uppercase">
+                Xuxuzinho para empresas e eventos
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold text-cream sm:text-5xl">
+                Por que escolher a Xuxuzinho?
+              </h2>
+              <p className="mt-5 text-cream/80">
+                Do sabor à embalagem, cada detalhe é pensado para representar a essência da sua
+                marca.
+              </p>
+            </div>
 
-          <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
-            <ol className="space-y-6">
-              {servicos.map(({ icon: Icon, title, text }, i) => (
-                <li key={title} className="flex gap-5">
-                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-plum text-cream">
-                    <Icon className="size-5" aria-hidden />
-                  </span>
-                  <div className="border-b border-border pb-6">
-                    <p className="text-xs tracking-widest text-plum uppercase">
-                      0{i + 1}
-                    </p>
-                    <h3 className="mt-1 text-lg font-medium text-navy">{title}</h3>
-                    <p className="mt-1 text-sm text-muted-foreground">{text}</p>
+            <div className="mt-12 grid gap-px overflow-hidden rounded-3xl bg-cream/20 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                ...servicos,
+                {
+                  icon: Sparkles,
+                  title: "Produção 100% artesanal",
+                  text: "Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por doce.",
+                },
+              ].map(({ icon: Icon, title, text }, i) => (
+                <div key={title} className="bg-navy p-8">
+                  <div className="flex items-center justify-between">
+                    <span className="flex size-11 items-center justify-center rounded-2xl bg-plum text-cream">
+                      <Icon className="size-5" aria-hidden />
+                    </span>
+                    <span className="text-sm text-cream/40">0{i + 1}</span>
                   </div>
-                </li>
-              ))}
-              <li className="flex gap-5">
-                <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-navy text-cream">
-                  <Sparkles className="size-5" aria-hidden />
-                </span>
-                <div>
-                  <p className="text-xs tracking-widest text-plum uppercase">04</p>
-                  <h3 className="mt-1 text-lg font-medium text-navy">
-                    Produção 100% artesanal
-                  </h3>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por
-                    doce.
-                  </p>
+                  <h3 className="mt-6 text-lg font-medium text-cream">{title}</h3>
+                  <p className="mt-2 text-sm text-cream/70">{text}</p>
                 </div>
-              </li>
-            </ol>
+              ))}
+            </div>
 
-            <div className="relative">
-              <img
-                src={corporateGifting}
-                alt="Caixa de presente corporativa com cupcakes personalizados"
-                width={1000}
-                height={1000}
-                loading="lazy"
-                className="h-[420px] w-full rounded-[2rem] object-cover lg:h-[520px]"
-              />
-              <div className="absolute inset-x-6 bottom-6 rounded-2xl bg-cream/95 px-6 py-4 backdrop-blur">
-                <p className="text-sm font-medium text-navy">
-                  Embalagem com o seu logo, cartão dedicado e entrega combinada.
-                </p>
-              </div>
+            <div className="mt-10">
+              <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
             </div>
           </div>
         </section>
 
-        {/* CUPCAKES — split */}
-        <section id="cupcakes" className="bg-secondary/60 py-16">
-          <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-[1fr_1.1fr]">
+        {/* CUPCAKES — comparativo horizontal */}
+        <section id="cupcakes" className="mx-auto max-w-6xl px-5 py-20">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.4fr] lg:items-end">
             <div>
               <p className="section-eyebrow">Nosso carro-chefe</p>
               <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
                 Cupcakes em dois tamanhos
               </h2>
               <p className="mt-5 text-muted-foreground">
-                De Cenoura a Ovomaltine, disponíveis nos tamanhos Standard e Mini.
+                De Cenoura a Ovomaltine, disponíveis nos tamanhos Standard e Mini. A partir de 30
+                unidades há condições especiais.
               </p>
-              <div className="mt-8 rounded-3xl bg-navy p-8 text-cream">
-                <p className="text-sm opacity-85">
-                  Para pedidos a partir de 30 unidades há condições especiais. Valores, sabores
-                  disponíveis e prazos são confirmados no atendimento.
-                </p>
-                <div className="mt-6">
-                  <WhatsButton size="sm">Consultar sabores e valores</WhatsButton>
-                </div>
-              </div>
             </div>
 
-            <div className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
               {[
                 {
                   size: "6 cm",
                   name: "Standard",
                   bites: "5 mordidas",
                   text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
+                  dark: true,
                 },
                 {
                   size: "4,5 cm",
                   name: "Mini",
                   bites: "2 mordidas",
                   text: "Perfeito para coffee breaks, kits com variedade de sabores e coquetéis.",
+                  dark: false,
                 },
               ].map((c) => (
                 <div
                   key={c.name}
-                  className="flex items-start gap-6 rounded-3xl border border-border bg-card p-8"
+                  className={`rounded-[2rem] p-8 ${
+                    c.dark ? "bg-plum text-cream" : "border border-border bg-card"
+                  }`}
                 >
-                  <span className="rounded-full bg-plum px-4 py-1.5 text-xs text-cream">
+                  <span
+                    className={`inline-block rounded-full px-4 py-1.5 text-xs ${
+                      c.dark ? "bg-cream/20 text-cream" : "bg-plum text-cream"
+                    }`}
+                  >
                     {c.size}
                   </span>
-                  <div>
-                    <h3 className="text-2xl font-semibold text-navy">{c.name}</h3>
-                    <p className="mt-1 text-sm text-plum">{c.bites}</p>
-                    <p className="mt-3 text-sm text-muted-foreground">{c.text}</p>
-                  </div>
+                  <h3
+                    className={`mt-6 text-3xl font-semibold ${c.dark ? "text-cream" : "text-navy"}`}
+                  >
+                    {c.name}
+                  </h3>
+                  <p className={`mt-1 text-sm ${c.dark ? "text-cream/80" : "text-plum"}`}>
+                    {c.bites}
+                  </p>
+                  <p
+                    className={`mt-4 text-sm ${c.dark ? "text-cream/75" : "text-muted-foreground"}`}
+                  >
+                    {c.text}
+                  </p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* PRODUTOS — cards claros */}
-        <section id="produtos" className="mx-auto max-w-6xl px-5 py-16">
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="section-eyebrow">Linha completa</p>
-            <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">Além dos cupcakes</h2>
-            <p className="mt-5 text-muted-foreground">
-              Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
-              empresa.
-            </p>
-          </div>
+        {/* PRODUTOS — vitrine com overlay */}
+        <section id="produtos" className="bg-secondary/60 py-20">
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div className="max-w-xl">
+                <p className="section-eyebrow">Linha completa</p>
+                <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
+                  Além dos cupcakes
+                </h2>
+              </div>
+              <p className="max-w-sm text-sm text-muted-foreground">
+                Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
+                empresa.
+              </p>
+            </div>
 
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {produtos.map((p) => (
-              <article
-                key={p.title}
-                className="group overflow-hidden rounded-3xl border border-border bg-card transition-shadow hover:shadow-lg"
-              >
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  width={800}
-                  height={800}
-                  loading="lazy"
-                  className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="p-6">
-                  <h3 className="text-lg font-medium text-navy">{p.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
-                </div>
-              </article>
-            ))}
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {produtos.map((p) => (
+                <article
+                  key={p.title}
+                  className="group relative overflow-hidden rounded-[2rem] bg-navy"
+                >
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    className="h-72 w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-navy via-navy/70 to-transparent p-6 pt-16">
+                    <h3 className="text-lg font-medium text-cream">{p.title}</h3>
+                    <p className="mt-1 text-sm text-cream/75">{p.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
+
 
 
         {/* MARCAS */}
