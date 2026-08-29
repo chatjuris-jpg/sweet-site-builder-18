@@ -321,29 +321,30 @@ function Index() {
             </p>
           </div>
 
-          <div id="produtos" className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div id="produtos" className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {produtos.map((p) => (
               <article
                 key={p.title}
-                className="group overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-plum/40"
+                className="group overflow-hidden rounded-xl bg-card shadow-sm ring-1 ring-border/60 transition-shadow hover:shadow-md"
               >
                 <div className="overflow-hidden">
                   <img
                     src={p.img}
                     alt={p.title}
-                    width={600}
-                    height={600}
+                    width={800}
+                    height={500}
                     loading="lazy"
-                    className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="aspect-16/10 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="font-display text-lg leading-tight text-navy">{p.title}</h3>
-                  <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{p.text}</p>
+                <div className="px-6 py-5">
+                  <h3 className="text-lg font-medium text-navy">{p.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-plum/80">{p.text}</p>
                 </div>
               </article>
             ))}
           </div>
+
 
 
 
