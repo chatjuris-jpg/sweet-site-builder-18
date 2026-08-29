@@ -230,165 +230,159 @@ function Index() {
         </section>
 
 
-        {/* POR QUE ESCOLHER — faixas alternadas */}
-        <section id="corporativo" className="py-20">
-          <div className="mx-auto max-w-3xl px-5 text-center">
-            <p className="section-eyebrow">Empresas e eventos</p>
-            <h2 className="mt-4 text-4xl font-semibold text-navy sm:text-5xl">
-              Por que escolher a Xuxuzinho?
-            </h2>
-            <p className="mt-5 text-muted-foreground">
-              Do sabor à embalagem, cada detalhe é pensado para representar a essência da sua marca.
-            </p>
-          </div>
+        {/* POR QUE ESCOLHER — quadrantes com divisórias */}
+        <section id="corporativo" className="bg-secondary/60 py-20">
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-end">
+              <div>
+                <p className="section-eyebrow">Empresas e eventos</p>
+                <h2 className="mt-4 text-4xl leading-tight font-semibold text-navy sm:text-5xl">
+                  Por que escolher
+                  <br />
+                  a Xuxuzinho?
+                </h2>
+              </div>
+              <p className="text-muted-foreground md:pb-2">
+                Do sabor à embalagem, cada detalhe é pensado para representar a essência da sua
+                marca — com atendimento próximo do briefing à entrega.
+              </p>
+            </div>
 
-          <div className="mt-14">
-            {[
-              ...servicos,
-              {
-                icon: Sparkles,
-                title: "Produção 100% artesanal",
-                text: "Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por doce.",
-              },
-            ].map(({ icon: Icon, title, text }, i) => {
-              const dark = i % 2 === 1;
-              return (
-                <div key={title} className={dark ? "bg-navy text-cream" : "bg-secondary/60"}>
-                  <div
-                    className={`mx-auto flex max-w-4xl flex-col items-center gap-6 px-5 py-12 text-center sm:flex-row sm:text-left ${
-                      i % 2 === 1 ? "sm:flex-row-reverse sm:text-right" : ""
-                    }`}
-                  >
-                    <span
-                      className={`flex size-16 shrink-0 items-center justify-center rounded-full ${
-                        dark ? "bg-cream/15 text-cream" : "bg-plum text-cream"
-                      }`}
-                    >
-                      <Icon className="size-6" aria-hidden />
-                    </span>
-                    <div>
-                      <h3
-                        className={`text-2xl font-medium ${dark ? "text-cream" : "text-navy"}`}
-                      >
-                        {title}
-                      </h3>
-                      <p
-                        className={`mt-2 text-sm ${
-                          dark ? "text-cream/80" : "text-muted-foreground"
-                        }`}
-                      >
-                        {text}
-                      </p>
-                    </div>
-                    <span
-                      className={`font-display text-5xl ${
-                        dark ? "text-cream/25" : "text-plum/25"
-                      } sm:ml-auto ${i % 2 === 1 ? "sm:mr-auto sm:ml-0" : ""}`}
-                    >
-                      0{i + 1}
-                    </span>
+            <div className="mt-14 grid divide-y divide-border border-t border-border md:grid-cols-2 md:divide-x md:divide-y-0 md:[&>*:nth-child(n+3)]:border-t md:[&>*:nth-child(n+3)]:border-border">
+              {[
+                ...servicos,
+                {
+                  icon: Sparkles,
+                  title: "Produção 100% artesanal",
+                  text: "Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por doce.",
+                },
+              ].map(({ icon: Icon, title, text }, i) => (
+                <div key={title} className="p-8 md:p-10">
+                  <div className="flex items-center gap-4">
+                    <Icon className="size-6 text-plum" aria-hidden />
+                    <span className="font-display text-sm text-plum/60">0{i + 1}</span>
                   </div>
+                  <h3 className="mt-5 text-2xl font-medium text-navy">{title}</h3>
+                  <p className="mt-3 text-sm text-muted-foreground">{text}</p>
                 </div>
-              );
-            })}
-          </div>
+              ))}
+            </div>
 
-          <div className="mt-14 flex justify-center">
-            <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
+            <div className="mt-12">
+              <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
+            </div>
           </div>
         </section>
 
-        {/* CUPCAKES — quadro comparativo */}
-        <section id="cupcakes" className="bg-secondary/60 py-20">
-          <div className="mx-auto max-w-3xl px-5">
-            <div className="text-center">
+        {/* CUPCAKES — cartões empilhados */}
+        <section id="cupcakes" className="mx-auto max-w-6xl px-5 py-20">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <div>
               <p className="section-eyebrow">Carro-chefe</p>
               <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
                 Cupcakes em dois tamanhos
               </h2>
               <p className="mt-5 text-muted-foreground">
-                De Cenoura a Ovomaltine. A partir de 30 unidades há condições especiais.
+                De Cenoura a Ovomaltine. A partir de 30 unidades há condições especiais para
+                empresas e eventos.
               </p>
+              <div className="mt-8">
+                <WhatsButton size="sm">Consultar sabores</WhatsButton>
+              </div>
             </div>
 
-            <div className="mt-12 overflow-hidden rounded-[2rem] border border-border bg-card">
+            <div className="space-y-5">
               {[
                 {
                   size: "6 cm",
                   name: "Standard",
                   bites: "5 mordidas",
                   text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
+                  dark: true,
                 },
                 {
                   size: "4,5 cm",
                   name: "Mini",
                   bites: "2 mordidas",
                   text: "Perfeito para coffee breaks, kits variados e coquetéis.",
+                  dark: false,
                 },
               ].map((c) => (
                 <div
                   key={c.name}
-                  className="flex flex-col gap-4 border-b border-border p-8 last:border-0 sm:flex-row sm:items-center"
+                  className={`flex items-center gap-6 rounded-[2rem] p-8 ${
+                    c.dark ? "bg-navy text-cream" : "border border-border bg-card"
+                  } ${c.dark ? "" : "lg:ml-10"}`}
                 >
-                  <div className="flex w-full items-baseline gap-4 sm:w-56">
-                    <span className="font-display text-4xl text-plum">{c.size}</span>
-                    <div>
-                      <h3 className="text-xl font-semibold text-navy">{c.name}</h3>
-                      <p className="text-xs tracking-[0.2em] text-plum uppercase">{c.bites}</p>
-                    </div>
+                  <span
+                    className={`font-display text-5xl ${c.dark ? "text-cream" : "text-plum"}`}
+                  >
+                    {c.size}
+                  </span>
+                  <div>
+                    <h3
+                      className={`text-2xl font-semibold ${c.dark ? "text-cream" : "text-navy"}`}
+                    >
+                      {c.name}
+                    </h3>
+                    <p
+                      className={`text-xs tracking-[0.2em] uppercase ${
+                        c.dark ? "text-cream/70" : "text-plum"
+                      }`}
+                    >
+                      {c.bites}
+                    </p>
+                    <p
+                      className={`mt-3 text-sm ${
+                        c.dark ? "text-cream/80" : "text-muted-foreground"
+                      }`}
+                    >
+                      {c.text}
+                    </p>
                   </div>
-                  <p className="text-sm text-muted-foreground">{c.text}</p>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-10 flex justify-center">
-              <WhatsButton size="sm">Consultar sabores</WhatsButton>
             </div>
           </div>
         </section>
 
-        {/* PRODUTOS — linhas alternadas com imagem */}
-        <section id="produtos" className="py-20">
+        {/* PRODUTOS — grade compacta com legenda no hover */}
+        <section id="produtos" className="bg-secondary/60 py-20">
           <div className="mx-auto max-w-6xl px-5">
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <div className="max-w-lg">
-                <p className="section-eyebrow">Linha completa</p>
-                <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-                  Além dos cupcakes
-                </h2>
-              </div>
-              <p className="max-w-sm text-sm text-muted-foreground">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="section-eyebrow">Linha completa</p>
+              <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
+                Além dos cupcakes
+              </h2>
+              <p className="mt-5 text-muted-foreground">
                 Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
                 empresa.
               </p>
             </div>
 
-            <div className="mt-12 space-y-6">
-              {produtos.map((p, i) => (
-                <article
-                  key={p.title}
-                  className={`group flex flex-col items-center gap-8 overflow-hidden rounded-[2rem] bg-secondary/60 sm:flex-row ${
-                    i % 2 === 1 ? "sm:flex-row-reverse" : ""
-                  }`}
-                >
+            <div className="mt-12 grid gap-4 grid-cols-2 lg:grid-cols-3">
+              {produtos.map((p) => (
+                <article key={p.title} className="group relative overflow-hidden rounded-2xl">
                   <img
                     src={p.img}
                     alt={p.title}
                     width={800}
                     height={800}
                     loading="lazy"
-                    className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-44 sm:w-64"
+                    className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <div className="px-8 pb-8 sm:px-0 sm:pb-0">
-                    <h3 className="text-2xl font-medium text-navy">{p.title}</h3>
-                    <p className="mt-3 max-w-lg text-sm text-muted-foreground">{p.text}</p>
+                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-navy/85 via-navy/20 to-transparent p-5">
+                    <h3 className="text-lg font-medium text-cream">{p.title}</h3>
+                    <p className="mt-1 max-h-0 overflow-hidden text-xs text-cream/85 opacity-0 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100">
+                      {p.text}
+                    </p>
                   </div>
                 </article>
               ))}
             </div>
           </div>
         </section>
+
 
 
 
