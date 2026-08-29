@@ -321,27 +321,30 @@ function Index() {
             </p>
           </div>
 
-          <div id="produtos" className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <div id="produtos" className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {produtos.map((p) => (
               <article
                 key={p.title}
-                className="group flex items-center gap-4 rounded-2xl border border-border bg-card p-3 transition-colors hover:border-plum/40"
+                className="group overflow-hidden rounded-2xl border border-border bg-card transition-colors hover:border-plum/40"
               >
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  width={400}
-                  height={400}
-                  loading="lazy"
-                  className="h-20 w-20 shrink-0 rounded-xl object-cover sm:h-24 sm:w-24"
-                />
-                <div className="min-w-0">
+                <div className="overflow-hidden">
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    width={600}
+                    height={600}
+                    loading="lazy"
+                    className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
                   <h3 className="font-display text-lg leading-tight text-navy">{p.title}</h3>
                   <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{p.text}</p>
                 </div>
               </article>
             ))}
           </div>
+
 
 
           <div className="mt-8 flex justify-center">
