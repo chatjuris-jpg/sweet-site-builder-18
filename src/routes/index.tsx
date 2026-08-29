@@ -246,9 +246,9 @@ function Index() {
                       src={brandX.url}
                       alt=""
                       aria-hidden="true"
-                      className="h-[1.35em] w-auto translate-y-[0.28em] select-none"
+                      className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
                     />
-                    <span className="-ml-[0.34em] font-script font-normal text-navy">uxuzinho</span>
+                    <span className="-ml-[0.22em] font-script font-normal text-navy">uxuzinho</span>
                   </span>
                   ?
                 </h2>
