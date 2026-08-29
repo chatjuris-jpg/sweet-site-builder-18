@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin } from "lucide-react";
 
 import logoX from "@/assets/logo-x.png.asset.json";
+import wordmark from "@/assets/wordmark-xuxuzinho.png.asset.json";
+
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 import corporateGifting from "@/assets/corporate-gifting.jpg";
 import prodCupcakes from "@/assets/prod-cupcakes.jpg";
@@ -130,10 +132,14 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4">
-          <a href="#topo" className="flex items-center gap-2">
-            <img src={logoX.url} alt="Logotipo Xuxuzinho" className="h-9 w-9 object-contain" />
-            <span className="font-script text-2xl text-navy">Xuxuzinho</span>
+          <a href="#topo" className="flex items-center">
+            <img
+              src={wordmark.url}
+              alt="Xuxuzinho"
+              className="h-9 w-auto object-contain sm:h-10"
+            />
           </a>
+
 
           <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
             <a href="#corporativo" className="transition-colors hover:text-plum">
