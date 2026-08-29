@@ -6,6 +6,15 @@ import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
 import brandX from "@/assets/x-logo.png.asset.json";
 
+import logoPilot from "@/assets/pilot.png.asset.json";
+import logoLojasMel from "@/assets/lojasmel.png.asset.json";
+import logoRevelo from "@/assets/revelo.jpg.asset.json";
+import logoPetCare from "@/assets/petcare.png.asset.json";
+import logoFoodToSave from "@/assets/foodtosave.png.asset.json";
+import logoEspiritoSanto from "@/assets/espiritosanto.jpg.asset.json";
+import logoPluris from "@/assets/pluris.png.asset.json";
+
+
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 import prodCupcakes from "@/assets/prod-cupcakes.webp";
 import prodBolos from "@/assets/prod-bolos.webp";
@@ -96,15 +105,15 @@ const produtos = [
 ];
 
 const marcas = [
-  "Grupo Alvorada",
-  "Vertex Consultoria",
-  "Banco Meridian",
-  "Clínica Vitalis",
-  "Nova Engenharia",
-  "Instituto Aurora",
-  "Lumina Tech",
-  "Rede Bem Viver",
+  { nome: "Pilot", src: logoPilot.url },
+  { nome: "Lojas Mel", src: logoLojasMel.url },
+  { nome: "Revelo", src: logoRevelo.url },
+  { nome: "Pet Care Centro Veterinário 24h", src: logoPetCare.url },
+  { nome: "Food to Save", src: logoFoodToSave.url },
+  { nome: "Espírito Santo", src: logoEspiritoSanto.url },
+  { nome: "Pluris", src: logoPluris.url },
 ];
+
 
 function WhatsButton({
   children,
@@ -432,13 +441,19 @@ function Index() {
               <ul className="grid grid-cols-2 gap-4 sm:grid-cols-4 lg:col-span-2">
                 {marcas.map((m) => (
                   <li
-                    key={m}
-                    className="flex h-20 items-center justify-center rounded-2xl border border-dashed border-border bg-card px-3 text-center text-sm text-muted-foreground"
+                    key={m.nome}
+                    className="flex h-20 items-center justify-center rounded-2xl border border-border bg-card px-4"
                   >
-                    {m}
+                    <img
+                      src={m.src}
+                      alt={`Logotipo ${m.nome}`}
+                      loading="lazy"
+                      className="max-h-12 w-auto max-w-full object-contain"
+                    />
                   </li>
                 ))}
               </ul>
+
             </div>
           </div>
         </section>
