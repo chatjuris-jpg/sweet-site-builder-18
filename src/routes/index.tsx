@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin } from "lucide-react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles } from "lucide-react";
 
 import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho.png.asset.json";
