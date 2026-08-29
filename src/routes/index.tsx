@@ -296,114 +296,99 @@ function Index() {
           </div>
         </section>
 
-        {/* CUPCAKES — cartões empilhados */}
+        {/* LINHA DE PRODUTOS — cupcakes + todos os demais produtos */}
         <section id="cupcakes" className="mx-auto max-w-6xl px-5 py-20">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+          <div className="grid gap-8 md:grid-cols-[1fr_1fr] md:items-end">
             <div>
-              <p className="section-eyebrow">Carro-chefe</p>
-              <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-                Cupcakes em dois tamanhos
+              <p className="section-eyebrow">Nossa linha de produtos</p>
+              <h2 className="mt-4 text-4xl leading-tight font-semibold text-navy sm:text-5xl">
+                Tudo o que a{" "}
+                <span className="inline-flex items-baseline whitespace-nowrap align-baseline">
+                  <img
+                    src={brandX.url}
+                    alt=""
+                    aria-hidden="true"
+                    className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
+                  />
+                  <span className="-ml-[0.22em] font-script font-normal text-navy">uxuzinho</span>
+                </span>{" "}
+                produz
               </h2>
-              <p className="mt-5 text-muted-foreground">
-                De Cenoura a Ovomaltine. A partir de 30 unidades há condições especiais para
-                empresas e eventos.
-              </p>
-              <div className="mt-8">
-                <WhatsButton size="sm">Consultar sabores</WhatsButton>
+            </div>
+            <p className="text-muted-foreground md:pb-2">
+              Do carro-chefe aos docinhos finos: todos os itens podem ser combinados em kits e
+              caixas personalizadas para a sua empresa ou evento.
+            </p>
+          </div>
+
+          {/* Cupcakes em destaque */}
+          <div className="mt-12 overflow-hidden rounded-[2rem] bg-navy text-cream">
+            <div className="grid gap-8 p-8 sm:p-10 lg:grid-cols-[1fr_1.2fr] lg:items-center">
+              <div>
+                <p className="text-xs tracking-[0.25em] uppercase text-cream/60">Destaque</p>
+                <h3 className="mt-3 text-3xl font-semibold text-cream">Cupcakes</h3>
+                <p className="mt-4 text-sm text-cream/80">
+                  Mais de 30 sabores, de Cenoura a Ovomaltine, em dois tamanhos e com topos
+                  personalizáveis. A partir de 30 unidades há condições especiais.
+                </p>
+                <div className="mt-7">
+                  <WhatsButton size="sm">Consultar sabores</WhatsButton>
+                </div>
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    size: "6 cm",
+                    name: "Standard",
+                    bites: "5 mordidas",
+                    text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
+                  },
+                  {
+                    size: "4,5 cm",
+                    name: "Mini",
+                    bites: "2 mordidas",
+                    text: "Perfeito para coffee breaks, kits variados e coquetéis.",
+                  },
+                ].map((c) => (
+                  <div key={c.name} className="rounded-2xl bg-cream/10 p-6">
+                    <p className="font-display text-4xl text-cream">{c.size}</p>
+                    <p className="mt-3 text-lg font-semibold text-cream">{c.name}</p>
+                    <p className="text-xs tracking-[0.2em] uppercase text-cream/60">{c.bites}</p>
+                    <p className="mt-3 text-sm text-cream/80">{c.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
-
-            <div className="space-y-5">
-              {[
-                {
-                  size: "6 cm",
-                  name: "Standard",
-                  bites: "5 mordidas",
-                  text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
-                  dark: true,
-                },
-                {
-                  size: "4,5 cm",
-                  name: "Mini",
-                  bites: "2 mordidas",
-                  text: "Perfeito para coffee breaks, kits variados e coquetéis.",
-                  dark: false,
-                },
-              ].map((c) => (
-                <div
-                  key={c.name}
-                  className={`flex items-center gap-6 rounded-[2rem] p-8 ${
-                    c.dark ? "bg-navy text-cream" : "border border-border bg-card"
-                  } ${c.dark ? "" : "lg:ml-10"}`}
-                >
-                  <span
-                    className={`font-display text-5xl ${c.dark ? "text-cream" : "text-plum"}`}
-                  >
-                    {c.size}
-                  </span>
-                  <div>
-                    <h3
-                      className={`text-2xl font-semibold ${c.dark ? "text-cream" : "text-navy"}`}
-                    >
-                      {c.name}
-                    </h3>
-                    <p
-                      className={`text-xs tracking-[0.2em] uppercase ${
-                        c.dark ? "text-cream/70" : "text-plum"
-                      }`}
-                    >
-                      {c.bites}
-                    </p>
-                    <p
-                      className={`mt-3 text-sm ${
-                        c.dark ? "text-cream/80" : "text-muted-foreground"
-                      }`}
-                    >
-                      {c.text}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
-        </section>
 
-        {/* PRODUTOS — grade compacta com legenda no hover */}
-        <section id="produtos" className="bg-secondary/60 py-20">
-          <div className="mx-auto max-w-6xl px-5">
-            <div className="mx-auto max-w-2xl text-center">
-              <p className="section-eyebrow">Linha completa</p>
-              <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-                Além dos cupcakes
-              </h2>
-              <p className="mt-5 text-muted-foreground">
-                Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
-                empresa.
-              </p>
-            </div>
-
-            <div className="mt-12 grid gap-4 grid-cols-2 lg:grid-cols-3">
-              {produtos.map((p) => (
-                <article key={p.title} className="group relative overflow-hidden rounded-2xl">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    width={800}
-                    height={800}
-                    loading="lazy"
-                    className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-navy/85 via-navy/20 to-transparent p-5">
-                    <h3 className="text-lg font-medium text-cream">{p.title}</h3>
-                    <p className="mt-1 max-h-0 overflow-hidden text-xs text-cream/85 opacity-0 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100">
-                      {p.text}
-                    </p>
+          {/* Demais produtos */}
+          <div id="produtos" className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {produtos
+              .filter((p) => p.title !== "Cupcakes")
+              .map((p) => (
+                <article
+                  key={p.title}
+                  className="group overflow-hidden rounded-2xl border border-border bg-card"
+                >
+                  <div className="overflow-hidden">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      width={800}
+                      height={800}
+                      loading="lazy"
+                      className="aspect-4/3 w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-display text-xl text-navy">{p.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
                   </div>
                 </article>
               ))}
-            </div>
           </div>
         </section>
+
 
 
 
