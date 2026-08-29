@@ -3,6 +3,7 @@ import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles } fro
 
 import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
+import brandX from "@/assets/x-logo.png.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 import prodCupcakes from "@/assets/prod-cupcakes.jpg";
