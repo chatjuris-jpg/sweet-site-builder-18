@@ -54,7 +54,7 @@ const servicos = [
   {
     icon: PartyPopper,
     title: "Eventos e confraternizações",
-    text: "Mesas de doces, coffee breaks e kits individuais para treinamentos, lançamentos e datas comemorativas.",
+    text: "Mesa de doces, brindes kits individuais e coletivos para treinamentos, datas comemorativas, reuniões ...",
   },
   {
     icon: CalendarClock,
