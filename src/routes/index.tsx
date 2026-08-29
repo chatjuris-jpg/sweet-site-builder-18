@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin } from "lucide-react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles } from "lucide-react";
 
 import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho.png.asset.json";
@@ -231,49 +231,73 @@ function Index() {
         </section>
 
 
-        {/* CORPORATIVO — bento */}
-        <section id="corporativo" className="mx-auto max-w-6xl px-5 py-14">
-          <div className="max-w-2xl">
-            <p className="section-eyebrow">Xuxuzinho para empresas</p>
+        {/* POR QUE ESCOLHER */}
+        <section id="corporativo" className="mx-auto max-w-6xl px-5 py-16">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="section-eyebrow">Xuxuzinho para empresas e eventos</p>
             <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-              Presentes que sua marca assina
+              Por que escolher a Xuxuzinho?
             </h2>
             <p className="mt-5 text-muted-foreground">
-              Cuidamos de tudo: sabores, embalagem personalizada com o seu logo, cartão dedicado e
-              entrega no endereço combinado.
+              Do sabor à embalagem, cada detalhe é pensado para representar a essência da sua marca.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            <div className="overflow-hidden rounded-3xl lg:row-span-3">
+          <div className="mt-12 grid items-center gap-10 lg:grid-cols-2">
+            <ol className="space-y-6">
+              {servicos.map(({ icon: Icon, title, text }, i) => (
+                <li key={title} className="flex gap-5">
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-plum text-cream">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <div className="border-b border-border pb-6">
+                    <p className="text-xs tracking-widest text-plum uppercase">
+                      0{i + 1}
+                    </p>
+                    <h3 className="mt-1 text-lg font-medium text-navy">{title}</h3>
+                    <p className="mt-1 text-sm text-muted-foreground">{text}</p>
+                  </div>
+                </li>
+              ))}
+              <li className="flex gap-5">
+                <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-navy text-cream">
+                  <Sparkles className="size-5" aria-hidden />
+                </span>
+                <div>
+                  <p className="text-xs tracking-widest text-plum uppercase">04</p>
+                  <h3 className="mt-1 text-lg font-medium text-navy">
+                    Produção 100% artesanal
+                  </h3>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por
+                    doce.
+                  </p>
+                </div>
+              </li>
+            </ol>
+
+            <div className="relative">
               <img
                 src={corporateGifting}
                 alt="Caixa de presente corporativa com cupcakes personalizados"
                 width={1000}
                 height={1000}
                 loading="lazy"
-                className="h-64 w-full object-cover lg:h-full"
+                className="h-[420px] w-full rounded-[2rem] object-cover lg:h-[520px]"
               />
-            </div>
-            {servicos.map(({ icon: Icon, title, text }) => (
-              <div
-                key={title}
-                className="rounded-3xl border border-border bg-card p-7 transition-shadow hover:shadow-lg lg:col-span-2"
-              >
-                <span className="flex size-11 items-center justify-center rounded-full bg-primary/15 text-primary">
-                  <Icon className="size-5" aria-hidden />
-                </span>
-                <h3 className="mt-4 text-lg font-medium text-navy">{title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{text}</p>
+              <div className="absolute inset-x-6 bottom-6 rounded-2xl bg-cream/95 px-6 py-4 backdrop-blur">
+                <p className="text-sm font-medium text-navy">
+                  Embalagem com o seu logo, cartão dedicado e entrega combinada.
+                </p>
               </div>
-            ))}
+            </div>
           </div>
         </section>
 
-        {/* CUPCAKES — bento */}
+        {/* CUPCAKES — split */}
         <section id="cupcakes" className="bg-secondary/60 py-16">
-          <div className="mx-auto max-w-6xl px-5">
-            <div className="max-w-2xl">
+          <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-[1fr_1.1fr]">
+            <div>
               <p className="section-eyebrow">Nosso carro-chefe</p>
               <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
                 Cupcakes em dois tamanhos
@@ -281,9 +305,18 @@ function Index() {
               <p className="mt-5 text-muted-foreground">
                 De Cenoura a Ovomaltine, disponíveis nos tamanhos Standard e Mini.
               </p>
+              <div className="mt-8 rounded-3xl bg-navy p-8 text-cream">
+                <p className="text-sm opacity-85">
+                  Para pedidos a partir de 30 unidades há condições especiais. Valores, sabores
+                  disponíveis e prazos são confirmados no atendimento.
+                </p>
+                <div className="mt-6">
+                  <WhatsButton size="sm">Consultar sabores e valores</WhatsButton>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-10 grid gap-4 lg:grid-cols-4">
+            <div className="space-y-4">
               {[
                 {
                   size: "6 cm",
@@ -298,31 +331,27 @@ function Index() {
                   text: "Perfeito para coffee breaks, kits com variedade de sabores e coquetéis.",
                 },
               ].map((c) => (
-                <div key={c.name} className="rounded-3xl border border-border bg-card p-8">
-                  <span className="inline-block rounded-full bg-accent px-3 py-1 text-xs text-accent-foreground">
+                <div
+                  key={c.name}
+                  className="flex items-start gap-6 rounded-3xl border border-border bg-card p-8"
+                >
+                  <span className="rounded-full bg-plum px-4 py-1.5 text-xs text-cream">
                     {c.size}
                   </span>
-                  <h3 className="mt-5 text-2xl font-semibold text-navy">{c.name}</h3>
-                  <p className="mt-1 text-sm text-plum">{c.bites}</p>
-                  <p className="mt-4 text-sm text-muted-foreground">{c.text}</p>
+                  <div>
+                    <h3 className="text-2xl font-semibold text-navy">{c.name}</h3>
+                    <p className="mt-1 text-sm text-plum">{c.bites}</p>
+                    <p className="mt-3 text-sm text-muted-foreground">{c.text}</p>
+                  </div>
                 </div>
               ))}
-              <div className="flex flex-col justify-between gap-6 rounded-3xl bg-navy p-8 text-cream lg:col-span-2">
-                <p className="text-sm opacity-85">
-                  Para pedidos a partir de 30 unidades há condições especiais. Valores, sabores
-                  disponíveis e prazos são confirmados no atendimento.
-                </p>
-                <div>
-                  <WhatsButton size="sm">Consultar sabores e valores</WhatsButton>
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
-        {/* PRODUTOS — bento grid */}
+        {/* PRODUTOS — cards claros */}
         <section id="produtos" className="mx-auto max-w-6xl px-5 py-16">
-          <div className="max-w-2xl">
+          <div className="mx-auto max-w-2xl text-center">
             <p className="section-eyebrow">Linha completa</p>
             <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">Além dos cupcakes</h2>
             <p className="mt-5 text-muted-foreground">
@@ -331,11 +360,11 @@ function Index() {
             </p>
           </div>
 
-          <div className="mt-10 grid auto-rows-[220px] gap-4 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {produtos.map((p) => (
               <article
                 key={p.title}
-                className={`group relative overflow-hidden rounded-3xl border border-border bg-card ${p.span ?? ""}`}
+                className="group overflow-hidden rounded-3xl border border-border bg-card transition-shadow hover:shadow-lg"
               >
                 <img
                   src={p.img}
@@ -343,16 +372,17 @@ function Index() {
                   width={800}
                   height={800}
                   loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-navy/80 p-5 text-cream backdrop-blur-sm">
-                  <h3 className="text-base font-medium">{p.title}</h3>
-                  <p className="mt-1 text-xs opacity-80">{p.text}</p>
+                <div className="p-6">
+                  <h3 className="text-lg font-medium text-navy">{p.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
                 </div>
               </article>
             ))}
           </div>
         </section>
+
 
         {/* MARCAS */}
         <section id="marcas" className="bg-secondary/60 py-16">
