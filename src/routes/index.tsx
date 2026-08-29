@@ -68,7 +68,7 @@ const produtos = [
   {
     img: prodCupcakes,
     title: "Cupcakes",
-    text: "Nosso carro-chefe: mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
+    text: "Mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
     span: "sm:col-span-2 sm:row-span-2",
   },
   { img: prodBrownie, title: "Brownie", text: "Brownies intensos, embalados individualmente." },
