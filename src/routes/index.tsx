@@ -5,7 +5,6 @@ import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho.png.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
-import corporateGifting from "@/assets/corporate-gifting.jpg";
 import prodCupcakes from "@/assets/prod-cupcakes.jpg";
 import prodBolos from "@/assets/prod-bolos.jpg";
 import prodBolosPersonalizados from "@/assets/prod-bolos-personalizados.jpg";
