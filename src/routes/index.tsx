@@ -230,145 +230,141 @@ function Index() {
         </section>
 
 
-        {/* POR QUE ESCOLHER — cartões alternados */}
-        <section id="corporativo" className="mx-auto max-w-6xl px-5 py-20">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="section-eyebrow">Xuxuzinho para empresas e eventos</p>
-            <h2 className="mt-4 text-4xl font-semibold text-navy sm:text-5xl">
-              Por que escolher a Xuxuzinho?
-            </h2>
-            <p className="mt-5 text-muted-foreground">
-              Do sabor à embalagem, cada detalhe é pensado para representar a essência da sua marca.
-            </p>
-          </div>
+        {/* POR QUE ESCOLHER — linhas largas */}
+        <section id="corporativo" className="bg-secondary/60 py-20">
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="flex flex-wrap items-end justify-between gap-6">
+              <div className="max-w-xl">
+                <p className="section-eyebrow">Xuxuzinho para empresas e eventos</p>
+                <h2 className="mt-4 text-4xl font-semibold text-navy sm:text-5xl">
+                  Por que escolher a Xuxuzinho?
+                </h2>
+              </div>
+              <p className="max-w-sm text-sm text-muted-foreground">
+                Do sabor à embalagem, cada detalhe é pensado para representar a essência da sua
+                marca.
+              </p>
+            </div>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-2">
-            {[
-              ...servicos,
-              {
-                icon: Sparkles,
-                title: "Produção 100% artesanal",
-                text: "Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por doce.",
-              },
-            ].map(({ icon: Icon, title, text }, i) => {
-              const dark = i % 3 === 0;
-              return (
-                <article
+            <div className="mt-12 border-t border-border">
+              {[
+                ...servicos,
+                {
+                  icon: Sparkles,
+                  title: "Produção 100% artesanal",
+                  text: "Ingredientes selecionados, receitas próprias e acabamento feito à mão, doce por doce.",
+                },
+              ].map(({ icon: Icon, title, text }, i) => (
+                <div
                   key={title}
-                  className={`relative overflow-hidden rounded-[2rem] p-9 ${
-                    dark ? "bg-navy text-cream" : "border border-border bg-card"
-                  }`}
+                  className="group grid items-center gap-4 border-b border-border py-8 md:grid-cols-[auto_1fr_1.4fr_auto]"
                 >
-                  <span
-                    className={`absolute -top-6 right-4 text-8xl font-semibold ${
-                      dark ? "text-cream/10" : "text-plum/10"
-                    }`}
-                    aria-hidden
-                  >
-                    0{i + 1}
-                  </span>
-                  <span
-                    className={`relative flex size-12 items-center justify-center rounded-2xl ${
-                      dark ? "bg-cream/15 text-cream" : "bg-plum text-cream"
-                    }`}
-                  >
+                  <span className="font-display text-3xl text-plum/50">0{i + 1}</span>
+                  <h3 className="text-xl font-medium text-navy md:text-2xl">{title}</h3>
+                  <p className="text-sm text-muted-foreground">{text}</p>
+                  <span className="hidden size-12 items-center justify-center rounded-full bg-navy text-cream transition-colors group-hover:bg-plum md:flex">
                     <Icon className="size-5" aria-hidden />
                   </span>
-                  <h3
-                    className={`relative mt-6 text-xl font-medium ${dark ? "" : "text-navy"}`}
-                  >
-                    {title}
-                  </h3>
-                  <p
-                    className={`relative mt-2 text-sm ${
-                      dark ? "text-cream/75" : "text-muted-foreground"
-                    }`}
-                  >
-                    {text}
-                  </p>
-                </article>
-              );
-            })}
-          </div>
-
-          <div className="mt-10 flex justify-center">
-            <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
-          </div>
-        </section>
-
-        {/* CUPCAKES — comparativo central */}
-        <section id="cupcakes" className="bg-secondary/60 py-20">
-          <div className="mx-auto max-w-5xl px-5 text-center">
-            <p className="section-eyebrow">Nosso carro-chefe</p>
-            <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-              Cupcakes em dois tamanhos
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-              De Cenoura a Ovomaltine, disponíveis nos tamanhos Standard e Mini. A partir de 30
-              unidades há condições especiais.
-            </p>
-
-            <div className="mt-12 grid divide-y divide-border overflow-hidden rounded-[2rem] border border-border bg-card sm:grid-cols-2 sm:divide-x sm:divide-y-0">
-              {[
-                {
-                  size: "6 cm",
-                  name: "Standard",
-                  bites: "5 mordidas",
-                  text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
-                },
-                {
-                  size: "4,5 cm",
-                  name: "Mini",
-                  bites: "2 mordidas",
-                  text: "Perfeito para coffee breaks, kits com variedade de sabores e coquetéis.",
-                },
-              ].map((c) => (
-                <div key={c.name} className="px-8 py-12">
-                  <p className="font-display text-5xl text-plum">{c.size}</p>
-                  <h3 className="mt-4 text-2xl font-semibold text-navy">{c.name}</h3>
-                  <p className="mt-1 text-sm text-plum">{c.bites}</p>
-                  <p className="mx-auto mt-4 max-w-xs text-sm text-muted-foreground">{c.text}</p>
                 </div>
               ))}
             </div>
 
-            <div className="mt-10 flex justify-center">
-              <WhatsButton size="sm">Consultar sabores e valores</WhatsButton>
+            <div className="mt-10">
+              <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
             </div>
           </div>
         </section>
 
-        {/* PRODUTOS — grade editorial */}
-        <section id="produtos" className="mx-auto max-w-6xl px-5 py-20">
-          <div className="flex flex-wrap items-end justify-between gap-6">
-            <h2 className="text-3xl font-semibold text-navy sm:text-4xl">
-              Além dos cupcakes
-              <span className="mt-2 block text-base font-normal text-muted-foreground">
-                Kits e caixas personalizadas para a sua empresa.
-              </span>
-            </h2>
-            <p className="section-eyebrow">Linha completa</p>
-          </div>
+        {/* CUPCAKES — faixa horizontal */}
+        <section id="cupcakes" className="mx-auto max-w-6xl px-5 py-20">
+          <div className="grid gap-10 md:grid-cols-[1fr_auto_1fr] md:items-center">
+            {[
+              {
+                size: "6 cm",
+                name: "Standard",
+                bites: "5 mordidas",
+                text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
+              },
+            ].map((c) => (
+              <div key={c.name} className="text-center md:text-right">
+                <p className="font-display text-6xl text-plum">{c.size}</p>
+                <h3 className="mt-3 text-2xl font-semibold text-navy">{c.name}</h3>
+                <p className="mt-1 text-sm text-plum">{c.bites}</p>
+                <p className="mt-3 text-sm text-muted-foreground md:ml-auto md:max-w-xs">
+                  {c.text}
+                </p>
+              </div>
+            ))}
 
-          <div className="mt-12 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-            {produtos.map((p) => (
-              <article key={p.title} className="group">
-                <div className="overflow-hidden rounded-2xl">
-                  <img
-                    src={p.img}
-                    alt={p.title}
-                    width={600}
-                    height={600}
-                    loading="lazy"
-                    className="aspect-square w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="mt-4 text-lg font-medium text-navy">{p.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{p.text}</p>
-              </article>
+            <div className="mx-auto max-w-sm rounded-[2rem] bg-navy px-8 py-12 text-center text-cream">
+              <p className="text-xs tracking-[0.25em] text-cream/70 uppercase">Nosso carro-chefe</p>
+              <h2 className="mt-4 text-3xl font-semibold">Cupcakes em dois tamanhos</h2>
+              <p className="mt-4 text-sm text-cream/80">
+                De Cenoura a Ovomaltine. A partir de 30 unidades há condições especiais.
+              </p>
+              <div className="mt-7 flex justify-center">
+                <WhatsButton size="sm">Consultar sabores</WhatsButton>
+              </div>
+            </div>
+
+            {[
+              {
+                size: "4,5 cm",
+                name: "Mini",
+                bites: "2 mordidas",
+                text: "Perfeito para coffee breaks, kits com variedade de sabores e coquetéis.",
+              },
+            ].map((c) => (
+              <div key={c.name} className="text-center md:text-left">
+                <p className="font-display text-6xl text-plum">{c.size}</p>
+                <h3 className="mt-3 text-2xl font-semibold text-navy">{c.name}</h3>
+                <p className="mt-1 text-sm text-plum">{c.bites}</p>
+                <p className="mt-3 text-sm text-muted-foreground md:max-w-xs">{c.text}</p>
+              </div>
             ))}
           </div>
         </section>
+
+        {/* PRODUTOS — mosaico */}
+        <section id="produtos" className="bg-secondary/60 py-20">
+          <div className="mx-auto max-w-6xl px-5">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="section-eyebrow">Linha completa</p>
+              <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
+                Além dos cupcakes
+              </h2>
+              <p className="mt-5 text-muted-foreground">
+                Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
+                empresa.
+              </p>
+            </div>
+
+            <div className="mt-12 grid auto-rows-[200px] gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {produtos.map((p, i) => (
+                <article
+                  key={p.title}
+                  className={`group relative overflow-hidden rounded-3xl ${
+                    i === 0 ? "sm:col-span-2 sm:row-span-2" : i === 5 ? "sm:row-span-2" : ""
+                  }`}
+                >
+                  <img
+                    src={p.img}
+                    alt={p.title}
+                    width={800}
+                    height={800}
+                    loading="lazy"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-x-3 bottom-3 rounded-2xl bg-cream/95 px-4 py-3 backdrop-blur">
+                    <h3 className="text-sm font-medium text-navy">{p.title}</h3>
+                    <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">{p.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
 
 
 
