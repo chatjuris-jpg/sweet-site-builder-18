@@ -248,8 +248,8 @@ function Index() {
               </p>
             </div>
 
-            <div className="mt-14 overflow-hidden rounded-[2.5rem] bg-navy">
-              <div className="grid gap-px bg-cream/15 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-14 border-t border-border">
+              <div className="grid sm:grid-cols-2">
                 {[
                   ...servicos,
                   {
@@ -260,18 +260,21 @@ function Index() {
                 ].map(({ icon: Icon, title, text }, i) => (
                   <article
                     key={title}
-                    className="group bg-navy p-8 transition-colors duration-300 hover:bg-plum"
+                    className={`px-2 py-10 sm:px-8 ${i % 2 === 0 ? "sm:border-r sm:border-border" : ""} ${
+                      i < 2 ? "border-b border-border" : ""
+                    }`}
                   >
-                    <div className="flex items-center justify-between">
-                      <Icon className="size-7 text-cream" aria-hidden />
-                      <span className="font-display text-3xl text-cream/25">0{i + 1}</span>
+                    <div className="flex items-center gap-3">
+                      <Icon className="size-6 text-plum" aria-hidden />
+                      <span className="font-display text-sm text-muted-foreground">0{i + 1}</span>
                     </div>
-                    <h3 className="mt-8 text-xl font-medium text-cream">{title}</h3>
-                    <p className="mt-3 text-sm text-cream/75">{text}</p>
+                    <h3 className="mt-6 font-display text-2xl text-navy">{title}</h3>
+                    <p className="mt-3 text-sm text-muted-foreground">{text}</p>
                   </article>
                 ))}
               </div>
             </div>
+
 
             <div className="mt-12">
               <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
