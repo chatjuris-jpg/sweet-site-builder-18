@@ -3,6 +3,7 @@ import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles } fro
 
 import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
+import brandX from "@/assets/x-logo.png.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 import prodCupcakes from "@/assets/prod-cupcakes.jpg";
@@ -239,7 +240,17 @@ function Index() {
                 <h2 className="mt-4 text-4xl leading-tight font-semibold text-navy sm:text-5xl">
                   Por que escolher
                   <br />
-                  a <span className="font-script font-normal text-navy">Xuxuzinho</span>?
+                  a{" "}
+                  <span className="inline-flex items-baseline whitespace-nowrap align-baseline">
+                    <img
+                      src={brandX.url}
+                      alt=""
+                      aria-hidden="true"
+                      className="h-[1.35em] w-auto translate-y-[0.28em] select-none"
+                    />
+                    <span className="-ml-[0.34em] font-script font-normal text-navy">uxuzinho</span>
+                  </span>
+                  ?
                 </h2>
               </div>
               <p className="text-muted-foreground md:pb-2">
