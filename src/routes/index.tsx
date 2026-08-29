@@ -230,21 +230,26 @@ function Index() {
         </section>
 
 
-        {/* POR QUE ESCOLHER — cartões em leque */}
+        {/* POR QUE ESCOLHER — painel lateral + lista */}
         <section id="corporativo" className="bg-secondary/60 py-20">
-          <div className="mx-auto max-w-6xl px-5">
-            <div className="mx-auto max-w-2xl text-center">
-              <p className="section-eyebrow">Xuxuzinho para empresas e eventos</p>
-              <h2 className="mt-4 text-4xl font-semibold text-navy sm:text-5xl">
+          <div className="mx-auto grid max-w-6xl gap-10 px-5 lg:grid-cols-[0.85fr_1.15fr]">
+            <div className="self-start rounded-[2.5rem] bg-navy p-10 text-cream lg:sticky lg:top-28">
+              <p className="text-xs tracking-[0.25em] text-cream/70 uppercase">
+                Empresas e eventos
+              </p>
+              <h2 className="mt-5 text-4xl font-semibold sm:text-5xl">
                 Por que escolher a Xuxuzinho?
               </h2>
-              <p className="mt-5 text-muted-foreground">
+              <p className="mt-5 text-sm text-cream/80">
                 Do sabor à embalagem, cada detalhe é pensado para representar a essência da sua
                 marca.
               </p>
+              <div className="mt-8">
+                <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
+              </div>
             </div>
 
-            <div className="mt-14 grid gap-5 md:grid-cols-3">
+            <div className="space-y-4">
               {[
                 ...servicos,
                 {
@@ -255,125 +260,100 @@ function Index() {
               ].map(({ icon: Icon, title, text }, i) => (
                 <article
                   key={title}
-                  className={`rounded-[2rem] border border-border p-8 transition-transform duration-300 hover:-translate-y-1.5 ${
-                    i === 1 ? "bg-navy text-cream md:-translate-y-6" : "bg-card"
-                  }`}
+                  className="flex items-start gap-5 rounded-[2rem] bg-card p-7 transition-shadow hover:shadow-lg"
                 >
-                  <span
-                    className={`flex size-14 items-center justify-center rounded-2xl ${
-                      i === 1 ? "bg-cream/15 text-cream" : "bg-plum/10 text-plum"
-                    }`}
-                  >
-                    <Icon className="size-6" aria-hidden />
+                  <span className="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-plum/10 text-plum">
+                    <Icon className="size-5" aria-hidden />
                   </span>
-                  <h3
-                    className={`mt-6 text-xl font-medium ${i === 1 ? "text-cream" : "text-navy"}`}
-                  >
-                    {title}
-                  </h3>
-                  <p
-                    className={`mt-3 text-sm ${
-                      i === 1 ? "text-cream/80" : "text-muted-foreground"
-                    }`}
-                  >
-                    {text}
-                  </p>
+                  <div>
+                    <div className="flex items-baseline gap-3">
+                      <span className="font-display text-sm text-plum/60">0{i + 1}</span>
+                      <h3 className="text-xl font-medium text-navy">{title}</h3>
+                    </div>
+                    <p className="mt-2 text-sm text-muted-foreground">{text}</p>
+                  </div>
                 </article>
               ))}
             </div>
+          </div>
+        </section>
 
-            <div className="mt-12 flex justify-center">
-              <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
+        {/* CUPCAKES — faixa dividida */}
+        <section id="cupcakes" className="mx-auto max-w-6xl px-5 py-20">
+          <div className="overflow-hidden rounded-[2.5rem] bg-plum text-cream">
+            <div className="grid gap-px bg-cream/20 md:grid-cols-3">
+              <div className="bg-plum p-10">
+                <p className="text-xs tracking-[0.25em] text-cream/70 uppercase">Carro-chefe</p>
+                <h2 className="mt-4 text-3xl font-semibold">Cupcakes em dois tamanhos</h2>
+                <p className="mt-4 text-sm text-cream/80">
+                  De Cenoura a Ovomaltine. A partir de 30 unidades há condições especiais.
+                </p>
+                <div className="mt-7">
+                  <WhatsButton size="sm">Consultar sabores</WhatsButton>
+                </div>
+              </div>
+              {[
+                {
+                  size: "6 cm",
+                  name: "Standard",
+                  bites: "5 mordidas",
+                  text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
+                },
+                {
+                  size: "4,5 cm",
+                  name: "Mini",
+                  bites: "2 mordidas",
+                  text: "Perfeito para coffee breaks, kits variados e coquetéis.",
+                },
+              ].map((c) => (
+                <div key={c.name} className="bg-plum p-10">
+                  <p className="font-display text-5xl">{c.size}</p>
+                  <h3 className="mt-4 text-2xl font-semibold">{c.name}</h3>
+                  <p className="mt-1 text-xs tracking-[0.2em] text-cream/70 uppercase">
+                    {c.bites}
+                  </p>
+                  <p className="mt-4 text-sm text-cream/80">{c.text}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* CUPCAKES — círculos concêntricos */}
-        <section id="cupcakes" className="mx-auto max-w-5xl px-5 py-20 text-center">
-          <p className="section-eyebrow">Nosso carro-chefe</p>
-          <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-            Cupcakes em dois tamanhos
-          </h2>
-          <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-            De Cenoura a Ovomaltine. A partir de 30 unidades há condições especiais.
-          </p>
-
-          <div className="mt-14 flex flex-col items-center justify-center gap-10 sm:flex-row sm:gap-16">
-            {[
-              {
-                size: "6 cm",
-                name: "Standard",
-                bites: "5 mordidas",
-                text: "O tamanho clássico, ideal para mesas de doces e presentes individuais.",
-                circle: "size-44 bg-navy text-cream",
-              },
-              {
-                size: "4,5 cm",
-                name: "Mini",
-                bites: "2 mordidas",
-                text: "Perfeito para coffee breaks, kits variados e coquetéis.",
-                circle: "size-32 bg-plum text-cream",
-              },
-            ].map((c) => (
-              <div key={c.name} className="flex max-w-xs flex-col items-center">
-                <div
-                  className={`flex flex-col items-center justify-center rounded-full ${c.circle}`}
-                >
-                  <span className="font-display text-3xl">{c.size}</span>
-                  <span className="mt-1 text-[11px] tracking-[0.2em] uppercase opacity-80">
-                    {c.bites}
-                  </span>
-                </div>
-                <h3 className="mt-6 text-2xl font-semibold text-navy">{c.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{c.text}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-12 flex justify-center">
-            <WhatsButton size="sm">Consultar sabores</WhatsButton>
-          </div>
-        </section>
-
-        {/* PRODUTOS — trilho horizontal */}
+        {/* PRODUTOS — grade circular */}
         <section id="produtos" className="bg-secondary/60 py-20">
           <div className="mx-auto max-w-6xl px-5">
-            <div className="flex flex-wrap items-end justify-between gap-6">
-              <div className="max-w-lg">
-                <p className="section-eyebrow">Linha completa</p>
-                <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
-                  Além dos cupcakes
-                </h2>
-              </div>
-              <p className="max-w-sm text-sm text-muted-foreground">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="section-eyebrow">Linha completa</p>
+              <h2 className="mt-4 text-3xl font-semibold text-navy sm:text-4xl">
+                Além dos cupcakes
+              </h2>
+              <p className="mt-5 text-muted-foreground">
                 Todos os itens podem ser combinados em kits e caixas personalizadas para a sua
                 empresa.
               </p>
             </div>
-          </div>
 
-          <div className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-4 lg:px-[max(1.25rem,calc((100%-72rem)/2))]">
-            {produtos.map((p) => (
-              <article
-                key={p.title}
-                className="group w-64 shrink-0 snap-start overflow-hidden rounded-[2rem] bg-card"
-              >
-                <img
-                  src={p.img}
-                  alt={p.title}
-                  width={800}
-                  height={800}
-                  loading="lazy"
-                  className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="p-6">
-                  <h3 className="text-lg font-medium text-navy">{p.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{p.text}</p>
-                </div>
-              </article>
-            ))}
+            <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+              {produtos.map((p) => (
+                <article key={p.title} className="group text-center">
+                  <div className="mx-auto aspect-square w-44 overflow-hidden rounded-full ring-4 ring-card">
+                    <img
+                      src={p.img}
+                      alt={p.title}
+                      width={800}
+                      height={800}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  </div>
+                  <h3 className="mt-6 text-lg font-medium text-navy">{p.title}</h3>
+                  <p className="mx-auto mt-2 max-w-xs text-sm text-muted-foreground">{p.text}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
+
 
 
 
