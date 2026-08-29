@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles } from "lucide-react";
 
 import logoX from "@/assets/logo-x.png.asset.json";
-import wordmarkPrincipal from "@/assets/wordmark-principal.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho.png.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
@@ -55,7 +54,7 @@ const servicos = [
   {
     icon: PartyPopper,
     title: "Eventos e confraternizações",
-    text: "Mesa de doces, brindes, kits individuais e coletivos para treinamentos, datas comemorativas, reuniões...",
+    text: "Mesas de doces, coffee breaks e kits individuais para treinamentos, lançamentos e datas comemorativas.",
   },
   {
     icon: CalendarClock,
@@ -190,7 +189,7 @@ function Index() {
               />
               <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-4 rounded-2xl bg-cream/95 px-5 py-3 backdrop-blur">
                 <div className="flex items-center gap-3">
-                  <img src={wordmarkPrincipal.url} alt="Logotipo Xuxuzinho" className="h-7 w-auto object-contain sm:h-8" />
+                  <img src={logoX.url} alt="Logotipo Xuxuzinho" className="h-8 w-8 object-contain" />
                   <div>
                     <p className="text-sm font-medium text-navy">Confeitaria artesanal</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -240,7 +239,7 @@ function Index() {
                 <h2 className="mt-4 text-4xl leading-tight font-semibold text-navy sm:text-5xl">
                   Por que escolher
                   <br />
-                  a <span className="font-script">Xuxuzinho</span>?
+                  a Xuxuzinho?
                 </h2>
               </div>
               <p className="text-muted-foreground md:pb-2">
@@ -278,9 +277,7 @@ function Index() {
 
 
             <div className="mt-12">
-              <WhatsButton size="sm">
-                Falar com a <span className="font-script">Xuxuzinho</span>
-              </WhatsButton>
+              <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
             </div>
 
 
@@ -416,7 +413,7 @@ function Index() {
                   Marcas que confiam em nós
                 </h2>
                 <p className="mt-5 text-sm text-muted-foreground">
-                  Empresas que escolheram a <span className="font-script">Xuxuzinho</span> para adoçar seus eventos, brindes e
+                  Empresas que escolheram a Xuxuzinho para adoçar seus eventos, brindes e
                   celebrações internas.
                 </p>
               </div>
