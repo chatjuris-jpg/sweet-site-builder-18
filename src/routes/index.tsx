@@ -22,10 +22,13 @@ import prodBolos from "@/assets/prod-bolos.webp";
 import prodBolosPersonalizados from "@/assets/prod-bolos-personalizados.webp";
 import prodBento from "@/assets/prod-bento.webp";
 import prodBolachas from "@/assets/prod-bolachas.webp";
-import prodBrownie from "@/assets/prod-brownie.webp";
 import prodDocinhos from "@/assets/prod-docinhos.webp";
 import prodMinibolos from "@/assets/prod-minibolos.webp";
 import prodPaodemel from "@/assets/prod-paodemel.webp";
+import brownie1 from "@/assets/brownie-1.webp.asset.json";
+import brownie2 from "@/assets/brownie-2.webp.asset.json";
+import brownie3 from "@/assets/brownie-3.webp.asset.json";
+import brownie4 from "@/assets/brownie-4.webp.asset.json";
 import cupcake1 from "@/assets/cupcake-1.webp.asset.json";
 import cupcake2 from "@/assets/cupcake-2.webp.asset.json";
 import cupcake3 from "@/assets/cupcake-3.webp.asset.json";
@@ -86,7 +89,7 @@ const produtos = [
     text: "Mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
     span: "sm:col-span-2 sm:row-span-2",
   },
-  { imgs: [prodBrownie], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
+  { imgs: [brownie1.url, brownie2.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
   { imgs: [prodBolos], title: "Bolos", text: "Bolos artesanais para comemorações." },
   {
     imgs: [prodDocinhos],
