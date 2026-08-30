@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BrandName } from "@/components/BrandName";
 import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download } from "lucide-react";
 
+import catalogoPdf from "@/assets/catalogo-xuxuzinho.pdf.asset.json";
 import logoX from "@/assets/logo-x.webp.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.webp.asset.json";
 import brandX from "@/assets/x-logo.webp.asset.json";
@@ -535,8 +536,8 @@ function Index() {
                 </div>
               </div>
               <a
-                href="/catalogo-xuxuzinho.pdf"
-                download
+                href={catalogoPdf.url}
+                download="catalogo-xuxuzinho.pdf"
                 className="inline-flex shrink-0 items-center gap-2 rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-plum transition-opacity hover:opacity-90"
               >
                 <Download className="h-4 w-4" aria-hidden="true" />
