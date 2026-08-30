@@ -333,20 +333,27 @@ function Index() {
           </a>
 
 
-          <nav className="hidden items-center gap-8 text-sm text-muted-foreground md:flex">
+          <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             <a href="#corporativo" className="transition-colors hover:text-plum">
               Corporativo
-            </a>
-            <a href="#cupcakes" className="transition-colors hover:text-plum">
-              Cupcakes
             </a>
             <a href="#produtos" className="transition-colors hover:text-plum">
               Produtos
             </a>
             <a href="#marcas" className="transition-colors hover:text-plum">
-              Marcas
+              Parcerias
+            </a>
+            <a href="#feedbacks" className="transition-colors hover:text-plum">
+              Depoimentos
+            </a>
+            <a href="#faq" className="transition-colors hover:text-plum">
+              Dúvidas
+            </a>
+            <a href="#contato" className="transition-colors hover:text-plum">
+              Contato
             </a>
           </nav>
+
           <WhatsButton size="sm">Orçamento</WhatsButton>
         </div>
       </header>
