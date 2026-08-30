@@ -6,6 +6,9 @@ import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
 import brandX from "@/assets/x-logo.png.asset.json";
 import fotoNatalia from "@/assets/depoimento-natalia.png.asset.json";
+import fotoKethelin1 from "@/assets/depoimento-kethelin-18.png.asset.json";
+import fotoKethelin2 from "@/assets/depoimento-kethelin-19.png.asset.json";
+import fotoKethelin3 from "@/assets/depoimento-kethelin-20.png.asset.json";
 
 import logoPilot from "@/assets/pilot.png.asset.json";
 import logoLojasMel from "@/assets/lojasmel.png.asset.json";
@@ -139,17 +142,18 @@ const marcas = [
   { nome: "Unicharm", src: logoUnicharm.url },
 ];
 
-const depoimentos: { nome: string; contexto: string; texto: string; foto?: string }[] = [
+const depoimentos: { nome: string; contexto: string; texto: string; fotos?: string[] }[] = [
   {
     nome: "Natália Esplendor",
     contexto: "Bentô cakes de mesversário",
-    foto: fotoNatalia.url,
+    fotos: [fotoNatalia.url],
     texto:
       "Estou a 3 meses fazendo os pedidos do Bentô Class de mesversário do meu sobrinho e além dos bolinhos serem lindos o sabor é maravilhoso! 3 temas, 3 sabores e nenhum arrependimento, rs. O atendimento das meninas também é super rápido, entrega sempre certinha. Vamos assim até o primeiro aninho 🤩❤️🎂",
   },
   {
     nome: "Kethelin De Oliveira Perandre",
     contexto: "Bolo personalizado",
+    fotos: [fotoKethelin1.url, fotoKethelin2.url, fotoKethelin3.url],
     texto:
       "A experiência já começa no atendimento: rápido, preciso e extremamente atencioso. Quando recebi o bolo, entendi por que são realmente uma referência no que fazem. Tudo é pensado com muito cuidado, desde a embalagem até cada detalhe da apresentação. O bolo, além de lindo, é simplesmente delicioso. Sério, está impecável! Estão de parabéns pelo trabalho e pelo carinho em cada etapa. Com toda certeza acompanharão os próximos 12 meses do meu pequeno. Os registros ficaram lindos!",
   },
@@ -538,13 +542,10 @@ function Index() {
                 key={d.nome}
                 className="flex flex-col rounded-3xl border border-border bg-card p-6"
               >
-                {d.foto ? (
-                  <img
-                    src={d.foto}
-                    alt={`Pedido de ${d.nome}`}
-                    loading="lazy"
-                    className="mb-4 aspect-16/10 w-full rounded-2xl object-cover"
-                  />
+                {d.fotos?.length ? (
+                  <div className="mb-4 overflow-hidden rounded-2xl">
+                    <ProductCarousel imgs={d.fotos} title={`Pedido de ${d.nome}`} />
+                  </div>
                 ) : null}
                 <Quote className="size-6 text-plum" aria-hidden />
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
