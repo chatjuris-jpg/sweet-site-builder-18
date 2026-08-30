@@ -19,7 +19,10 @@ import logoUnicharm from "@/assets/unicharm.png.asset.json";
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 
 import prodBolos from "@/assets/prod-bolos.webp";
-import prodBento from "@/assets/prod-bento.webp";
+import bento1 from "@/assets/bento-1.webp.asset.json";
+import bento2 from "@/assets/bento-2.webp.asset.json";
+import bento3 from "@/assets/bento-3.webp.asset.json";
+import bento4 from "@/assets/bento-4.webp.asset.json";
 import prodBolachas from "@/assets/prod-bolachas.webp";
 import docinho1 from "@/assets/docinho-1.webp.asset.json";
 import docinho2 from "@/assets/docinho-2.webp.asset.json";
@@ -116,7 +119,7 @@ const produtos = [
     text: "Bolos exclusivos com a identidade visual da sua empresa.",
     span: "sm:col-span-2",
   },
-  { imgs: [prodBento], title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
+  { imgs: [bento1.url, bento2.url, bento3.url, bento4.url], title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
   { imgs: [prodBolachas], title: "Bolachas", text: "Biscoitos com pintura manual." },
   { imgs: [prodMinibolos], title: "Mini Bolos", text: "Porções individuais elegantes." },
 ];
