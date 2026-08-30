@@ -2,28 +2,28 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download } from "lucide-react";
 
-import logoX from "@/assets/logo-x.png.asset.json";
-import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
-import brandX from "@/assets/x-logo.png.asset.json";
-import fotoNatalia from "@/assets/depoimento-natalia.png.asset.json";
-import fotoKethelin1 from "@/assets/depoimento-kethelin-18.png.asset.json";
-import fotoKethelin2 from "@/assets/depoimento-kethelin-19.png.asset.json";
-import fotoKethelin3 from "@/assets/depoimento-kethelin-20.png.asset.json";
-import fotoSuellen1 from "@/assets/depoimento-suellen-21.png.asset.json";
-import fotoSuellen2 from "@/assets/depoimento-suellen-22.png.asset.json";
-import fotoSuellen3 from "@/assets/depoimento-suellen-23.png.asset.json";
+import logoX from "@/assets/logo-x.webp.asset.json";
+import wordmark from "@/assets/wordmark-xuxuzinho-v2.webp.asset.json";
+import brandX from "@/assets/x-logo.webp.asset.json";
+import fotoNatalia from "@/assets/depoimento-natalia.webp.asset.json";
+import fotoKethelin1 from "@/assets/depoimento-kethelin-18.webp.asset.json";
+import fotoKethelin2 from "@/assets/depoimento-kethelin-19.webp.asset.json";
+import fotoKethelin3 from "@/assets/depoimento-kethelin-20.webp.asset.json";
+import fotoSuellen1 from "@/assets/depoimento-suellen-21.webp.asset.json";
+import fotoSuellen2 from "@/assets/depoimento-suellen-22.webp.asset.json";
+import fotoSuellen3 from "@/assets/depoimento-suellen-23.webp.asset.json";
 
-import logoPilot from "@/assets/pilot.png.asset.json";
-import logoLojasMel from "@/assets/lojasmel.png.asset.json";
-import logoRevelo from "@/assets/revelo.jpg.asset.json";
-import logoPetCare from "@/assets/petcare.png.asset.json";
-import logoFoodToSave from "@/assets/foodtosave.png.asset.json";
-import logoEspiritoSanto from "@/assets/espiritosanto.jpg.asset.json";
-import logoPluris from "@/assets/pluris.png.asset.json";
-import logoUnicharm from "@/assets/unicharm.png.asset.json";
+import logoPilot from "@/assets/pilot.webp.asset.json";
+import logoLojasMel from "@/assets/lojasmel.webp.asset.json";
+import logoRevelo from "@/assets/revelo.webp.asset.json";
+import logoPetCare from "@/assets/petcare.webp.asset.json";
+import logoFoodToSave from "@/assets/foodtosave.webp.asset.json";
+import logoEspiritoSanto from "@/assets/espiritosanto.webp.asset.json";
+import logoPluris from "@/assets/pluris.webp.asset.json";
+import logoUnicharm from "@/assets/unicharm.webp.asset.json";
 
 
-import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
+import heroCupcakeAsset from "@/assets/hero-cupcake.webp.asset.json";
 
 import prodBolos from "@/assets/prod-bolos.webp";
 import bento1 from "@/assets/bento-1.webp.asset.json";
@@ -246,6 +246,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
             width={800}
             height={500}
             loading="lazy"
+            decoding="async"
             className={`${aspect} w-full shrink-0 object-cover`}
           />
         ))}
@@ -297,6 +298,11 @@ function Index() {
             <img
               src={wordmark.url}
               alt="Xuxuzinho"
+              width={900}
+              height={270}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-9 w-auto object-contain sm:h-10"
             />
           </a>
@@ -346,12 +352,15 @@ function Index() {
                 src={heroCupcakeAsset.url}
                 alt="Cupcake artesanal com cobertura de chocolate e caixas de brinde com laço vermelho"
                 width={1200}
-                height={900}
+                height={1600}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="h-[360px] w-full object-cover sm:h-[440px] lg:h-[520px]"
               />
               <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-4 rounded-2xl bg-cream/95 px-5 py-3 backdrop-blur">
                 <div className="flex items-center gap-3">
-                  <img src={logoX.url} alt="Logotipo Xuxuzinho" className="h-8 w-8 object-contain" />
+                  <img src={logoX.url} alt="Logotipo Xuxuzinho" width={211} height={202} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
                   <div>
                     <p className="text-sm font-medium text-navy">Confeitaria artesanal</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -407,7 +416,9 @@ function Index() {
                       src={brandX.url}
                       alt=""
                       aria-hidden="true"
-                      className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
+                      loading="lazy"
+                    decoding="async"
+                    className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
                     />
                     <span className="-ml-[0.22em] font-script font-normal text-navy">uxuzinho</span>
                   </span>
@@ -469,6 +480,8 @@ function Index() {
                     src={brandX.url}
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
                     className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
                   />
                   <span className="-ml-[0.22em] font-script font-normal text-navy">uxuzinho</span>
@@ -570,6 +583,9 @@ function Index() {
                       src={m.src}
                       alt={`Logotipo ${m.nome}`}
                       loading="lazy"
+                      decoding="async"
+                      width={600}
+                      height={200}
                       className="max-h-12 w-auto max-w-full object-contain"
                     />
                   </li>
