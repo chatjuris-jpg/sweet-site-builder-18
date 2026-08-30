@@ -93,7 +93,7 @@ const produtos = [
     span: "sm:col-span-2 sm:row-span-2",
   },
   { imgs: [brownie1.url, brownie2.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
-  { imgs: [bolo1.url, bolo2.url, bolo3.url, bolo4.url], title: "Bolos", text: "Bolos artesanais para comemorações." },
+  { imgs: [prodBolosPersonalizados], title: "Bolos", text: "Bolos artesanais para comemorações." },
   {
     imgs: [prodDocinhos],
     title: "Docinhos",
@@ -105,7 +105,7 @@ const produtos = [
     text: "Recheado e banhado em chocolate nobre.",
   },
   {
-    imgs: [prodBolosPersonalizados],
+    imgs: [bolo1.url, bolo2.url, bolo3.url, bolo4.url],
     title: "Bolos Personalizados",
     text: "Bolos exclusivos com a identidade visual da sua empresa.",
     span: "sm:col-span-2",
