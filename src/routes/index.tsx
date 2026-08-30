@@ -81,7 +81,7 @@ const servicos = [
 
 const produtos = [
   {
-    imgs: [prodCupcakes],
+    imgs: [prodCupcakes, cupcake1.url, cupcake2.url, cupcake3.url, cupcake4.url],
     title: "Cupcakes",
     text: "Mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
     span: "sm:col-span-2 sm:row-span-2",
