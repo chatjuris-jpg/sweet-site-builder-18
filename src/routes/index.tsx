@@ -17,7 +17,7 @@ import logoUnicharm from "@/assets/unicharm.png.asset.json";
 
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
-import prodCupcakes from "@/assets/prod-cupcakes.webp";
+
 import prodBolos from "@/assets/prod-bolos.webp";
 import prodBolosPersonalizados from "@/assets/prod-bolos-personalizados.webp";
 import prodBento from "@/assets/prod-bento.webp";
