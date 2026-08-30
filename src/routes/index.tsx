@@ -603,7 +603,18 @@ function Index() {
             <div>
               <p className="section-eyebrow">Depoimentos</p>
               <h2 className="mt-4 max-w-md text-3xl font-semibold text-navy">
-                O que dizem sobre a <BrandName className="font-normal" />
+                O que dizem sobre a{" "}
+                <span className="inline-flex items-baseline whitespace-nowrap align-baseline">
+                  <img
+                    src={brandX.url}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
+                    className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
+                  />
+                  <BrandName withoutX className="-ml-[0.22em] font-normal text-navy" />
+                </span>
               </h2>
             </div>
             <div className="flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4">
