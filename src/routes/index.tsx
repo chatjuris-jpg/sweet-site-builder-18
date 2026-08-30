@@ -114,7 +114,7 @@ const produtos = [
     span: "sm:col-span-2 sm:row-span-2",
   },
   { imgs: [brownie1.url, brownie2.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
-  { imgs: [prodBolos], title: "Bolos", text: "Bolos artesanais para comemorações." },
+  
   {
     imgs: [docinho1.url, docinho2.url, docinho3.url, docinho4.url],
     title: "Docinhos",
