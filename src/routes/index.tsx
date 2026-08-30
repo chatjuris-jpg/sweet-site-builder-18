@@ -246,6 +246,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
             width={800}
             height={500}
             loading="lazy"
+            decoding="async"
             className={`${aspect} w-full shrink-0 object-cover`}
           />
         ))}
@@ -297,6 +298,11 @@ function Index() {
             <img
               src={wordmark.url}
               alt="Xuxuzinho"
+              width={900}
+              height={270}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className="h-9 w-auto object-contain sm:h-10"
             />
           </a>
@@ -346,12 +352,15 @@ function Index() {
                 src={heroCupcakeAsset.url}
                 alt="Cupcake artesanal com cobertura de chocolate e caixas de brinde com laço vermelho"
                 width={1200}
-                height={900}
+                height={1600}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
                 className="h-[360px] w-full object-cover sm:h-[440px] lg:h-[520px]"
               />
               <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-4 rounded-2xl bg-cream/95 px-5 py-3 backdrop-blur">
                 <div className="flex items-center gap-3">
-                  <img src={logoX.url} alt="Logotipo Xuxuzinho" className="h-8 w-8 object-contain" />
+                  <img src={logoX.url} alt="Logotipo Xuxuzinho" width={211} height={202} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
                   <div>
                     <p className="text-sm font-medium text-navy">Confeitaria artesanal</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -407,7 +416,9 @@ function Index() {
                       src={brandX.url}
                       alt=""
                       aria-hidden="true"
-                      className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
+                      loading="lazy"
+                    decoding="async"
+                    className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
                     />
                     <span className="-ml-[0.22em] font-script font-normal text-navy">uxuzinho</span>
                   </span>
@@ -469,6 +480,8 @@ function Index() {
                     src={brandX.url}
                     alt=""
                     aria-hidden="true"
+                    loading="lazy"
+                    decoding="async"
                     className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
                   />
                   <span className="-ml-[0.22em] font-script font-normal text-navy">uxuzinho</span>
@@ -570,6 +583,9 @@ function Index() {
                       src={m.src}
                       alt={`Logotipo ${m.nome}`}
                       loading="lazy"
+                      decoding="async"
+                      width={600}
+                      height={200}
                       className="max-h-12 w-auto max-w-full object-contain"
                     />
                   </li>
