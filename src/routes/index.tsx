@@ -18,13 +18,16 @@ import logoUnicharm from "@/assets/unicharm.png.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 
-import prodBolos from "@/assets/prod-bolos.webp";
 import prodBolosPersonalizados from "@/assets/prod-bolos-personalizados.webp";
 import prodBento from "@/assets/prod-bento.webp";
 import prodBolachas from "@/assets/prod-bolachas.webp";
 import prodDocinhos from "@/assets/prod-docinhos.webp";
 import prodMinibolos from "@/assets/prod-minibolos.webp";
 import prodPaodemel from "@/assets/prod-paodemel.webp";
+import bolo1 from "@/assets/bolo-1.webp.asset.json";
+import bolo2 from "@/assets/bolo-2.webp.asset.json";
+import bolo3 from "@/assets/bolo-3.webp.asset.json";
+import bolo4 from "@/assets/bolo-4.webp.asset.json";
 import brownie1 from "@/assets/brownie-1.webp.asset.json";
 import brownie2 from "@/assets/brownie-2.webp.asset.json";
 import brownie3 from "@/assets/brownie-3.webp.asset.json";
@@ -90,7 +93,7 @@ const produtos = [
     span: "sm:col-span-2 sm:row-span-2",
   },
   { imgs: [brownie1.url, brownie2.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
-  { imgs: [prodBolos], title: "Bolos", text: "Bolos artesanais para comemorações." },
+  { imgs: [bolo1.url, bolo2.url, bolo3.url, bolo4.url], title: "Bolos", text: "Bolos artesanais para comemorações." },
   {
     imgs: [prodDocinhos],
     title: "Docinhos",
