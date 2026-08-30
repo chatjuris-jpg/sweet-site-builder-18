@@ -156,36 +156,52 @@ const marcas = [
 
 const faqs = [
   {
-    pergunta: "Com quanto tempo de antecedência preciso fazer o pedido?",
+    pergunta: "Posso personalizar meu pedido?",
     resposta:
-      "Para pedidos personalizados, recomendamos de 7 a 10 dias de antecedência. Para volumes maiores ou datas comemorativas, quanto antes melhor — a agenda costuma fechar rápido.",
+      "Sim! Personalizamos seu pedido de acordo com a sua ideia, ocasião ou identidade visual da empresa.",
   },
   {
-    pergunta: "Existe quantidade mínima por pedido?",
+    pergunta: "Qual é o prazo de produção?",
     resposta:
-      "Sim, a quantidade mínima varia conforme o produto e o tipo de personalização. Fale com a gente pelo WhatsApp que passamos o mínimo e o valor exato para o seu caso.",
+      "Para pedidos de até 50 unidades, recomendamos pelo menos 3 dias de antecedência. Para quantidades maiores, consulte nossa equipe para verificarmos o melhor prazo.",
   },
   {
-    pergunta: "Vocês personalizam com a logo ou identidade visual da empresa?",
+    pergunta: "Como faço o pagamento?",
     resposta:
-      "Personalizamos com logo, cores, adesivos e embalagens de acordo com a identidade da sua marca ou do seu evento. É só enviar os arquivos e a gente cuida do resto.",
+      "Para empresas, trabalhamos com pagamento via PIX ou boleto bancário. Consulte nossa equipe para mais informações.",
   },
   {
-    pergunta: "Quais são as opções de entrega?",
+    pergunta: "Vocês fazem entrega?",
     resposta:
-      "Estamos no Tatuapé, em São Paulo, e atendemos com entrega na capital e região. Também é possível retirar no local em horário combinado.",
+      "Sim, atendemos algumas regiões de São Paulo. Consulte nossa equipe para verificar a disponibilidade e o valor da entrega para o seu endereço.",
   },
   {
-    pergunta: "Como funciona o pagamento?",
+    pergunta: "Qual é a validade dos produtos?",
     resposta:
-      "O pedido é confirmado com sinal e o restante é pago antes da entrega. Aceitamos Pix, cartão e emitimos nota fiscal para pedidos corporativos.",
+      "A validade varia de acordo com o produto. Pães de mel e brownies, por exemplo, podem durar até 15 dias, enquanto bolos e docinhos possuem validade menor. Consulte-nos para saber a validade do item escolhido.",
   },
   {
-    pergunta: "Posso pedir sabores ou temas diferentes no mesmo pedido?",
+    pergunta: "Existe quantidade mínima para pedidos?",
     resposta:
-      "Pode sim. Trabalhamos com combinações de sabores e temas dentro do mesmo pedido — só precisamos alinhar as quantidades de cada opção no orçamento.",
+      "Não temos quantidade mínima. Para pedidos menores, as opções de personalização podem variar de acordo com o produto e a quantidade escolhida.",
+  },
+  {
+    pergunta: "Vocês fazem pedidos para empresas e eventos?",
+    resposta:
+      "Sim! Produzimos encomendas para empresas, eventos, ações promocionais, confraternizações e presentes corporativos.",
+  },
+  {
+    pergunta: "Vocês atendem pedidos em grandes quantidades?",
+    resposta:
+      "Sim. Atendemos desde pequenas encomendas até pedidos corporativos em maiores quantidades. Para grandes volumes, recomendamos entrar em contato com antecedência.",
+  },
+  {
+    pergunta: "Posso solicitar um orçamento personalizado?",
+    resposta:
+      "Claro! Envie o produto desejado, quantidade, personalização e data de entrega. Nossa equipe prepara um orçamento de acordo com a sua necessidade.",
   },
 ];
+
 
 const depoimentos: { nome: string; contexto: string; texto: string; fotos?: string[] }[] = [
   {
