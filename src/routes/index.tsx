@@ -673,15 +673,45 @@ function Index() {
         </section>
 
         {/* CTA FINAL */}
-        <section className="mx-auto max-w-6xl px-5 py-16">
+        <section id="contato" className="mx-auto max-w-6xl px-5 py-16">
           <div className="rounded-3xl bg-navy px-6 py-16 text-center text-cream">
-            <h2 className="font-script text-4xl">Vamos adoçar sua próxima ação?</h2>
+            <h2 className="text-4xl">
+              Vamos adoçar sua próxima ação?
+            </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm opacity-80">
-              Conte a ocasião, a quantidade e a data. Respondemos com sabores, embalagens e prazos.
+              Quer um orçamento da linha de produtos da{" "}
+              <span className="font-script text-base">Xuxuzinho</span>, um evento especial ou uma
+              ocasião diferente? Conte a data, a quantidade e a ideia — respondemos com sabores,
+              embalagens e prazos.
             </p>
+
+            <ul className="mx-auto mt-8 grid max-w-3xl gap-3 sm:grid-cols-3">
+              {[
+                "Linha de produtos",
+                "Eventos especiais",
+                "Ocasiões personalizadas",
+              ].map((item) => (
+                <li
+                  key={item}
+                  className="rounded-2xl border border-cream/20 bg-cream/5 px-4 py-3 text-sm"
+                >
+                  {item}
+                </li>
+              ))}
+            </ul>
+
             <div className="mt-8 flex justify-center">
-              <WhatsButton>Pedir orçamento</WhatsButton>
+              <a
+                href="https://wa.me/5511950858045?text=Ol%C3%A1%2C%20Xuxuzinho!%20Gostaria%20de%20um%20or%C3%A7amento."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-cream px-8 py-4 text-sm font-medium text-navy transition-opacity hover:opacity-90"
+              >
+                <MessageCircle className="size-4" aria-hidden />
+                Pedir orçamento
+              </a>
             </div>
+            <p className="mt-4 text-xs opacity-70">WhatsApp (11) 95085-8045</p>
           </div>
         </section>
       </main>
