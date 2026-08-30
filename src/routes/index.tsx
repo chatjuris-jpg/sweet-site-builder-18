@@ -460,7 +460,7 @@ function Index() {
 
 
             <div className="mt-12">
-              <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
+              <WhatsButton size="sm">Falar com a <span className="font-script text-base">Xuxuzinho</span></WhatsButton>
             </div>
 
 
@@ -569,7 +569,7 @@ function Index() {
                   Marcas que confiam em nós
                 </h2>
                 <p className="mt-5 text-sm text-muted-foreground">
-                  Empresas que escolheram a Xuxuzinho para adoçar seus eventos, brindes e
+                  Empresas que escolheram a <span className="font-script text-base">Xuxuzinho</span> para adoçar seus eventos, brindes e
                   celebrações internas.
                 </p>
               </div>
