@@ -707,7 +707,7 @@ function Index() {
 
 
         {/* FAQ */}
-        <section className="mx-auto max-w-4xl px-5 py-16">
+        <section id="faq" className="mx-auto max-w-4xl px-5 py-16">
           <p className="section-eyebrow">Perguntas frequentes</p>
           <h2 className="mt-4 text-3xl font-semibold text-navy">
             Dúvidas antes de encomendar
