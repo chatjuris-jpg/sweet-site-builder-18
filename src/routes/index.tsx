@@ -482,6 +482,67 @@ function Index() {
           </div>
         </section>
 
+        {/* FEEDBACKS */}
+        <section id="feedbacks" className="mx-auto max-w-6xl px-5 py-16">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="section-eyebrow">Depoimentos</p>
+              <h2 className="mt-4 max-w-md text-3xl font-semibold text-navy">
+                O que dizem sobre a <span className="font-script font-normal">Xuxuzinho</span>
+              </h2>
+            </div>
+            <div className="flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4">
+              <p className="text-4xl font-semibold text-navy">4,9</p>
+              <div>
+                <div className="flex gap-0.5 text-plum">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} className="size-4 fill-current" aria-hidden />
+                  ))}
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  +1.000 avaliações no Google
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <ul className="mt-10 grid gap-5 md:grid-cols-3">
+            {depoimentos.map((d) => (
+              <li
+                key={d.nome}
+                className="flex flex-col rounded-3xl border border-border bg-card p-6"
+              >
+                <Quote className="size-6 text-plum" aria-hidden />
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  “{d.texto}”
+                </p>
+                <div className="mt-6 border-t border-border pt-4">
+                  <div className="flex gap-0.5 text-plum">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <Star key={i} className="size-3.5 fill-current" aria-hidden />
+                    ))}
+                  </div>
+                  <p className="mt-2 text-sm font-medium text-navy">{d.nome}</p>
+                  <p className="text-xs text-muted-foreground">{d.contexto}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 text-center">
+            <a
+              href="https://share.google/1phk8kyYl4jfbbDd5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-plum underline underline-offset-4"
+            >
+              Ver todas as avaliações no Google
+            </a>
+          </div>
+        </section>
+
+
+
         {/* CTA FINAL */}
         <section className="mx-auto max-w-6xl px-5 py-16">
           <div className="rounded-3xl bg-navy px-6 py-16 text-center text-cream">
