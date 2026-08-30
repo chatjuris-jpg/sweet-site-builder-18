@@ -195,7 +195,7 @@ function WhatsButton({
   );
 }
 
-function ProductCarousel({ imgs, title }: { imgs: string[]; title: string }) {
+function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: string[]; title: string; aspect?: string }) {
   const [i, setI] = useState(0);
   const go = (d: number) => setI((p) => (p + d + imgs.length) % imgs.length);
 
@@ -213,7 +213,7 @@ function ProductCarousel({ imgs, title }: { imgs: string[]; title: string }) {
             width={800}
             height={500}
             loading="lazy"
-            className="aspect-16/10 w-full shrink-0 object-cover"
+            className={`${aspect} w-full shrink-0 object-cover`}
           />
         ))}
       </div>
@@ -548,7 +548,7 @@ function Index() {
               >
                 {d.fotos?.length ? (
                   <div className="mb-4 overflow-hidden rounded-2xl">
-                    <ProductCarousel imgs={d.fotos} title={`Pedido de ${d.nome}`} />
+                    <ProductCarousel imgs={d.fotos} title={`Pedido de ${d.nome}`} aspect="aspect-4/3" />
                   </div>
                 ) : null}
                 <Quote className="size-6 text-plum" aria-hidden />
