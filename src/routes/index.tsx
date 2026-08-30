@@ -138,6 +138,29 @@ const marcas = [
   { nome: "Unicharm", src: logoUnicharm.url },
 ];
 
+const depoimentos = [
+  {
+    nome: "Ana Paula M.",
+    contexto: "Kits para colaboradores",
+    texto:
+      "Encomendei kits personalizados com a logo da empresa e o resultado foi impecável. Entrega no horário e todo mundo elogiou o sabor.",
+  },
+  {
+    nome: "Rodrigo S.",
+    contexto: "Confraternização corporativa",
+    texto:
+      "Atendimento atencioso do começo ao fim. A mesa de doces ficou linda e combinou perfeitamente com a identidade visual do evento.",
+  },
+  {
+    nome: "Juliana T.",
+    contexto: "Bentô cakes para clientes",
+    texto:
+      "Já é a terceira vez que peço. Capricho na decoração, embalagem impecável e um sabor que sempre surpreende quem recebe.",
+  },
+];
+
+
+
 
 function WhatsButton({
   children,
