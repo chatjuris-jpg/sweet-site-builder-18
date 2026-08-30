@@ -27,7 +27,10 @@ import logoUnicharm from "@/assets/unicharm.webp.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.webp.asset.json";
 
-import prodBolos from "@/assets/prod-bolos.webp";
+import outros1 from "@/assets/outros-1.webp.asset.json";
+import outros2 from "@/assets/outros-2.webp.asset.json";
+import outros3 from "@/assets/outros-3.webp.asset.json";
+import outros4 from "@/assets/outros-4.webp.asset.json";
 import bento1 from "@/assets/bento-1.webp.asset.json";
 import bento2 from "@/assets/bento-2.webp.asset.json";
 import bento3 from "@/assets/bento-3.webp.asset.json";
