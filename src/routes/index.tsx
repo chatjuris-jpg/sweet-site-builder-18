@@ -18,7 +18,7 @@ import logoUnicharm from "@/assets/unicharm.png.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 
-import prodBolosPersonalizados from "@/assets/prod-bolos-personalizados.webp";
+import prodBolos from "@/assets/prod-bolos.webp";
 import prodBento from "@/assets/prod-bento.webp";
 import prodBolachas from "@/assets/prod-bolachas.webp";
 import prodDocinhos from "@/assets/prod-docinhos.webp";
@@ -93,7 +93,7 @@ const produtos = [
     span: "sm:col-span-2 sm:row-span-2",
   },
   { imgs: [brownie1.url, brownie2.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
-  { imgs: [prodBolosPersonalizados], title: "Bolos", text: "Bolos artesanais para comemorações." },
+  { imgs: [prodBolos], title: "Bolos", text: "Bolos artesanais para comemorações." },
   {
     imgs: [prodDocinhos],
     title: "Docinhos",
