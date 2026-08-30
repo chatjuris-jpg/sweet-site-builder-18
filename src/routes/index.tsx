@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download } from "lucide-react";
 
 import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
@@ -499,6 +499,37 @@ function Index() {
 
 
 
+
+          {/* CATÁLOGO EM PDF */}
+          <div className="mt-12 overflow-hidden rounded-3xl bg-plum px-8 py-10 text-cream sm:px-12">
+            <div className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
+              <div className="flex items-start gap-5">
+                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-cream/15">
+                  <FileText className="h-7 w-7" aria-hidden="true" />
+                </span>
+                <div>
+                  <p className="text-xs font-medium tracking-[0.2em] uppercase text-cream/70">
+                    Catálogo completo
+                  </p>
+                  <h3 className="mt-2 text-2xl font-semibold sm:text-3xl">
+                    Acesse nosso catálogo abaixo e veja nossa linha completa
+                  </h3>
+                  <p className="mt-3 max-w-xl text-sm leading-relaxed text-cream/80">
+                    Sabores, opções de personalização, kits e formatos de embalagem em um único
+                    arquivo PDF, pronto para compartilhar com o seu time.
+                  </p>
+                </div>
+              </div>
+              <a
+                href="/catalogo-xuxuzinho.pdf"
+                download
+                className="inline-flex shrink-0 items-center gap-2 rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-plum transition-opacity hover:opacity-90"
+              >
+                <Download className="h-4 w-4" aria-hidden="true" />
+                Baixar catálogo (PDF)
+              </a>
+            </div>
+          </div>
 
           <div className="mt-8 flex justify-center">
             <WhatsButton size="sm">Consultar sabores e kits</WhatsButton>
