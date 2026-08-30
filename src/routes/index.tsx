@@ -17,7 +17,7 @@ import logoUnicharm from "@/assets/unicharm.png.asset.json";
 
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
-import prodCupcakes from "@/assets/prod-cupcakes.webp";
+
 import prodBolos from "@/assets/prod-bolos.webp";
 import prodBolosPersonalizados from "@/assets/prod-bolos-personalizados.webp";
 import prodBento from "@/assets/prod-bento.webp";
@@ -81,7 +81,7 @@ const servicos = [
 
 const produtos = [
   {
-    imgs: [prodCupcakes, cupcake1.url, cupcake2.url, cupcake3.url, cupcake4.url],
+    imgs: [cupcake1.url, cupcake2.url, cupcake3.url, cupcake4.url],
     title: "Cupcakes",
     text: "Mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
     span: "sm:col-span-2 sm:row-span-2",
