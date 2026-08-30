@@ -139,7 +139,7 @@ const marcas = [
   { nome: "Unicharm", src: logoUnicharm.url },
 ];
 
-const depoimentos = [
+const depoimentos: { nome: string; contexto: string; texto: string; foto?: string }[] = [
   {
     nome: "Natália Esplendor",
     contexto: "Bentô cakes de mesversário",
