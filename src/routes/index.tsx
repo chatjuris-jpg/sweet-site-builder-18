@@ -21,7 +21,10 @@ import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
 import prodBolos from "@/assets/prod-bolos.webp";
 import prodBento from "@/assets/prod-bento.webp";
 import prodBolachas from "@/assets/prod-bolachas.webp";
-import prodDocinhos from "@/assets/prod-docinhos.webp";
+import docinho1 from "@/assets/docinho-1.webp.asset.json";
+import docinho2 from "@/assets/docinho-2.webp.asset.json";
+import docinho3 from "@/assets/docinho-3.webp.asset.json";
+import docinho4 from "@/assets/docinho-4.webp.asset.json";
 import prodMinibolos from "@/assets/prod-minibolos.webp";
 import prodPaodemel from "@/assets/prod-paodemel.webp";
 import bolo1 from "@/assets/bolo-1.webp.asset.json";
@@ -95,7 +98,7 @@ const produtos = [
   { imgs: [brownie1.url, brownie2.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
   { imgs: [prodBolos], title: "Bolos", text: "Bolos artesanais para comemorações." },
   {
-    imgs: [prodDocinhos],
+    imgs: [docinho1.url, docinho2.url, docinho3.url, docinho4.url],
     title: "Docinhos",
     text: "Brigadeiros e docinhos finos para coffee breaks.",
   },
