@@ -140,24 +140,25 @@ const marcas = [
 
 const depoimentos = [
   {
-    nome: "Ana Paula M.",
-    contexto: "Kits para colaboradores",
+    nome: "Natália Esplendor",
+    contexto: "Bentô cakes de mesversário",
     texto:
-      "Encomendei kits personalizados com a logo da empresa e o resultado foi impecável. Entrega no horário e todo mundo elogiou o sabor.",
+      "Estou a 3 meses fazendo os pedidos do Bentô Class de mesversário do meu sobrinho e além dos bolinhos serem lindos o sabor é maravilhoso! 3 temas, 3 sabores e nenhum arrependimento, rs. O atendimento das meninas também é super rápido, entrega sempre certinha. Vamos assim até o primeiro aninho 🤩❤️🎂",
   },
   {
-    nome: "Rodrigo S.",
-    contexto: "Confraternização corporativa",
+    nome: "Kethelin De Oliveira Perandre",
+    contexto: "Bolo personalizado",
     texto:
-      "Atendimento atencioso do começo ao fim. A mesa de doces ficou linda e combinou perfeitamente com a identidade visual do evento.",
+      "A experiência já começa no atendimento: rápido, preciso e extremamente atencioso. Quando recebi o bolo, entendi por que são realmente uma referência no que fazem. Tudo é pensado com muito cuidado, desde a embalagem até cada detalhe da apresentação. O bolo, além de lindo, é simplesmente delicioso. Sério, está impecável! Estão de parabéns pelo trabalho e pelo carinho em cada etapa. Com toda certeza acompanharão os próximos 12 meses do meu pequeno. Os registros ficaram lindos!",
   },
   {
-    nome: "Juliana T.",
-    contexto: "Bentô cakes para clientes",
+    nome: "Suellen Ferreira",
+    contexto: "Cliente recorrente",
     texto:
-      "Já é a terceira vez que peço. Capricho na decoração, embalagem impecável e um sabor que sempre surpreende quem recebe.",
+      "Mais uma vez só tenho a agradecer a atenção, do pedido até a entrega. O capricho em atender nosso pedido e oferecer com atenção e pontualidade vale o preço pago. Nunca é só um bolo. Representam de verdade o nosso amor no pedido.",
   },
 ];
+
 
 
 
