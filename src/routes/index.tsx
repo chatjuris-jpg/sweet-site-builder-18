@@ -35,7 +35,7 @@ import bento1 from "@/assets/bento-1.webp.asset.json";
 import bento2 from "@/assets/bento-2.webp.asset.json";
 import bento3 from "@/assets/bento-3.webp.asset.json";
 import bento4 from "@/assets/bento-4.webp.asset.json";
-import prodBolachas from "@/assets/prod-bolachas.webp";
+
 import docinho1 from "@/assets/docinho-1.webp.asset.json";
 import docinho2 from "@/assets/docinho-2.webp.asset.json";
 import docinho3 from "@/assets/docinho-3.webp.asset.json";
