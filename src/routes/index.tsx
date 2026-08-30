@@ -2,28 +2,28 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download } from "lucide-react";
 
-import logoX from "@/assets/logo-x.png.asset.json";
-import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
-import brandX from "@/assets/x-logo.png.asset.json";
-import fotoNatalia from "@/assets/depoimento-natalia.png.asset.json";
-import fotoKethelin1 from "@/assets/depoimento-kethelin-18.png.asset.json";
-import fotoKethelin2 from "@/assets/depoimento-kethelin-19.png.asset.json";
-import fotoKethelin3 from "@/assets/depoimento-kethelin-20.png.asset.json";
-import fotoSuellen1 from "@/assets/depoimento-suellen-21.png.asset.json";
-import fotoSuellen2 from "@/assets/depoimento-suellen-22.png.asset.json";
-import fotoSuellen3 from "@/assets/depoimento-suellen-23.png.asset.json";
+import logoX from "@/assets/logo-x.webp.asset.json";
+import wordmark from "@/assets/wordmark-xuxuzinho-v2.webp.asset.json";
+import brandX from "@/assets/x-logo.webp.asset.json";
+import fotoNatalia from "@/assets/depoimento-natalia.webp.asset.json";
+import fotoKethelin1 from "@/assets/depoimento-kethelin-18.webp.asset.json";
+import fotoKethelin2 from "@/assets/depoimento-kethelin-19.webp.asset.json";
+import fotoKethelin3 from "@/assets/depoimento-kethelin-20.webp.asset.json";
+import fotoSuellen1 from "@/assets/depoimento-suellen-21.webp.asset.json";
+import fotoSuellen2 from "@/assets/depoimento-suellen-22.webp.asset.json";
+import fotoSuellen3 from "@/assets/depoimento-suellen-23.webp.asset.json";
 
-import logoPilot from "@/assets/pilot.png.asset.json";
-import logoLojasMel from "@/assets/lojasmel.png.asset.json";
-import logoRevelo from "@/assets/revelo.jpg.asset.json";
-import logoPetCare from "@/assets/petcare.png.asset.json";
-import logoFoodToSave from "@/assets/foodtosave.png.asset.json";
-import logoEspiritoSanto from "@/assets/espiritosanto.jpg.asset.json";
-import logoPluris from "@/assets/pluris.png.asset.json";
-import logoUnicharm from "@/assets/unicharm.png.asset.json";
+import logoPilot from "@/assets/pilot.webp.asset.json";
+import logoLojasMel from "@/assets/lojasmel.webp.asset.json";
+import logoRevelo from "@/assets/revelo.webp.asset.json";
+import logoPetCare from "@/assets/petcare.webp.asset.json";
+import logoFoodToSave from "@/assets/foodtosave.webp.asset.json";
+import logoEspiritoSanto from "@/assets/espiritosanto.webp.asset.json";
+import logoPluris from "@/assets/pluris.webp.asset.json";
+import logoUnicharm from "@/assets/unicharm.webp.asset.json";
 
 
-import heroCupcakeAsset from "@/assets/hero-cupcake.jpg.asset.json";
+import heroCupcakeAsset from "@/assets/hero-cupcake.webp.asset.json";
 
 import prodBolos from "@/assets/prod-bolos.webp";
 import bento1 from "@/assets/bento-1.webp.asset.json";
