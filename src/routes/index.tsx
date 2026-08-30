@@ -27,12 +27,15 @@ import logoUnicharm from "@/assets/unicharm.webp.asset.json";
 
 import heroCupcakeAsset from "@/assets/hero-cupcake.webp.asset.json";
 
-import prodBolos from "@/assets/prod-bolos.webp";
+import outros1 from "@/assets/outros-1.webp.asset.json";
+import outros2 from "@/assets/outros-2.webp.asset.json";
+import outros3 from "@/assets/outros-3.webp.asset.json";
+import outros4 from "@/assets/outros-4.webp.asset.json";
 import bento1 from "@/assets/bento-1.webp.asset.json";
 import bento2 from "@/assets/bento-2.webp.asset.json";
 import bento3 from "@/assets/bento-3.webp.asset.json";
 import bento4 from "@/assets/bento-4.webp.asset.json";
-import prodBolachas from "@/assets/prod-bolachas.webp";
+
 import docinho1 from "@/assets/docinho-1.webp.asset.json";
 import docinho2 from "@/assets/docinho-2.webp.asset.json";
 import docinho3 from "@/assets/docinho-3.webp.asset.json";
@@ -114,7 +117,7 @@ const produtos = [
     span: "sm:col-span-2 sm:row-span-2",
   },
   { imgs: [brownie1.url, brownie2.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
-  { imgs: [prodBolos], title: "Bolos", text: "Bolos artesanais para comemorações." },
+  
   {
     imgs: [docinho1.url, docinho2.url, docinho3.url, docinho4.url],
     title: "Docinhos",
@@ -132,8 +135,12 @@ const produtos = [
     span: "sm:col-span-2",
   },
   { imgs: [bento1.url, bento2.url, bento3.url, bento4.url], title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
-  { imgs: [prodBolachas], title: "Bolachas", text: "Biscoitos com pintura manual." },
   { imgs: [minibolo1.url, minibolo2.url, minibolo3.url, minibolo4.url], title: "Mini Bolos", text: "Porções individuais elegantes." },
+  {
+    imgs: [outros1.url, outros2.url, outros3.url, outros4.url],
+    title: "Outros Produtos",
+    text: "Kits, cestas, drageados e canecas personalizadas para a sua marca.",
+  },
 ];
 
 const marcas = [
