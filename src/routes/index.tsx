@@ -5,6 +5,7 @@ import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, Chev
 import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
 import brandX from "@/assets/x-logo.png.asset.json";
+import fotoNatalia from "@/assets/depoimento-natalia.png.asset.json";
 
 import logoPilot from "@/assets/pilot.png.asset.json";
 import logoLojasMel from "@/assets/lojasmel.png.asset.json";
@@ -138,10 +139,11 @@ const marcas = [
   { nome: "Unicharm", src: logoUnicharm.url },
 ];
 
-const depoimentos = [
+const depoimentos: { nome: string; contexto: string; texto: string; foto?: string }[] = [
   {
     nome: "Natália Esplendor",
     contexto: "Bentô cakes de mesversário",
+    foto: fotoNatalia.url,
     texto:
       "Estou a 3 meses fazendo os pedidos do Bentô Class de mesversário do meu sobrinho e além dos bolinhos serem lindos o sabor é maravilhoso! 3 temas, 3 sabores e nenhum arrependimento, rs. O atendimento das meninas também é super rápido, entrega sempre certinha. Vamos assim até o primeiro aninho 🤩❤️🎂",
   },
@@ -536,6 +538,14 @@ function Index() {
                 key={d.nome}
                 className="flex flex-col rounded-3xl border border-border bg-card p-6"
               >
+                {d.foto ? (
+                  <img
+                    src={d.foto}
+                    alt={`Pedido de ${d.nome}`}
+                    loading="lazy"
+                    className="mb-4 aspect-16/10 w-full rounded-2xl object-cover"
+                  />
+                ) : null}
                 <Quote className="size-6 text-plum" aria-hidden />
                 <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
                   “{d.texto}”
