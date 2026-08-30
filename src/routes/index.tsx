@@ -716,9 +716,25 @@ function Index() {
         </section>
       </main>
 
-      <footer className="bg-navy py-8 text-center text-xs text-cream/70">
+      <footer className="bg-navy py-10 text-center text-xs text-cream/70">
         <p className="font-script text-lg text-cream">Xuxuzinho</p>
-        <p className="mt-2">Confeitaria artesanal · Tatuapé, São Paulo · Pedidos pelo WhatsApp</p>
+        <p className="mt-2">Confeitaria artesanal · Pedidos pelo WhatsApp (11) 95085-8045</p>
+
+        <address className="mt-5 not-italic">
+          <span className="inline-flex items-center gap-2 text-cream/80">
+            <MapPin className="size-3.5" aria-hidden />
+            R. Manuel de Atouguia, 14 – Tatuapé, São Paulo/SP · CEP 03313-020
+          </span>
+        </address>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=R.+Manuel+de+Atouguia%2C+14+-+Tatuap%C3%A9%2C+S%C3%A3o+Paulo+-+SP%2C+03313-020"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-3 inline-block underline underline-offset-4 hover:text-cream"
+        >
+          Ver no Google Maps
+        </a>
       </footer>
 
       <div className="fixed right-5 bottom-5 z-50">
