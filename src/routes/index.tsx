@@ -26,7 +26,10 @@ import docinho2 from "@/assets/docinho-2.webp.asset.json";
 import docinho3 from "@/assets/docinho-3.webp.asset.json";
 import docinho4 from "@/assets/docinho-4.webp.asset.json";
 import prodMinibolos from "@/assets/prod-minibolos.webp";
-import prodPaodemel from "@/assets/prod-paodemel.webp";
+import paodemel1 from "@/assets/paodemel-1.webp.asset.json";
+import paodemel2 from "@/assets/paodemel-2.webp.asset.json";
+import paodemel3 from "@/assets/paodemel-3.webp.asset.json";
+import paodemel4 from "@/assets/paodemel-4.webp.asset.json";
 import bolo1 from "@/assets/bolo-1.webp.asset.json";
 import bolo2 from "@/assets/bolo-2.webp.asset.json";
 import bolo3 from "@/assets/bolo-3.webp.asset.json";
@@ -103,7 +106,7 @@ const produtos = [
     text: "Brigadeiros e docinhos finos para coffee breaks.",
   },
   {
-    imgs: [prodPaodemel],
+    imgs: [paodemel1.url, paodemel2.url, paodemel3.url, paodemel4.url],
     title: "Pão de Mel",
     text: "Recheado e banhado em chocolate nobre.",
   },
