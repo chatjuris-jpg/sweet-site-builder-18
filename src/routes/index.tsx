@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote } from "lucide-react";
 
 import logoX from "@/assets/logo-x.png.asset.json";
 import wordmark from "@/assets/wordmark-xuxuzinho-v2.png.asset.json";
@@ -137,6 +137,29 @@ const marcas = [
   { nome: "Pluris", src: logoPluris.url },
   { nome: "Unicharm", src: logoUnicharm.url },
 ];
+
+const depoimentos = [
+  {
+    nome: "Ana Paula M.",
+    contexto: "Kits para colaboradores",
+    texto:
+      "Encomendei kits personalizados com a logo da empresa e o resultado foi impecável. Entrega no horário e todo mundo elogiou o sabor.",
+  },
+  {
+    nome: "Rodrigo S.",
+    contexto: "Confraternização corporativa",
+    texto:
+      "Atendimento atencioso do começo ao fim. A mesa de doces ficou linda e combinou perfeitamente com a identidade visual do evento.",
+  },
+  {
+    nome: "Juliana T.",
+    contexto: "Bentô cakes para clientes",
+    texto:
+      "Já é a terceira vez que peço. Capricho na decoração, embalagem impecável e um sabor que sempre surpreende quem recebe.",
+  },
+];
+
+
 
 
 function WhatsButton({
@@ -481,6 +504,67 @@ function Index() {
             </div>
           </div>
         </section>
+
+        {/* FEEDBACKS */}
+        <section id="feedbacks" className="mx-auto max-w-6xl px-5 py-16">
+          <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="section-eyebrow">Depoimentos</p>
+              <h2 className="mt-4 max-w-md text-3xl font-semibold text-navy">
+                O que dizem sobre a <span className="font-script font-normal">Xuxuzinho</span>
+              </h2>
+            </div>
+            <div className="flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4">
+              <p className="text-4xl font-semibold text-navy">4,9</p>
+              <div>
+                <div className="flex gap-0.5 text-plum">
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <Star key={i} className="size-4 fill-current" aria-hidden />
+                  ))}
+                </div>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  +1.000 avaliações no Google
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <ul className="mt-10 grid gap-5 md:grid-cols-3">
+            {depoimentos.map((d) => (
+              <li
+                key={d.nome}
+                className="flex flex-col rounded-3xl border border-border bg-card p-6"
+              >
+                <Quote className="size-6 text-plum" aria-hidden />
+                <p className="mt-4 flex-1 text-sm leading-relaxed text-muted-foreground">
+                  “{d.texto}”
+                </p>
+                <div className="mt-6 border-t border-border pt-4">
+                  <div className="flex gap-0.5 text-plum">
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <Star key={i} className="size-3.5 fill-current" aria-hidden />
+                    ))}
+                  </div>
+                  <p className="mt-2 text-sm font-medium text-navy">{d.nome}</p>
+                  <p className="text-xs text-muted-foreground">{d.contexto}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-8 text-center">
+            <a
+              href="https://share.google/1phk8kyYl4jfbbDd5"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-plum underline underline-offset-4"
+            >
+              Ver todas as avaliações no Google
+            </a>
+          </div>
+        </section>
+
+
 
         {/* CTA FINAL */}
         <section className="mx-auto max-w-6xl px-5 py-16">
