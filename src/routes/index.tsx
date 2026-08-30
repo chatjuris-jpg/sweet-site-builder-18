@@ -535,8 +535,8 @@ function Index() {
                 </div>
               </div>
               <a
-                href="/catalogo-xuxuzinho.pdf"
-                download
+                href={catalogoPdf.url}
+                download="catalogo-xuxuzinho.pdf"
                 className="inline-flex shrink-0 items-center gap-2 rounded-full bg-cream px-7 py-3.5 text-sm font-medium text-plum transition-opacity hover:opacity-90"
               >
                 <Download className="h-4 w-4" aria-hidden="true" />
