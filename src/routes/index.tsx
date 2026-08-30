@@ -26,6 +26,10 @@ import prodBrownie from "@/assets/prod-brownie.webp";
 import prodDocinhos from "@/assets/prod-docinhos.webp";
 import prodMinibolos from "@/assets/prod-minibolos.webp";
 import prodPaodemel from "@/assets/prod-paodemel.webp";
+import cupcake1 from "@/assets/cupcake-1.webp.asset.json";
+import cupcake2 from "@/assets/cupcake-2.webp.asset.json";
+import cupcake3 from "@/assets/cupcake-3.webp.asset.json";
+import cupcake4 from "@/assets/cupcake-4.webp.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
