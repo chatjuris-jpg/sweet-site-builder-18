@@ -145,6 +145,39 @@ const marcas = [
   { nome: "Unicharm", src: logoUnicharm.url },
 ];
 
+const faqs = [
+  {
+    pergunta: "Com quanto tempo de antecedência preciso fazer o pedido?",
+    resposta:
+      "Para pedidos personalizados, recomendamos de 7 a 10 dias de antecedência. Para volumes maiores ou datas comemorativas, quanto antes melhor — a agenda costuma fechar rápido.",
+  },
+  {
+    pergunta: "Existe quantidade mínima por pedido?",
+    resposta:
+      "Sim, a quantidade mínima varia conforme o produto e o tipo de personalização. Fale com a gente pelo WhatsApp que passamos o mínimo e o valor exato para o seu caso.",
+  },
+  {
+    pergunta: "Vocês personalizam com a logo ou identidade visual da empresa?",
+    resposta:
+      "Personalizamos com logo, cores, adesivos e embalagens de acordo com a identidade da sua marca ou do seu evento. É só enviar os arquivos e a gente cuida do resto.",
+  },
+  {
+    pergunta: "Quais são as opções de entrega?",
+    resposta:
+      "Estamos no Tatuapé, em São Paulo, e atendemos com entrega na capital e região. Também é possível retirar no local em horário combinado.",
+  },
+  {
+    pergunta: "Como funciona o pagamento?",
+    resposta:
+      "O pedido é confirmado com sinal e o restante é pago antes da entrega. Aceitamos Pix, cartão e emitimos nota fiscal para pedidos corporativos.",
+  },
+  {
+    pergunta: "Posso pedir sabores ou temas diferentes no mesmo pedido?",
+    resposta:
+      "Pode sim. Trabalhamos com combinações de sabores e temas dentro do mesmo pedido — só precisamos alinhar as quantidades de cada opção no orçamento.",
+  },
+];
+
 const depoimentos: { nome: string; contexto: string; texto: string; fotos?: string[] }[] = [
   {
     nome: "Natália Esplendor",
@@ -581,6 +614,32 @@ function Index() {
         </section>
 
 
+
+
+        {/* FAQ */}
+        <section className="mx-auto max-w-4xl px-5 py-16">
+          <p className="section-eyebrow">Perguntas frequentes</p>
+          <h2 className="mt-4 text-3xl font-semibold text-navy">
+            Dúvidas antes de encomendar
+          </h2>
+
+          <div className="mt-10 divide-y divide-border border-y border-border">
+            {faqs.map((f) => (
+              <details key={f.pergunta} className="group py-5">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-navy">
+                  {f.pergunta}
+                  <ChevronRight
+                    className="size-4 shrink-0 text-plum transition-transform group-open:rotate-90"
+                    aria-hidden
+                  />
+                </summary>
+                <p className="mt-3 pr-8 text-sm leading-relaxed text-muted-foreground">
+                  {f.resposta}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
 
         {/* CTA FINAL */}
         <section className="mx-auto max-w-6xl px-5 py-16">
