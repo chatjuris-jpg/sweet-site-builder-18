@@ -9,6 +9,9 @@ import fotoNatalia from "@/assets/depoimento-natalia.png.asset.json";
 import fotoKethelin1 from "@/assets/depoimento-kethelin-18.png.asset.json";
 import fotoKethelin2 from "@/assets/depoimento-kethelin-19.png.asset.json";
 import fotoKethelin3 from "@/assets/depoimento-kethelin-20.png.asset.json";
+import fotoSuellen1 from "@/assets/depoimento-suellen-21.png.asset.json";
+import fotoSuellen2 from "@/assets/depoimento-suellen-22.png.asset.json";
+import fotoSuellen3 from "@/assets/depoimento-suellen-23.png.asset.json";
 
 import logoPilot from "@/assets/pilot.png.asset.json";
 import logoLojasMel from "@/assets/lojasmel.png.asset.json";
@@ -160,6 +163,7 @@ const depoimentos: { nome: string; contexto: string; texto: string; fotos?: stri
   {
     nome: "Suellen Ferreira",
     contexto: "Cliente recorrente",
+    fotos: [fotoSuellen1.url, fotoSuellen2.url, fotoSuellen3.url],
     texto:
       "Mais uma vez só tenho a agradecer a atenção, do pedido até a entrega. O capricho em atender nosso pedido e oferecer com atenção e pontualidade vale o preço pago. Nunca é só um bolo. Representam de verdade o nosso amor no pedido.",
   },
