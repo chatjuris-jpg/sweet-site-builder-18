@@ -4,11 +4,17 @@ import { cn } from "@/lib/utils";
  * Nome da marca escrito conforme o manual: fonte script + coração no lugar
  * do pingo da letra "i".
  */
-export function BrandName({ className }: { className?: string }) {
+export function BrandName({
+  className,
+  withoutX = false,
+}: {
+  className?: string;
+  withoutX?: boolean;
+}) {
   return (
     <span className={cn("font-script whitespace-nowrap", className)}>
       <span aria-hidden="true">
-        Xuxuz
+        {withoutX ? "uxuz" : "Xuxuz"}
         <span className="relative inline-block">
           ı
           <span
@@ -20,7 +26,7 @@ export function BrandName({ className }: { className?: string }) {
         </span>
         nho
       </span>
-      <span className="sr-only">Xuxuzinho</span>
+      <span className="sr-only">{withoutX ? "uxuzinho" : "Xuxuzinho"}</span>
     </span>
   );
 }

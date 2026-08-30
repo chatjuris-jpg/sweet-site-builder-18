@@ -420,7 +420,7 @@ function Index() {
                     decoding="async"
                     className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
                     />
-                    <span className="-ml-[0.22em] font-script font-normal text-navy">uxuzinho</span>
+                    <BrandName withoutX className="-ml-[0.22em] font-normal text-navy" />
                   </span>
                   ?
                 </h2>
@@ -460,7 +460,7 @@ function Index() {
 
 
             <div className="mt-12">
-              <WhatsButton size="sm">Falar com a <span className="font-script text-base">Xuxuzinho</span></WhatsButton>
+              <WhatsButton size="sm">Falar com a <BrandName className="text-base" /></WhatsButton>
             </div>
 
 
@@ -484,7 +484,7 @@ function Index() {
                     decoding="async"
                     className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
                   />
-                  <span className="-ml-[0.22em] font-script font-normal text-navy">uxuzinho</span>
+                  <BrandName withoutX className="-ml-[0.22em] font-normal text-navy" />
                 </span>{" "}
                 produz
               </h2>
@@ -569,7 +569,7 @@ function Index() {
                   Marcas que confiam em nós
                 </h2>
                 <p className="mt-5 text-sm text-muted-foreground">
-                  Empresas que escolheram a <span className="font-script text-base">Xuxuzinho</span> para adoçar seus eventos, brindes e
+                  Empresas que escolheram a <BrandName className="text-base" /> para adoçar seus eventos, brindes e
                   celebrações internas.
                 </p>
               </div>
@@ -602,7 +602,7 @@ function Index() {
             <div>
               <p className="section-eyebrow">Depoimentos</p>
               <h2 className="mt-4 max-w-md text-3xl font-semibold text-navy">
-                O que dizem sobre a <span className="font-script font-normal">Xuxuzinho</span>
+                O que dizem sobre a <BrandName className="font-normal" />
               </h2>
             </div>
             <div className="flex items-center gap-4 rounded-2xl border border-border bg-card px-5 py-4">
@@ -696,7 +696,7 @@ function Index() {
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm opacity-80">
               Quer um orçamento da linha de produtos da{" "}
-              <span className="font-script text-base">Xuxuzinho</span>, um evento especial ou uma
+              <BrandName className="text-base" />, um evento especial ou uma
               ocasião diferente? Conte a data, a quantidade e a ideia — respondemos com sabores,
               embalagens e prazos.
             </p>
@@ -733,7 +733,7 @@ function Index() {
       </main>
 
       <footer className="bg-navy py-10 text-center text-xs text-cream/70">
-        <p className="font-script text-lg text-cream">Xuxuzinho</p>
+        <p className="text-lg text-cream"><BrandName /></p>
         <p className="mt-2">Confeitaria artesanal · Pedidos pelo WhatsApp (11) 95085-8045</p>
 
         <address className="mt-5 not-italic">
