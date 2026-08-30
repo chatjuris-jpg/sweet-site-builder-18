@@ -132,8 +132,12 @@ const produtos = [
     span: "sm:col-span-2",
   },
   { imgs: [bento1.url, bento2.url, bento3.url, bento4.url], title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
-  { imgs: [prodBolachas], title: "Bolachas", text: "Biscoitos com pintura manual." },
   { imgs: [minibolo1.url, minibolo2.url, minibolo3.url, minibolo4.url], title: "Mini Bolos", text: "Porções individuais elegantes." },
+  {
+    imgs: [outros1.url, outros2.url, outros3.url, outros4.url],
+    title: "Outros Produtos",
+    text: "Kits, cestas, drageados e canecas personalizadas para a sua marca.",
+  },
 ];
 
 const marcas = [
