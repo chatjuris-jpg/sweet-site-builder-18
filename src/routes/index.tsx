@@ -442,19 +442,7 @@ function Index() {
                 <h2 className="mt-4 text-4xl leading-tight font-semibold text-navy sm:text-5xl">
                   Por que escolher
                   <br />
-                  a{" "}
-                  <span className="inline-flex items-baseline whitespace-nowrap align-baseline">
-                    <img
-                      src={brandX.url}
-                      alt=""
-                      aria-hidden="true"
-                      loading="lazy"
-                    decoding="async"
-                    className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
-                    />
-                    <BrandName withoutX className="-ml-[0.22em] font-normal text-navy" />
-                  </span>
-                  ?
+                  a Xuxuzinho?
                 </h2>
               </div>
               <p className="text-muted-foreground md:pb-2">
