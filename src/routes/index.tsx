@@ -411,7 +411,7 @@ function ProductRow({
 
 function ProductShowcase() {
   return (
-    <div className="space-y-16 lg:space-y-24">
+    <div className="space-y-10 lg:space-y-12">
       {produtos.map((p, idx) => (
         <ProductRow key={p.title} produto={p} reverse={idx % 2 === 1} index={idx} />
       ))}
