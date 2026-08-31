@@ -764,7 +764,7 @@ function Index() {
       </main>
 
       <footer className="bg-navy py-10 text-center text-xs text-cream/70">
-        <p className="text-lg text-cream"><BrandName /></p>
+        <p className="text-lg font-semibold text-cream">Xuxuzinho</p>
         <p className="mt-2">Confeitaria artesanal · Pedidos pelo WhatsApp (11) 95085-8045</p>
 
         <address className="mt-5 not-italic">
