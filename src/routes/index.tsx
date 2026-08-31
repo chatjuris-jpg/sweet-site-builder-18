@@ -318,7 +318,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
 function ProductShowcase() {
   const [sel, setSel] = useState(0);
   const [i, setI] = useState(0);
-  const p = produtos[sel];
+  const p = produtos[sel]!;
   const imgs = p.imgs;
   const go = (d: number) => setI((v) => (v + d + imgs.length) % imgs.length);
 
