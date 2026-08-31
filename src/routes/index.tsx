@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { BrandName } from "@/components/BrandName";
-import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download } from "lucide-react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download, X as XIcon, Expand } from "lucide-react";
 
 import catalogoPdf from "@/assets/catalogo-xuxuzinho.pdf.asset.json";
 import logoX from "@/assets/logo-x.webp.asset.json";
@@ -253,8 +253,76 @@ function WhatsButton({
   );
 }
 
+function Lightbox({
+  imgs,
+  index,
+  title,
+  onClose,
+  onNav,
+}: {
+  imgs: string[];
+  index: number;
+  title: string;
+  onClose: () => void;
+  onNav: (d: number) => void;
+}) {
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={`Foto ampliada de ${title}`}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-navy/90 p-4 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <button
+        type="button"
+        aria-label="Fechar"
+        onClick={onClose}
+        className="absolute top-5 right-5 rounded-full bg-cream/95 p-2.5 text-navy shadow-md transition hover:bg-cream"
+      >
+        <XIcon className="size-5" aria-hidden />
+      </button>
+
+      <img
+        src={imgs[index]}
+        alt={`${title} — foto ${index + 1} ampliada`}
+        onClick={(e) => e.stopPropagation()}
+        className="max-h-[85vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl"
+      />
+
+      {imgs.length > 1 && (
+        <>
+          <button
+            type="button"
+            aria-label="Foto anterior"
+            onClick={(e) => {
+              e.stopPropagation();
+              onNav(-1);
+            }}
+            className="absolute top-1/2 left-3 -translate-y-1/2 rounded-full bg-cream/95 p-3 text-navy shadow-md transition hover:bg-cream sm:left-8"
+          >
+            <ChevronLeft className="size-5" aria-hidden />
+          </button>
+          <button
+            type="button"
+            aria-label="Próxima foto"
+            onClick={(e) => {
+              e.stopPropagation();
+              onNav(1);
+            }}
+            className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full bg-cream/95 p-3 text-navy shadow-md transition hover:bg-cream sm:right-8"
+          >
+            <ChevronRight className="size-5" aria-hidden />
+          </button>
+        </>
+      )}
+    </div>
+  );
+}
+
 function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: string[]; title: string; aspect?: string }) {
   const [i, setI] = useState(0);
+  const [zoom, setZoom] = useState(false);
   const go = (d: number) => setI((p) => (p + d + imgs.length) % imgs.length);
 
   return (
@@ -264,7 +332,16 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
         style={{ transform: `translateX(-${i * 100}%)` }}
       >
         {imgs.map((src, idx) => (
-          <div key={src} className={`${aspect} relative w-full shrink-0 overflow-hidden bg-sand`}>
+          <button
+            type="button"
+            key={src}
+            onClick={() => {
+              setI(idx);
+              setZoom(true);
+            }}
+            aria-label={`Ampliar foto ${idx + 1} de ${title}`}
+            className={`${aspect} group/zoom relative w-full shrink-0 cursor-zoom-in overflow-hidden bg-sand`}
+          >
             <img
               src={src}
               alt={`${title} — foto ${idx + 1}`}
@@ -272,11 +349,25 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
               height={500}
               loading="lazy"
               decoding="async"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover transition-transform duration-500 group-hover/zoom:scale-[1.04]"
             />
-          </div>
+            <span className="pointer-events-none absolute top-3 right-3 flex items-center justify-center rounded-full bg-cream/90 p-2 text-navy opacity-0 shadow-md transition-opacity group-hover/car:opacity-100">
+              <Expand className="size-4" aria-hidden />
+            </span>
+          </button>
         ))}
       </div>
+
+      {zoom && (
+        <Lightbox
+          imgs={imgs}
+          index={i}
+          title={title}
+          onClose={() => setZoom(false)}
+          onNav={go}
+        />
+      )}
+
 
       {imgs.length > 1 && (
         <>
@@ -507,16 +598,18 @@ function Index() {
             </p>
           </div>
 
-          <div id="produtos" className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div id="produtos" className="mt-10 grid gap-7 sm:grid-cols-2">
             {produtos.map((p) => (
               <article
                 key={p.title}
                 className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border/60 transition-shadow hover:shadow-md"
               >
-                <ProductCarousel imgs={p.imgs} title={p.title} />
-                <div className="p-6">
-                  <h3 className="text-lg font-semibold text-navy">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{p.text}</p>
+                <ProductCarousel imgs={p.imgs} title={p.title} aspect="aspect-4/3" />
+                <div className="p-7">
+                  <h3 className="text-xl font-semibold text-navy sm:text-2xl">{p.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground sm:text-base">
+                    {p.text}
+                  </p>
                 </div>
               </article>
             ))}
