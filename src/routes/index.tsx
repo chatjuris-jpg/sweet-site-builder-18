@@ -608,7 +608,7 @@ function Index() {
 
 
             <div className="mt-12">
-              <WhatsButton size="sm">Falar com a <BrandName className="text-base" /></WhatsButton>
+              <WhatsButton size="sm">Falar com a Xuxuzinho</WhatsButton>
             </div>
 
 
