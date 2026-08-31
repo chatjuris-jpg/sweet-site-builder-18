@@ -329,7 +329,7 @@ function ProductRow({
   const go = (d: number) => setI((v) => (v + d + imgs.length) % imgs.length);
 
   return (
-    <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+    <article className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
       {/* Carrossel */}
       <div
         className={`relative overflow-hidden rounded-[2rem] bg-sand shadow-sm ring-1 ring-border/60 ${
@@ -343,7 +343,7 @@ function ProductRow({
           {imgs.map((src, idx) => (
             <div
               key={src}
-              className="flex h-[320px] w-full shrink-0 items-center justify-center sm:h-[420px] lg:h-[460px]"
+              className="flex h-[280px] w-full shrink-0 items-center justify-center sm:h-[340px] lg:h-[380px]"
             >
               <img
                 src={src}
@@ -396,12 +396,12 @@ function ProductRow({
         <span className="text-xs font-medium tracking-[0.22em] text-plum/60">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <h3 className="mt-3 text-3xl font-semibold text-navy sm:text-4xl">{produto.title}</h3>
-        <div className="mt-4 h-px w-16 bg-plum/40" />
-        <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+        <h3 className="mt-2 text-2xl font-semibold text-navy sm:text-3xl">{produto.title}</h3>
+        <div className="mt-3 h-px w-14 bg-plum/40" />
+        <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
           {produto.text}
         </p>
-        <p className="mt-6 text-sm text-plum/70">
+        <p className="mt-4 text-xs text-plum/70">
           {imgs.length} fotos · personalização sob medida
         </p>
       </div>
@@ -411,7 +411,7 @@ function ProductRow({
 
 function ProductShowcase() {
   return (
-    <div className="space-y-16 lg:space-y-24">
+    <div className="space-y-10 lg:space-y-12">
       {produtos.map((p, idx) => (
         <ProductRow key={p.title} produto={p} reverse={idx % 2 === 1} index={idx} />
       ))}
