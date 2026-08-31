@@ -872,7 +872,13 @@ function Index() {
       </main>
 
       <footer className="bg-navy py-10 text-center text-xs text-cream/70">
-        <p className="text-lg font-semibold text-cream">Xuxuzinho</p>
+        <img
+          src={wordmarkFooter.url}
+          alt="Xuxuzinho"
+          loading="lazy"
+          decoding="async"
+          className="mx-auto h-10 w-auto [filter:brightness(0)_invert(1)] opacity-90"
+        />
         <p className="mt-2">Confeitaria artesanal · Pedidos pelo WhatsApp (11) 95085-8045</p>
 
         <address className="mt-5 not-italic">
