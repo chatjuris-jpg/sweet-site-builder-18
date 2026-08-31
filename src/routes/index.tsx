@@ -442,19 +442,7 @@ function Index() {
                 <h2 className="mt-4 text-4xl leading-tight font-semibold text-navy sm:text-5xl">
                   Por que escolher
                   <br />
-                  a{" "}
-                  <span className="inline-flex items-baseline whitespace-nowrap align-baseline">
-                    <img
-                      src={brandX.url}
-                      alt=""
-                      aria-hidden="true"
-                      loading="lazy"
-                    decoding="async"
-                    className="h-[0.95em] w-auto translate-y-[0.16em] select-none"
-                    />
-                    <BrandName withoutX className="-ml-[0.22em] font-normal text-navy" />
-                  </span>
-                  ?
+                  a Xuxuzinho?
                 </h2>
               </div>
               <p className="text-muted-foreground md:pb-2">
@@ -776,7 +764,7 @@ function Index() {
       </main>
 
       <footer className="bg-navy py-10 text-center text-xs text-cream/70">
-        <p className="text-lg text-cream"><BrandName /></p>
+        <p className="text-lg font-semibold text-cream">Xuxuzinho</p>
         <p className="mt-2">Confeitaria artesanal · Pedidos pelo WhatsApp (11) 95085-8045</p>
 
         <address className="mt-5 not-italic">
