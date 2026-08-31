@@ -409,12 +409,23 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
 
 
 
+const NAV_LINKS = [
+  { href: "#corporativo", label: "Corporativo" },
+  { href: "#produtos", label: "Produtos" },
+  { href: "#marcas", label: "Parcerias" },
+  { href: "#feedbacks", label: "Depoimentos" },
+  { href: "#faq", label: "Dúvidas" },
+  { href: "#contato", label: "Contato" },
+];
+
 function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <header className="sticky top-0 z-50 border-b border-border/60 bg-background/85 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4">
-          <a href="#topo" className="flex items-center">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 py-4 md:flex md:justify-between md:gap-6">
+          <a href="#topo" className="flex min-w-0 items-center">
             <img
               src={wordmark.url}
               alt="Xuxuzinho"
@@ -429,28 +440,49 @@ function Index() {
 
 
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
-            <a href="#corporativo" className="transition-colors hover:text-plum">
-              Corporativo
-            </a>
-            <a href="#produtos" className="transition-colors hover:text-plum">
-              Produtos
-            </a>
-            <a href="#marcas" className="transition-colors hover:text-plum">
-              Parcerias
-            </a>
-            <a href="#feedbacks" className="transition-colors hover:text-plum">
-              Depoimentos
-            </a>
-            <a href="#faq" className="transition-colors hover:text-plum">
-              Dúvidas
-            </a>
-            <a href="#contato" className="transition-colors hover:text-plum">
-              Contato
-            </a>
+            {NAV_LINKS.map((l) => (
+              <a key={l.href} href={l.href} className="transition-colors hover:text-plum">
+                {l.label}
+              </a>
+            ))}
           </nav>
 
-          <WhatsButton size="sm">Orçamento</WhatsButton>
+          <div className="flex shrink-0 items-center gap-2">
+            <div className="hidden md:block">
+              <WhatsButton size="sm">Orçamento</WhatsButton>
+            </div>
+            <button
+              type="button"
+              aria-label={menuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-expanded={menuOpen}
+              onClick={() => setMenuOpen((v) => !v)}
+              className="rounded-full p-2.5 text-navy ring-1 ring-border transition hover:bg-secondary md:hidden"
+            >
+              {menuOpen ? <XIcon className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
+            </button>
+          </div>
         </div>
+
+        {menuOpen && (
+          <nav className="border-t border-border/60 bg-background px-5 pb-5 md:hidden">
+            <ul className="flex flex-col py-2">
+              {NAV_LINKS.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="block border-b border-border/40 py-3 text-base text-navy transition-colors hover:text-plum"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-3">
+              <WhatsButton size="sm">Orçamento</WhatsButton>
+            </div>
+          </nav>
+        )}
       </header>
 
       <main id="topo">
