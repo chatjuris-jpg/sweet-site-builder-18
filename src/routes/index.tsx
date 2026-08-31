@@ -303,7 +303,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
                 aria-label={`Ver foto ${idx + 1} de ${title}`}
                 onClick={() => setI(idx)}
                 className={`h-1.5 rounded-full transition-all ${
-                  idx === i ? "w-4 bg-cream" : "w-1.5 bg-cream/60"
+                  idx === i ? "w-4 bg-plum" : "w-1.5 bg-navy/30"
                 }`}
               />
             ))}
