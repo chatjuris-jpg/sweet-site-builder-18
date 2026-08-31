@@ -343,7 +343,7 @@ function ProductRow({
           {imgs.map((src, idx) => (
             <div
               key={src}
-              className="flex h-[320px] w-full shrink-0 items-center justify-center sm:h-[420px] lg:h-[460px]"
+              className="flex h-[280px] w-full shrink-0 items-center justify-center sm:h-[340px] lg:h-[380px]"
             >
               <img
                 src={src}
