@@ -272,7 +272,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
             height={500}
             loading="lazy"
             decoding="async"
-            className={`${aspect} w-full shrink-0 object-cover`}
+            className={`${aspect} w-full shrink-0 bg-sand object-contain`}
           />
         ))}
       </div>
@@ -283,7 +283,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
             type="button"
             aria-label={`Foto anterior de ${title}`}
             onClick={() => go(-1)}
-            className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-cream/90 p-1.5 text-navy opacity-0 shadow transition-opacity group-hover/car:opacity-100 focus-visible:opacity-100"
+            className="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-cream/95 p-2 text-navy shadow-md transition hover:bg-cream focus-visible:ring-2 focus-visible:ring-plum"
           >
             <ChevronLeft className="size-4" aria-hidden />
           </button>
@@ -291,7 +291,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
             type="button"
             aria-label={`Próxima foto de ${title}`}
             onClick={() => go(1)}
-            className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-cream/90 p-1.5 text-navy opacity-0 shadow transition-opacity group-hover/car:opacity-100 focus-visible:opacity-100"
+            className="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-cream/95 p-2 text-navy shadow-md transition hover:bg-cream focus-visible:ring-2 focus-visible:ring-plum"
           >
             <ChevronRight className="size-4" aria-hidden />
           </button>
@@ -303,7 +303,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
                 aria-label={`Ver foto ${idx + 1} de ${title}`}
                 onClick={() => setI(idx)}
                 className={`h-1.5 rounded-full transition-all ${
-                  idx === i ? "w-4 bg-cream" : "w-1.5 bg-cream/60"
+                  idx === i ? "w-4 bg-plum" : "w-1.5 bg-navy/30"
                 }`}
               />
             ))}
