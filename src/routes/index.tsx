@@ -504,20 +504,10 @@ function Index() {
             </p>
           </div>
 
-          <div id="produtos" className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {produtos.map((p) => (
-              <article
-                key={p.title}
-                className="group overflow-hidden rounded-xl bg-card shadow-sm ring-1 ring-border/60 transition-shadow hover:shadow-md"
-              >
-                <ProductCarousel imgs={p.imgs} title={p.title} />
-                <div className="px-6 py-5">
-                  <h3 className="text-lg font-medium text-navy">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-plum/80">{p.text}</p>
-                </div>
-              </article>
-            ))}
+          <div id="produtos" className="mt-10">
+            <ProductShowcase />
           </div>
+
 
 
 
