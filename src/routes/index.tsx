@@ -419,7 +419,6 @@ function ProductShowcase() {
   );
 }
 
-}
 
 
 function Index() {
