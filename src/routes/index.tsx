@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { BrandName } from "@/components/BrandName";
-import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download, X as XIcon, Expand } from "lucide-react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download, X as XIcon, Expand, Menu } from "lucide-react";
 
 import catalogoPdf from "@/assets/catalogo-xuxuzinho.pdf.asset.json";
 import logoX from "@/assets/logo-x.webp.asset.json";
