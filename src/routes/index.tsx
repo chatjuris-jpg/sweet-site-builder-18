@@ -135,7 +135,7 @@ const produtos = [
     span: "sm:col-span-2",
   },
   { imgs: [bento3.url, bento1.url, bento2.url, bento4.url], title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
-  { imgs: [minibolo1.url, minibolo2.url, minibolo3.url, minibolo4.url], title: "Mini Bolos", text: "Porções individuais elegantes." },
+  { imgs: [minibolo1.url, minibolo2.url, minibolo3.url, minibolo5.url], title: "Mini Bolos", text: "Porções individuais elegantes." },
   {
     imgs: [outros4.url, outros1.url, outros2.url, outros3.url],
     title: "Outros Produtos",
