@@ -44,6 +44,7 @@ import minibolo1 from "@/assets/minibolo-1.webp.asset.json";
 import minibolo2 from "@/assets/minibolo-2.webp.asset.json";
 import minibolo3 from "@/assets/minibolo-3.webp.asset.json";
 import minibolo5 from "@/assets/minibolo-5.webp.asset.json";
+import wordmarkFooter from "@/assets/wordmark-footer.png.asset.json";
 import paodemel1 from "@/assets/paodemel-1.webp.asset.json";
 import paodemel2 from "@/assets/paodemel-2.webp.asset.json";
 import paodemel3 from "@/assets/paodemel-3.webp.asset.json";
@@ -872,7 +873,13 @@ function Index() {
       </main>
 
       <footer className="bg-navy py-10 text-center text-xs text-cream/70">
-        <p className="text-lg font-semibold text-cream">Xuxuzinho</p>
+        <img
+          src={wordmarkFooter.url}
+          alt="Xuxuzinho"
+          loading="lazy"
+          decoding="async"
+          className="mx-auto h-10 w-auto [filter:brightness(0)_invert(1)] opacity-90"
+        />
         <p className="mt-2">Confeitaria artesanal · Pedidos pelo WhatsApp (11) 95085-8045</p>
 
         <address className="mt-5 not-italic">
