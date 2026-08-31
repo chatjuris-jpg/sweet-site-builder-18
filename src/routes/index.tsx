@@ -267,20 +267,12 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
           <div key={src} className={`${aspect} relative w-full shrink-0 overflow-hidden bg-sand`}>
             <img
               src={src}
-              alt=""
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              className="absolute inset-0 h-full w-full scale-110 object-cover blur-xl"
-            />
-            <img
-              src={src}
               alt={`${title} — foto ${idx + 1}`}
               width={800}
               height={500}
               loading="lazy"
               decoding="async"
-              className="relative h-full w-full object-contain"
+              className="h-full w-full object-cover"
             />
           </div>
         ))}
