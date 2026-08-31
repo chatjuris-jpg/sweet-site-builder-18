@@ -315,6 +315,112 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
   );
 }
 
+function ProductShowcase() {
+  const [sel, setSel] = useState(0);
+  const [i, setI] = useState(0);
+  const p = produtos[sel]!;
+  const imgs = p.imgs;
+  const go = (d: number) => setI((v) => (v + d + imgs.length) % imgs.length);
+
+  const pick = (idx: number) => {
+    setSel(idx);
+    setI(0);
+  };
+
+  return (
+    <div className="grid gap-8 lg:grid-cols-[260px_minmax(0,1fr)] lg:items-start">
+      {/* Lista de produtos */}
+      <div className="-mx-5 flex gap-2 overflow-x-auto px-5 pb-2 lg:mx-0 lg:flex-col lg:overflow-visible lg:px-0 lg:pb-0">
+        {produtos.map((prod, idx) => (
+          <button
+            key={prod.title}
+            type="button"
+            onClick={() => pick(idx)}
+            aria-pressed={idx === sel}
+            className={`shrink-0 rounded-full px-5 py-3 text-left text-sm font-medium whitespace-nowrap transition lg:w-full lg:rounded-2xl ${
+              idx === sel
+                ? "bg-plum text-cream shadow-sm"
+                : "bg-card text-navy ring-1 ring-border/60 hover:bg-sand"
+            }`}
+          >
+            {prod.title}
+          </button>
+        ))}
+      </div>
+
+      {/* Painel do produto selecionado */}
+      <article className="overflow-hidden rounded-3xl bg-card shadow-sm ring-1 ring-border/60">
+        <div className="relative bg-sand">
+          <div
+            className="flex transition-transform duration-500 ease-out"
+            style={{ transform: `translateX(-${i * 100}%)` }}
+          >
+            {imgs.map((src, idx) => (
+              <div
+                key={src}
+                className="flex h-[340px] w-full shrink-0 items-center justify-center sm:h-[440px] lg:h-[520px]"
+              >
+                <img
+                  src={src}
+                  alt={`${p.title} — foto ${idx + 1}`}
+                  loading="lazy"
+                  decoding="async"
+                  className="max-h-full max-w-full object-contain"
+                />
+              </div>
+            ))}
+          </div>
+
+          {imgs.length > 1 && (
+            <>
+              <button
+                type="button"
+                aria-label={`Foto anterior de ${p.title}`}
+                onClick={() => go(-1)}
+                className="absolute top-1/2 left-3 -translate-y-1/2 rounded-full bg-cream/95 p-2.5 text-navy shadow-md transition hover:bg-cream"
+              >
+                <ChevronLeft className="size-5" aria-hidden />
+              </button>
+              <button
+                type="button"
+                aria-label={`Próxima foto de ${p.title}`}
+                onClick={() => go(1)}
+                className="absolute top-1/2 right-3 -translate-y-1/2 rounded-full bg-cream/95 p-2.5 text-navy shadow-md transition hover:bg-cream"
+              >
+                <ChevronRight className="size-5" aria-hidden />
+              </button>
+              <div className="absolute inset-x-0 bottom-3 flex justify-center gap-1.5">
+                {imgs.map((src, idx) => (
+                  <button
+                    key={src}
+                    type="button"
+                    aria-label={`Ver foto ${idx + 1} de ${p.title}`}
+                    onClick={() => setI(idx)}
+                    className={`h-1.5 rounded-full transition-all ${
+                      idx === i ? "w-5 bg-plum" : "w-1.5 bg-navy/30"
+                    }`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+
+        <div className="grid gap-3 px-6 py-6 sm:px-8 sm:flex sm:items-center sm:justify-between">
+          <div className="min-w-0">
+            <h3 className="text-2xl font-semibold text-navy">{p.title}</h3>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-plum/80">{p.text}</p>
+          </div>
+          <span className="shrink-0 text-xs tracking-[0.18em] uppercase text-muted-foreground">
+            {i + 1} / {imgs.length}
+          </span>
+        </div>
+      </article>
+    </div>
+  );
+}
+
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -504,20 +610,10 @@ function Index() {
             </p>
           </div>
 
-          <div id="produtos" className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {produtos.map((p) => (
-              <article
-                key={p.title}
-                className="group overflow-hidden rounded-xl bg-card shadow-sm ring-1 ring-border/60 transition-shadow hover:shadow-md"
-              >
-                <ProductCarousel imgs={p.imgs} title={p.title} />
-                <div className="px-6 py-5">
-                  <h3 className="text-lg font-medium text-navy">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-plum/80">{p.text}</p>
-                </div>
-              </article>
-            ))}
+          <div id="produtos" className="mt-10">
+            <ProductShowcase />
           </div>
+
 
 
 
