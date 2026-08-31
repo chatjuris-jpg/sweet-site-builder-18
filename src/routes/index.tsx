@@ -116,7 +116,7 @@ const produtos = [
     text: "Mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
     span: "sm:col-span-2 sm:row-span-2",
   },
-  { imgs: [brownie1.url, brownie2.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
+  { imgs: [brownie2.url, brownie1.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
   
   {
     imgs: [docinho1.url, docinho2.url, docinho3.url, docinho4.url],
