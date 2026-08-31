@@ -897,7 +897,21 @@ function Index() {
         >
           Ver no Google Maps
         </a>
+
+        <div className="mx-auto mt-6 max-w-3xl px-5">
+          <div className="overflow-hidden rounded-2xl border border-cream/20">
+            <iframe
+              title="Mapa da localização da Xuxuzinho no Tatuapé"
+              src="https://www.google.com/maps?q=R.%20Manuel%20de%20Atouguia%2C%2014%20-%20Tatuap%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003313-020&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="h-64 w-full border-0"
+              allowFullScreen
+            />
+          </div>
+        </div>
       </footer>
+
 
       <div className="fixed right-5 bottom-5 z-50">
         <WhatsButton size="sm">Pedir orçamento</WhatsButton>
