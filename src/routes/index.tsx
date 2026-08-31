@@ -329,7 +329,7 @@ function ProductRow({
   const go = (d: number) => setI((v) => (v + d + imgs.length) % imgs.length);
 
   return (
-    <article className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+    <article className="grid items-center gap-6 lg:grid-cols-2 lg:gap-10">
       {/* Carrossel */}
       <div
         className={`relative overflow-hidden rounded-[2rem] bg-sand shadow-sm ring-1 ring-border/60 ${
