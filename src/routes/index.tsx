@@ -43,7 +43,7 @@ import docinho4 from "@/assets/docinho-4.webp.asset.json";
 import minibolo1 from "@/assets/minibolo-1.webp.asset.json";
 import minibolo2 from "@/assets/minibolo-2.webp.asset.json";
 import minibolo3 from "@/assets/minibolo-3.webp.asset.json";
-import minibolo4 from "@/assets/minibolo-4.webp.asset.json";
+import minibolo5 from "@/assets/minibolo-5.webp.asset.json";
 import paodemel1 from "@/assets/paodemel-1.webp.asset.json";
 import paodemel2 from "@/assets/paodemel-2.webp.asset.json";
 import paodemel3 from "@/assets/paodemel-3.webp.asset.json";
