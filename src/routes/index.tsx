@@ -88,7 +88,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATS =
-  "https://wa.me/5511971872937?text=Ol%C3%A1%2C%20Xuxuzinho!%20Gostaria%20de%20um%20or%C3%A7amento%20corporativo%20para%20minha%20empresa.";
+  "https://wa.me/5511950858045?text=Ol%C3%A1%2C%20Xuxuzinho!%20Gostaria%20de%20um%20or%C3%A7amento%20corporativo%20para%20minha%20empresa.";
 
 const palavras = ["CUPCAKE", "BROWNIE", "BOLOS", "DOCINHOS", "PÃO DE MEL", "Entre outros"];
 
@@ -858,7 +858,7 @@ function Index() {
 
             <div className="mt-8 flex justify-center">
               <a
-                href="https://wa.me/5511971872937?text=Ol%C3%A1%2C%20Xuxuzinho!%20Gostaria%20de%20um%20or%C3%A7amento."
+                href="https://wa.me/5511950858045?text=Ol%C3%A1%2C%20Xuxuzinho!%20Gostaria%20de%20um%20or%C3%A7amento."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-cream px-8 py-4 text-sm font-medium text-navy transition-opacity hover:opacity-90"
