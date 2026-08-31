@@ -396,12 +396,12 @@ function ProductRow({
         <span className="text-xs font-medium tracking-[0.22em] text-plum/60">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <h3 className="mt-3 text-3xl font-semibold text-navy sm:text-4xl">{produto.title}</h3>
-        <div className="mt-4 h-px w-16 bg-plum/40" />
-        <p className="mt-5 max-w-md text-base leading-relaxed text-muted-foreground">
+        <h3 className="mt-2 text-2xl font-semibold text-navy sm:text-3xl">{produto.title}</h3>
+        <div className="mt-3 h-px w-14 bg-plum/40" />
+        <p className="mt-4 max-w-md text-sm leading-relaxed text-muted-foreground">
           {produto.text}
         </p>
-        <p className="mt-6 text-sm text-plum/70">
+        <p className="mt-4 text-xs text-plum/70">
           {imgs.length} fotos · personalização sob medida
         </p>
       </div>
