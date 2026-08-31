@@ -43,7 +43,7 @@ import docinho4 from "@/assets/docinho-4.webp.asset.json";
 import minibolo1 from "@/assets/minibolo-1.webp.asset.json";
 import minibolo2 from "@/assets/minibolo-2.webp.asset.json";
 import minibolo3 from "@/assets/minibolo-3.webp.asset.json";
-import minibolo4 from "@/assets/minibolo-4.webp.asset.json";
+import minibolo5 from "@/assets/minibolo-5.webp.asset.json";
 import paodemel1 from "@/assets/paodemel-1.webp.asset.json";
 import paodemel2 from "@/assets/paodemel-2.webp.asset.json";
 import paodemel3 from "@/assets/paodemel-3.webp.asset.json";
@@ -135,7 +135,7 @@ const produtos = [
     span: "sm:col-span-2",
   },
   { imgs: [bento3.url, bento1.url, bento2.url, bento4.url], title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
-  { imgs: [minibolo1.url, minibolo2.url, minibolo3.url, minibolo4.url], title: "Mini Bolos", text: "Porções individuais elegantes." },
+  { imgs: [minibolo1.url, minibolo2.url, minibolo3.url, minibolo5.url], title: "Mini Bolos", text: "Porções individuais elegantes." },
   {
     imgs: [outros4.url, outros1.url, outros2.url, outros3.url],
     title: "Outros Produtos",
