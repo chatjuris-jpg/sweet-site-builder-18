@@ -406,7 +406,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
                 key={src}
                 type="button"
                 aria-label={`Ver foto ${idx + 1} de ${title}`}
-                onClick={() => setI(idx)}
+                onClick={() => { reveal(idx); setI(idx); }}
                 className={`h-1.5 rounded-full transition-all ${
                   idx === i ? "w-4 bg-plum" : "w-1.5 bg-navy/30"
                 }`}
