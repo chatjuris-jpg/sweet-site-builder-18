@@ -446,7 +446,6 @@ function Index() {
               width={900}
               height={270}
               loading="eager"
-              fetchPriority="low"
               decoding="async"
               className="h-9 w-auto object-contain sm:h-10"
             />
@@ -535,7 +534,7 @@ function Index() {
               />
               <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-4 rounded-2xl bg-cream/95 px-5 py-3 backdrop-blur">
                 <div className="flex items-center gap-3">
-                  <img src={logoX.url} alt="Logotipo Xuxuzinho" width={211} height={202} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
+                  <img src={logoX.url} alt="Logotipo Xuxuzinho" width={211} height={202} loading="eager" decoding="async" className="h-8 w-8 object-contain" />
                   <div>
                     <p className="text-sm font-medium text-navy">Confeitaria artesanal</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
