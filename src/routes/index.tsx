@@ -326,7 +326,15 @@ function Lightbox({
 function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: string[]; title: string; aspect?: string }) {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(false);
-  const go = (d: number) => setI((p) => (p + d + imgs.length) % imgs.length);
+  const [loaded, setLoaded] = useState<number[]>([0]);
+  const reveal = (idx: number) =>
+    setLoaded((p) => (p.includes(idx) ? p : [...p, idx, (idx + 1) % imgs.length]));
+  const go = (d: number) =>
+    setI((p) => {
+      const n = (p + d + imgs.length) % imgs.length;
+      reveal(n);
+      return n;
+    });
 
   return (
     <div className="group/car relative overflow-hidden">
