@@ -83,6 +83,16 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [
+      {
+        rel: "preload",
+        as: "image",
+        href: heroCupcakeAsset.url,
+        imagesrcset: `/assets/sm/hero-cupcake.webp 420w, ${heroCupcakeAsset.url} 760w`,
+        imagesizes: "(max-width: 768px) 92vw, 45vw",
+        fetchpriority: "high",
+      },
+    ],
   }),
   component: Index,
 });
