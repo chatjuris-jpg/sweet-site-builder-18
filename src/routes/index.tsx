@@ -326,7 +326,15 @@ function Lightbox({
 function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: string[]; title: string; aspect?: string }) {
   const [i, setI] = useState(0);
   const [zoom, setZoom] = useState(false);
-  const go = (d: number) => setI((p) => (p + d + imgs.length) % imgs.length);
+  const [loaded, setLoaded] = useState<number[]>([0]);
+  const reveal = (idx: number) =>
+    setLoaded((p) => (p.includes(idx) ? p : [...p, idx, (idx + 1) % imgs.length]));
+  const go = (d: number) =>
+    setI((p) => {
+      const n = (p + d + imgs.length) % imgs.length;
+      reveal(n);
+      return n;
+    });
 
   return (
     <div className="group/car relative overflow-hidden">
@@ -346,8 +354,8 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
             className={`${aspect} group/zoom relative w-full shrink-0 cursor-zoom-in overflow-hidden bg-sand`}
           >
             <img
-              src={src}
-              srcSet={`${smSrc(src)} 420w, ${src} 760w`}
+              src={loaded.includes(idx) ? src : undefined}
+              srcSet={loaded.includes(idx) ? `${smSrc(src)} 420w, ${src} 760w` : undefined}
               sizes="(max-width: 768px) 92vw, 45vw"
               alt={`${title} — foto ${idx + 1}`}
               width={800}
@@ -398,7 +406,7 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
                 key={src}
                 type="button"
                 aria-label={`Ver foto ${idx + 1} de ${title}`}
-                onClick={() => setI(idx)}
+                onClick={() => { reveal(idx); setI(idx); }}
                 className={`h-1.5 rounded-full transition-all ${
                   idx === i ? "w-4 bg-plum" : "w-1.5 bg-navy/30"
                 }`}
@@ -438,7 +446,6 @@ function Index() {
               width={900}
               height={270}
               loading="eager"
-              fetchPriority="low"
               decoding="async"
               className="h-9 w-auto object-contain sm:h-10"
             />
@@ -527,7 +534,7 @@ function Index() {
               />
               <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-4 rounded-2xl bg-cream/95 px-5 py-3 backdrop-blur">
                 <div className="flex items-center gap-3">
-                  <img src={logoX.url} alt="Logotipo Xuxuzinho" width={211} height={202} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
+                  <img src={logoX.url} alt="Logotipo Xuxuzinho" width={211} height={202} loading="eager" decoding="async" className="h-8 w-8 object-contain" />
                   <div>
                     <p className="text-sm font-medium text-navy">Confeitaria artesanal</p>
                     <p className="flex items-center gap-1 text-xs text-muted-foreground">
@@ -569,7 +576,7 @@ function Index() {
 
 
         {/* POR QUE ESCOLHER — quadrantes com divisórias */}
-        <section id="corporativo" className="bg-secondary/60 py-20">
+        <section id="corporativo" className="cv-auto bg-secondary/60 py-20">
           <div className="mx-auto max-w-6xl px-5">
             <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-end">
               <div>
@@ -624,7 +631,7 @@ function Index() {
         </section>
 
         {/* LINHA DE PRODUTOS — cupcakes + todos os demais produtos */}
-        <section id="cupcakes" className="mx-auto max-w-6xl px-5 py-20">
+        <section id="cupcakes" className="cv-auto mx-auto max-w-6xl px-5 py-20">
           <div className="grid gap-8 md:grid-cols-[1fr_1fr] md:items-end">
             <div>
               <p className="section-eyebrow">Nossa linha de produtos</p>
@@ -706,7 +713,7 @@ function Index() {
 
 
         {/* MARCAS */}
-        <section id="marcas" className="bg-secondary/60 py-16">
+        <section id="marcas" className="cv-auto bg-secondary/60 py-16">
           <div className="mx-auto max-w-6xl px-5">
             <div className="grid gap-4 lg:grid-cols-3">
               <div className="rounded-3xl bg-card p-8">
@@ -743,7 +750,7 @@ function Index() {
         </section>
 
         {/* FEEDBACKS */}
-        <section id="feedbacks" className="mx-auto max-w-6xl px-5 py-16">
+        <section id="feedbacks" className="cv-auto mx-auto max-w-6xl px-5 py-16">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="section-eyebrow">Depoimentos</p>
@@ -811,7 +818,7 @@ function Index() {
 
 
         {/* FAQ */}
-        <section id="faq" className="mx-auto max-w-4xl px-5 py-16">
+        <section id="faq" className="cv-auto mx-auto max-w-4xl px-5 py-16">
           <p className="section-eyebrow">Perguntas frequentes</p>
           <h2 className="mt-4 text-3xl font-semibold text-navy">
             Dúvidas antes de encomendar
@@ -836,7 +843,7 @@ function Index() {
         </section>
 
         {/* CTA FINAL */}
-        <section id="contato" className="mx-auto max-w-6xl px-5 py-16">
+        <section id="contato" className="cv-auto mx-auto max-w-6xl px-5 py-16">
           <div className="rounded-3xl bg-navy px-6 py-16 text-center text-cream">
             <h2 className="text-4xl">
               Vamos adoçar sua próxima ação?
