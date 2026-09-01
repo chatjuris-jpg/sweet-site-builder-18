@@ -835,8 +835,7 @@ function Index() {
               Vamos adoçar sua próxima ação?
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-sm opacity-80">
-              Quer um orçamento da linha de produtos da{" "}
-              <BrandName className="text-base" />, um evento especial ou uma
+              Quer um orçamento da linha de produtos da Xuxuzinho, um evento especial ou uma
               ocasião diferente? Conte a data, a quantidade e a ideia — respondemos com sabores,
               embalagens e prazos.
             </p>
