@@ -185,3 +185,8 @@
   color: var(--plum);
   font-weight: 500;
 }
+
+@utility cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 900px;
+}

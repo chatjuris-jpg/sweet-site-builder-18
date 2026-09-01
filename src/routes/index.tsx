@@ -577,7 +577,7 @@ function Index() {
 
 
         {/* POR QUE ESCOLHER — quadrantes com divisórias */}
-        <section id="corporativo" className="bg-secondary/60 py-20">
+        <section id="corporativo" className="cv-auto bg-secondary/60 py-20">
           <div className="mx-auto max-w-6xl px-5">
             <div className="grid gap-8 md:grid-cols-[1fr_1.2fr] md:items-end">
               <div>
@@ -632,7 +632,7 @@ function Index() {
         </section>
 
         {/* LINHA DE PRODUTOS — cupcakes + todos os demais produtos */}
-        <section id="cupcakes" className="mx-auto max-w-6xl px-5 py-20">
+        <section id="cupcakes" className="cv-auto mx-auto max-w-6xl px-5 py-20">
           <div className="grid gap-8 md:grid-cols-[1fr_1fr] md:items-end">
             <div>
               <p className="section-eyebrow">Nossa linha de produtos</p>
@@ -714,7 +714,7 @@ function Index() {
 
 
         {/* MARCAS */}
-        <section id="marcas" className="bg-secondary/60 py-16">
+        <section id="marcas" className="cv-auto bg-secondary/60 py-16">
           <div className="mx-auto max-w-6xl px-5">
             <div className="grid gap-4 lg:grid-cols-3">
               <div className="rounded-3xl bg-card p-8">
@@ -751,7 +751,7 @@ function Index() {
         </section>
 
         {/* FEEDBACKS */}
-        <section id="feedbacks" className="mx-auto max-w-6xl px-5 py-16">
+        <section id="feedbacks" className="cv-auto mx-auto max-w-6xl px-5 py-16">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="section-eyebrow">Depoimentos</p>
@@ -819,7 +819,7 @@ function Index() {
 
 
         {/* FAQ */}
-        <section id="faq" className="mx-auto max-w-4xl px-5 py-16">
+        <section id="faq" className="cv-auto mx-auto max-w-4xl px-5 py-16">
           <p className="section-eyebrow">Perguntas frequentes</p>
           <h2 className="mt-4 text-3xl font-semibold text-navy">
             Dúvidas antes de encomendar
@@ -844,7 +844,7 @@ function Index() {
         </section>
 
         {/* CTA FINAL */}
-        <section id="contato" className="mx-auto max-w-6xl px-5 py-16">
+        <section id="contato" className="cv-auto mx-auto max-w-6xl px-5 py-16">
           <div className="rounded-3xl bg-navy px-6 py-16 text-center text-cream">
             <h2 className="text-4xl">
               Vamos adoçar sua próxima ação?
