@@ -254,6 +254,8 @@ function WhatsButton({
   );
 }
 
+const smSrc = (src: string) => src.replace("/assets/", "/assets/sm/");
+
 function Lightbox({
   imgs,
   index,
@@ -423,6 +425,7 @@ const NAV_LINKS = [
 
 function Index() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mapOn, setMapOn] = useState(false);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -435,7 +438,7 @@ function Index() {
               width={900}
               height={270}
               loading="eager"
-              fetchPriority="high"
+              fetchPriority="low"
               decoding="async"
               className="h-9 w-auto object-contain sm:h-10"
             />
@@ -512,9 +515,11 @@ function Index() {
             <div className="relative overflow-hidden rounded-[2rem] shadow-xl">
               <img
                 src={heroCupcakeAsset.url}
+                srcSet={`${smSrc(heroCupcakeAsset.url)} 420w, ${heroCupcakeAsset.url} 760w`}
+                sizes="(max-width: 768px) 92vw, 45vw"
                 alt="Cupcake artesanal com cobertura de chocolate e caixas de brinde com laço vermelho"
-                width={1200}
-                height={1600}
+                width={760}
+                height={1013}
                 loading="eager"
                 fetchPriority="high"
                 decoding="async"
@@ -721,7 +726,7 @@ function Index() {
                     className="flex h-20 items-center justify-center rounded-2xl border border-border bg-card px-4"
                   >
                     <img
-                      src={m.src}
+                      src={smSrc(m.src)}
                       alt={`Logotipo ${m.nome}`}
                       loading="lazy"
                       decoding="async"
@@ -901,14 +906,25 @@ function Index() {
 
         <div className="mx-auto mt-6 max-w-3xl px-5">
           <div className="overflow-hidden rounded-2xl border border-cream/20">
-            <iframe
-              title="Mapa da localização da Xuxuzinho no Tatuapé"
-              src="https://www.google.com/maps?q=R.%20Manuel%20de%20Atouguia%2C%2014%20-%20Tatuap%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003313-020&output=embed"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-64 w-full border-0"
-              allowFullScreen
-            />
+            {mapOn ? (
+              <iframe
+                title="Mapa da localização da Xuxuzinho no Tatuapé"
+                src="https://www.google.com/maps?q=R.%20Manuel%20de%20Atouguia%2C%2014%20-%20Tatuap%C3%A9%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2003313-020&output=embed"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-64 w-full border-0"
+                allowFullScreen
+              />
+            ) : (
+              <button
+                type="button"
+                onClick={() => setMapOn(true)}
+                className="flex h-64 w-full flex-col items-center justify-center gap-2 bg-cream/10 text-cream transition hover:bg-cream/20"
+              >
+                <MapPin className="size-5" aria-hidden />
+                <span className="text-sm">Ver mapa da loja</span>
+              </button>
+            )}
           </div>
         </div>
       </footer>
