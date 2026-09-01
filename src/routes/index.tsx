@@ -345,6 +345,8 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
           >
             <img
               src={src}
+              srcSet={`${smSrc(src)} 420w, ${src} 760w`}
+              sizes="(max-width: 768px) 92vw, 45vw"
               alt={`${title} — foto ${idx + 1}`}
               width={800}
               height={500}
