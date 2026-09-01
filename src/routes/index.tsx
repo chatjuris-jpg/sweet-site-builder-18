@@ -113,8 +113,8 @@ const servicos = [
 const produtos = [
   {
     imgs: [cupcake3.url, cupcake1.url, cupcake2.url, cupcake4.url],
-    title: "Cupcakes",
-    text: "Mais de 30 sabores, em dois tamanhos, com topos personalizáveis.",
+    title: "Cupcakes e mini cupcakes",
+    text: "Perfeitos para eventos, festa na empresa, brindes, presente para funcionários e clientes.",
     span: "sm:col-span-2 sm:row-span-2",
   },
   { imgs: [brownie2.url, brownie1.url, brownie3.url, brownie4.url], title: "Brownie", text: "Brownies intensos, embalados individualmente." },
@@ -122,12 +122,12 @@ const produtos = [
   {
     imgs: [docinho1.url, docinho2.url, docinho3.url, docinho4.url],
     title: "Docinhos",
-    text: "Brigadeiros e docinhos finos para coffee breaks.",
+    text: "Docinhos individuais ou coletivos. Um excelente brinde comestível.",
   },
   {
     imgs: [paodemel1.url, paodemel2.url, paodemel3.url, paodemel4.url],
     title: "Pão de Mel",
-    text: "Recheado e banhado em chocolate nobre.",
+    text: "Deliciosos Pães de Mel super recheados para sua empresa ou evento.",
   },
   {
     imgs: [bolo1.url, bolo2.url, bolo3.url, bolo4.url],
@@ -135,12 +135,12 @@ const produtos = [
     text: "Bolos exclusivos com a identidade visual da sua empresa.",
     span: "sm:col-span-2",
   },
-  { imgs: [bento3.url, bento1.url, bento2.url, bento4.url], title: "Bentô Cakes", text: "Mini bolos individuais e encantadores." },
+  { imgs: [bento3.url, bento1.url, bento2.url, bento4.url], title: "Bentô Cakes", text: "Perfeito para presentear colaboradores, amigos e clientes." },
   { imgs: [minibolo2.url, minibolo1.url, minibolo3.url, minibolo5.url], title: "Mini Bolos", text: "Porções individuais elegantes." },
   {
     imgs: [outros4.url, outros1.url, outros2.url, outros3.url],
     title: "Outros Produtos",
-    text: "Kits, cestas, drageados e canecas personalizadas para a sua marca.",
+    text: "Kits, canecas personalizadas, drages, cestas, entre outros.",
   },
 ];
 
