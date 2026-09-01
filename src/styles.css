@@ -4,6 +4,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@font-face{font-family:'Playfair Display';font-style:normal;font-weight:500 700;font-display:swap;src:url('/fonts/PlayfairDisplay-600.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:300;font-display:swap;src:url('/fonts/Poppins-300.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/Poppins-400.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url('/fonts/Poppins-500.woff2') format('woff2');}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url('/fonts/Poppins-600.woff2') format('woff2');}
+@font-face{font-family:'Yellowtail';font-style:normal;font-weight:400;font-display:swap;src:url('/fonts/Yellowtail-400.woff2') format('woff2');}
+
+
 /*
  * Design system definition.
  *
