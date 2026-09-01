@@ -354,8 +354,8 @@ function ProductCarousel({ imgs, title, aspect = "aspect-16/10" }: { imgs: strin
             className={`${aspect} group/zoom relative w-full shrink-0 cursor-zoom-in overflow-hidden bg-sand`}
           >
             <img
-              src={src}
-              srcSet={`${smSrc(src)} 420w, ${src} 760w`}
+              src={loaded.includes(idx) ? src : undefined}
+              srcSet={loaded.includes(idx) ? `${smSrc(src)} 420w, ${src} 760w` : undefined}
               sizes="(max-width: 768px) 92vw, 45vw"
               alt={`${title} — foto ${idx + 1}`}
               width={800}
