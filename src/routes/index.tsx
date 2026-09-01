@@ -708,7 +708,7 @@ function Index() {
                   Marcas que confiam em nós
                 </h2>
                 <p className="mt-5 text-sm text-muted-foreground">
-                  Empresas que escolheram a <BrandName className="text-base" /> para adoçar seus eventos, brindes e
+                  Empresas que escolheram a Xuxuzinho para adoçar seus eventos, brindes e
                   celebrações internas.
                 </p>
               </div>
