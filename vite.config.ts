@@ -12,4 +12,6 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Hostinger (Node.js 22, tipo Nitro): saída em .output/server/index.mjs
+  nitro: { preset: "node-server" },
 });
