@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { BrandName } from "@/components/BrandName";
-import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download, X as XIcon, Expand, Menu } from "lucide-react";
+import { MessageCircle, Gift, PartyPopper, CalendarClock, MapPin, Mail, Sparkles, ChevronLeft, ChevronRight, Star, Quote, FileText, Download, X as XIcon, Expand, Menu } from "lucide-react";
 
 import catalogoPdf from "@/assets/catalogo-xuxuzinho.pdf.asset.json";
 import logoX from "@/assets/logo-x.webp.asset.json";
@@ -869,7 +869,7 @@ function Index() {
               ))}
             </ul>
 
-            <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <a
                 href="https://wa.me/5511950858045?text=Ol%C3%A1%2C%20Xuxuzinho!%20Gostaria%20de%20um%20or%C3%A7amento."
                 target="_blank"
@@ -879,8 +879,18 @@ function Index() {
                 <MessageCircle className="size-4" aria-hidden />
                 Pedir orçamento
               </a>
+              <a
+                href="mailto:contato@xuxuzinho.com.br"
+                className="inline-flex items-center gap-2 rounded-full border border-cream/30 px-8 py-4 text-sm font-medium text-cream transition-opacity hover:opacity-80"
+              >
+                <Mail className="size-4" aria-hidden />
+                contato@xuxuzinho.com.br
+              </a>
             </div>
-            <p className="mt-4 text-xs opacity-70">WhatsApp (11) 95085-8045</p>
+            <p className="mt-4 text-xs opacity-70">
+              WhatsApp (11) 95085-8045 · contato@xuxuzinho.com.br
+            </p>
+
           </div>
         </section>
       </main>
