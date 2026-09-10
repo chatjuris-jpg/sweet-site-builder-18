@@ -455,7 +455,16 @@ function Index() {
 
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} className="transition-colors hover:text-plum">
+              <a
+                key={l.href}
+                href={l.href}
+                {...("external" in l && l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={
+                  "external" in l && l.external
+                    ? "rounded-full bg-plum px-4 py-2 font-medium text-cream transition-opacity hover:opacity-90"
+                    : "transition-colors hover:text-plum"
+                }
+              >
                 {l.label}
               </a>
             ))}
