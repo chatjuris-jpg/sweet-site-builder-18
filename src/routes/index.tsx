@@ -493,6 +493,7 @@ function Index() {
                 <li key={l.href}>
                   <a
                     href={l.href}
+                    {...("external" in l && l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     onClick={() => setMenuOpen(false)}
                     className="block border-b border-border/40 py-3 text-base text-navy transition-colors hover:text-plum"
                   >
