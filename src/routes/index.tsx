@@ -429,6 +429,7 @@ const NAV_LINKS = [
   { href: "#feedbacks", label: "Depoimentos" },
   { href: "#faq", label: "Dúvidas" },
   { href: "#contato", label: "Contato" },
+  { href: "https://www.xuxuzinho.com.br", label: "Pessoa Física", external: true },
 ];
 
 function Index() {
@@ -454,7 +455,16 @@ function Index() {
 
           <nav className="hidden items-center gap-7 text-sm text-muted-foreground md:flex">
             {NAV_LINKS.map((l) => (
-              <a key={l.href} href={l.href} className="transition-colors hover:text-plum">
+              <a
+                key={l.href}
+                href={l.href}
+                {...("external" in l && l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className={
+                  "external" in l && l.external
+                    ? "rounded-full bg-plum px-4 py-2 font-medium text-cream transition-opacity hover:opacity-90"
+                    : "transition-colors hover:text-plum"
+                }
+              >
                 {l.label}
               </a>
             ))}
@@ -483,6 +493,7 @@ function Index() {
                 <li key={l.href}>
                   <a
                     href={l.href}
+                    {...("external" in l && l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     onClick={() => setMenuOpen(false)}
                     className="block border-b border-border/40 py-3 text-base text-navy transition-colors hover:text-plum"
                   >
