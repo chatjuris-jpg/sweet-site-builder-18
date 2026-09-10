@@ -429,6 +429,7 @@ const NAV_LINKS = [
   { href: "#feedbacks", label: "Depoimentos" },
   { href: "#faq", label: "Dúvidas" },
   { href: "#contato", label: "Contato" },
+  { href: "https://www.xuxuzinho.com.br", label: "Pessoa Física", external: true },
 ];
 
 function Index() {
