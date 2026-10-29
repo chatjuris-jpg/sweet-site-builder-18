@@ -162,6 +162,32 @@ function RootComponent() {
     }
   }, []);
 
+  // The Tintim tag (loaded via GTM) hijacks clicks on tintim.link and navigates
+  // the current tab. Intercept first (capture phase) and open a new tab instead,
+  // keeping Tintim's tt_* tracking cookies appended to the URL.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      const target = event.target as Element | null;
+      const link = target?.closest?.(
+        'a[href*="tintim.link"], a[href*="s.tintim.app"]',
+      ) as HTMLAnchorElement | null;
+      if (!link) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const url = new URL(link.href);
+      for (const cookie of document.cookie.split("; ")) {
+        const [fullName, value] = cookie.split("=");
+        if (fullName?.startsWith("tt_") && value !== undefined) {
+          const name = fullName.slice(3);
+          if (!url.searchParams.has(name)) url.searchParams.append(name, decodeURIComponent(value));
+        }
+      }
+      window.open(url.toString(), "_blank", "noopener,noreferrer");
+    };
+    window.addEventListener("click", onClick, true);
+    return () => window.removeEventListener("click", onClick, true);
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
