@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Tintim WhatsApp links (tintim.link) are opened in a new tab by a capture-phase click handler in src/routes/__root.tsx, because the Tintim tag loaded via GTM otherwise forces same-tab navigation.
