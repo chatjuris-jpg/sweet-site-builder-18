@@ -892,6 +892,8 @@ function Index() {
               </a>
               <a
                 href="mailto:contato@xuxuzinho.com.br"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full border border-cream/30 px-8 py-4 text-sm font-medium text-cream transition-opacity hover:opacity-80"
               >
                 <Mail className="size-4" aria-hidden />
